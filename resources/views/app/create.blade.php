@@ -42,6 +42,14 @@
 											<label>推广网址 * </label>
 											<input type="text" class="form-control" placeholder="请输入自已网站地址">
 										</div>
+										<div class="form-group">
+											<label>推广网址 * </label>
+											<label class="form-switch form-switch-pill form-switch-primary d-block">
+															<input type="radio" name="-" value="1" checked="">
+															<i data-on="ON" data-off="OFF"></i>
+															Using Text
+														</label>
+										</div>
 
 										<button type="submit" class="btn btn-primary">提交</button>
 									</form>
