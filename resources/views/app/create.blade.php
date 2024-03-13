@@ -14,7 +14,7 @@
 							<div class="portlet-header">
 
 								<span class="d-block text-muted text-truncate font-weight-medium">
-									<a href="">返回</a>
+									<a href="/app">返回</a>
 								</span>
 
 							</div>
