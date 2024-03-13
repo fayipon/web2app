@@ -43,12 +43,19 @@
 											<input type="text" class="form-control" placeholder="请输入自已网站地址">
 										</div>
 										<div class="form-group">
-											<label>推广网址 * </label>
+											<label> </label>
 											<label class="form-switch form-switch-pill form-switch-primary d-block">
-															<input type="radio" name="-" value="1" checked="">
-															<i data-on="ON" data-off="OFF"></i>
-															Using Text
-														</label>
+												<input type="radio" name="-" value="1" checked="">
+												<i data-on="允许" data-off="不允许"></i>
+												网址是否允许修改
+											</label>
+										</div>
+										<div class="form-group">
+											<label>在iframe打开</label>
+											<label class="form-switch form-switch-pill form-switch-primary d-block">
+												<input type="radio" name="-" value="1" checked="">
+												<i data-on="是" data-off="否"></i>
+											</label>
 										</div>
 
 										<button type="submit" class="btn btn-primary">提交</button>
