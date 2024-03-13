@@ -906,7 +906,7 @@
 
 							<li class="list-inline-item ml--6 mr--6 float-start d-none d-lg-inline-block">
 								<a target="_blank" href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-light bg-transparent text-muted shadow-none m-0">
-									Get Smarty
+									进入后台
 								</a>
 							</li>
 
