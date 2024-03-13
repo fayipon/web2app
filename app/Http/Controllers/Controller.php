@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cache;
 
 class Controller extends BaseController
 {
@@ -24,6 +26,21 @@ class Controller extends BaseController
     	return $input;
     }
     
+	// 判断是否登入
+	
+	// 檢查是否登入
+	protected function isLogin() {
+
+		$is_login = Session::get('is_login', false);
+
+		if ($is_login === false) {
+			Session::flush();
+			header("Location: /login");
+			exit();
+		}
+	
+	}
+
     // assign
     protected function assign($key, $value) {
     	$this->data[$key] = $value;

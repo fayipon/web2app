@@ -106,6 +106,8 @@
 
 		<script src="admin/assets/js/core.min.js"></script>
 		<script src="admin/assets/js/vendor_bundle.min.js"></script>
+		<script src="admin/assets/js/core.min.js"></script>
+		src/js/sow.core/sow.toast.js
 
 		<!-- Your custom javascripts -->
 		<script>
