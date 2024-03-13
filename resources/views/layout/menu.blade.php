@@ -5,7 +5,7 @@
 <!-- LOGO -->
 <div class="d-none d-sm-block">
 	<div class="clearfix d-flex justify-content-between">
-		<a class="w-100 align-self-center navbar-brand p-3" href="index.html">
+		<a class="w-100 align-self-center navbar-brand p-3" href="/dashboard">
 			<img src="admin/assets/images/logo/logo_light.svg" width="110" height="60" alt="...">
 		</a>
 	</div>
