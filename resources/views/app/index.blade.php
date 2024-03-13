@@ -79,7 +79,7 @@
 
 
 									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light" style="background-color:#cceeff;">
+									<div class="d-flex align-items-center p-3 border-bottom border-light">
 
 										<div class="flex-fill text-truncate px-3">
 											<span class="fs--13 d-block">ac79044b83c9b42</span>
