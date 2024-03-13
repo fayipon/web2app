@@ -8,50 +8,35 @@
 
 					<!-- Primary -->
 					<section class="rounded mb-3">
+						
+						<div class="portlet">
 
-						<div class="col-12 col-xl-12 mb-3">
+							<div class="portlet-header border-bottom">
+								<span>Default Bootstrap</span>
+							</div>
 
-							<div class="portlet">
-								
-								<div class="portlet-header">
+							<div class="portlet-body">
+								<div class="container py-6">
 
-									<div class="float-start dropdown">
-
-									<a href="/app" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
-										返回
-									</a>
-
+									<form>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email address</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Password</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									</div>
+									<div class="form-group form-check">
+										<input type="checkbox" class="form-check-input" id="exampleCheck1">
+										<label class="form-check-label" for="exampleCheck1">Check me out</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+										
 
 								</div>
-
-								<table>
-
-									<tr style="background-color:#cceeff;">
-										<th>应用ID</th>
-										<th>应用名称</th>
-										<th>状态</th>
-										<th>屏幕方向</th>
-										<th>安装量</th>
-										<th>创建时间</th>
-										<th>备注</th>
-										<th>链接</th>
-										<th>操作</th>
-									</tr>
-
-									<tr>
-										<td>ac79044b83c9b42</td>
-										<td>fayitest01</td>
-										<td>上架</td>
-										<td>竖屏</td>
-										<td>9</td>
-										<td>2024/03/11<br>15:49:13</td>
-										<td> </td>
-										<td>获取</td>
-										<td>下架 统计 编辑 删除</td>
-									</tr>
-								</table>
-								
 							</div>
 
 						</div>
