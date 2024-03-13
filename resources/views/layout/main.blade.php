@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="UTF-8">
-		<title>Smarty V3</title>
+		<title>Smarty Web2App</title>
 		<meta name="description" content="...">
 
         <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
@@ -112,7 +112,7 @@
 								Logo : height: 60px max
 								visibility : mobile only
 							-->
-							<a class="navbar-brand d-inline-block d-lg-none" href="index.html">
+							<a class="navbar-brand d-inline-block d-lg-none" href="/dashboard">
 								<img src="admin/assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
 							</a>
 

@@ -20,8 +20,6 @@
 									</a>
 
 								</div>
-
-
 							</div>
 							<div class="portlet-body">
 								<div class="container py-6">
