@@ -37,24 +37,10 @@
 									<!-- item -->
 									<div class="d-flex align-items-center p-3 border-bottom border-light">
 
-										<div class="flex-none w--40">
-											<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/csv.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
-										</div>
 
 										<div class="flex-fill text-truncate px-3">
 											<span class="text-muted">384 items imported, 766 updated, 12 ignored</span>
 											<span class="fs--13 d-block text-gray-500">29 June, 2020 / 18:44</span>
-										</div>
-
-										<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end dropdown">
-
-											<!-- dropdown -->
-											<a id="dropdownImport_1" href="#!" class="dropdown-toggle btn btn-sm btn-soft btn-primary px-2 py-1 fs--15 mt--n3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<i class="fi fi-dots-vertical m-0"></i>
-											</a>
-
-											<!-- /dropdown -->
-
 										</div>
 
 
