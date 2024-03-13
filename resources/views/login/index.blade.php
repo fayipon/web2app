@@ -49,7 +49,7 @@
 							<h1 class="d-inline-block text-align-end text-center-md text-center-xs display-4 h2-xs w-100 max-w-600 w-100-md w-100-xs">
 								登入
 								<span class="display-3 h1-xs d-block font-weight-medium">
-									Smarty
+									Web2App
 								</span>
 							</h1>
 						</div>
@@ -91,7 +91,7 @@
 
 								<div class="col-12 col-md-6 mt-4">
 									<button type="submit" class="btn btn-primary btn-block transition-hover-top">
-										Sign In
+										登入
 									</button>
 								</div>
 
