@@ -624,15 +624,6 @@
 
 
 
-			<!-- FOOTER -->
-			<footer id="footer" class="aside-primary text-white">
-				<div class="p-3 fs--14">
-					&copy; My Company LLC
-				</div>
-			</footer>
-			<!-- /FOOTER -->
-
-
 		</div><!-- /#wrapper -->
 
 
