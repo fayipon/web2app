@@ -38,7 +38,7 @@ class AppController extends Controller
         dd($session);
 
     	
-    	return view('app.create',[]);
+    	return view('app.create',$this->data);
     }
 }
 

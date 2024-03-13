@@ -13,11 +13,13 @@ class DashboardController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
 
         //////////////////////////////////////
 
 
-    	return view('dashboard.index',[]);
+    	return view('dashboard.index',$this->data);
     }
 }
 
