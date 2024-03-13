@@ -9,178 +9,123 @@
 					<!-- Primary -->
 					<section class="rounded mb-3">
 
+					<div class="col-12 col-xl-8 mb-3">
 
-						<!-- graph header -->
-						<div class="clearfix fs--18 pt-2 pb-3 mb-3 border-bottom">
+<div class="portlet">
+	
+	<div class="portlet-header">
 
-							<!-- save image -->
-							<a href="#" data-chartjs-id="visitsvsorders" data-file-name="visitsvsorders" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
-								<i class="fi fi-arrow-download m-0"></i>
-							</a>
-							<!-- /save image -->
+		<div class="float-end dropdown">
 
-							Visits &amp; Orders
-							<small class="fs--11 text-muted d-block mt-1">MONTHLY REVENUE OF 2019</small>
+			<a href="#!" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
+				View All
+			</a>
 
-						</div>
-						<!-- /graph header -->
+		</div>
 
 
+		<span class="d-block text-muted text-truncate font-weight-medium">
+			Shop Imports	
+		</span>
 
-						<div class="row gutters-sm">
-
-							<!-- MAIN GRAPH -->
-							<div class="col-12 col-lg-7 col-xl-9 mb-5">
-
-								<div class="position-relative min-h-250 max-h-500 max-h-300-xs h-100">
-									<canvas id="visitsvsorders" class="mb-5 chartjs" 
-										data-chartjs-dots="false" 
-										data-chartjs-legend="top" 
-										data-chartjs-grid="true" 
-										data-chartjs-tooltip="true" 
-
-										data-chartjs-title="Visits &amp; Orders" 
-										data-chartjs-xaxes-label="" 
-										data-chartjs-yaxes-label="" 
-										data-chartjs-line-width="5" 
-
-										data-chartjs-type="line" 
-										data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
-										data-chartjs-datasets='[{															
-									        "label": 				"Visits",
-									        "data": 				[20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
-									        "fill": 				true,
-									        "backgroundColor": 			"rgba(255, 206, 86, 0.2)"
-										},{
-									        "label": 				"Orders",
-									        "data": 				[14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
-									        "fill": 				true,
-									        "backgroundColor": 		"rgba(255, 206, 86, 0.4)"
-										}]'></canvas>
-
-								</div>
-
-							</div>
-							<!-- /MAIN GRAPH -->
-
-							<div class="col-12 col-lg-5 col-xl-3 mb-5">
-
-								<!-- card -->
-								<div class="bg-white shadow-lg p-4 rounded my-3 transition-hover-top transition-all-ease-150">
-
-									<!-- dropdown options -->
-									<div class="float-end dropdown">
-
-										<!-- dropdown -->
-										<button type="button" class="dropdown-toggle btn btn-sm btn-soft btn-primary px-2 py-1 fs--15 mt--n3" aria-label="Dropdown Options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<i class="fi fi-dots-vertical m-0"></i>
-										</button>
-
-										<div class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-invert mt-2">
-
-											<a href="#!" class="dropdown-item">
-												Export PDF
-											</a>
-
-											<a href="#!" class="dropdown-item">
-												Export Tasks
-											</a>
-
-											<a href="#!" class="dropdown-item">
-												Print
-											</a>
-
-										</div>
-										<!-- /dropdown -->
-
-									</div>
-									<!-- /dropdown options -->
+	</div>
 
 
-									<div class="mb-3">
-										<a href="#!" class="w--40 h--40 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="../../html_frontend/demo.files/images/unsplash/team/thumb_330/erik-mclean-06vpBIHmiYc-unsplash.jpg"></a>
-										<a href="#!" class="w--40 h--40 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="../../html_frontend/demo.files/images/unsplash/team/thumb_330/craig-mckay-jmURdhtm7Ng-unsplash.jpg"></a>
-										<a href="#!" class="w--40 h--40 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="../../html_frontend/demo.files/images/unsplash/team/thumb_330/michael-dam-mEZ3PoFGs_k-unsplash.jpg"></a>
-									</div>
+	<!-- content loaded via ajax! -->
+	<div class="portlet-body max-h-500 scrollable-vertical scrollable-styled-dark">
 
-									<a href="#!" class="h6 text-dark">
-										Project Ikarus
-									</a>
+		<!-- item -->
+		<div class="d-flex align-items-center p-3 border-bottom border-light">
 
-									<p class="font-weight-light fs--14">This project has a timeline, we need to finish it as soon as possible!</p>
+			<div class="flex-none w--40">
+				<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/csv.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+			</div>
 
-									<span class="fs--14">39%</span>
-									<div class="progress h--2">
-										<div class="progress-bar bg-danger" role="progressbar" style="width: 39%" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+			<div class="flex-fill text-truncate px-3">
+				<span class="text-muted">384 items imported, 766 updated, 12 ignored</span>
+				<span class="fs--13 d-block text-gray-500">29 June, 2020 / 18:44</span>
+			</div>
 
-								</div>
+			<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end dropdown">
 
+				<!-- dropdown -->
+				<a id="dropdownImport_1" href="#!" class="dropdown-toggle btn btn-sm btn-soft btn-primary px-2 py-1 fs--15 mt--n3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fi fi-dots-vertical m-0"></i>
+				</a>
 
-								<!-- card -->
-								<div class="bg-white shadow-lg p-4 rounded my-3 transition-hover-top transition-all-ease-150">
+				<div aria-labelledby="dropdownImport_1" class="prefix-link-icon prefix-icon-dot dropdown-menu mt-2">
 
-									<!-- dropdown options -->
-									<div class="float-end dropdown">
+					<a href="#!" class="dropdown-item">
+						View Log
+					</a>
 
-										<!-- dropdown -->
-										<button type="button" class="dropdown-toggle btn btn-sm btn-soft btn-primary px-2 py-1 fs--15 mt--n3" aria-label="Dropdown Options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<i class="fi fi-dots-vertical m-0"></i>
-										</button>
+					<a href="#!" class="dropdown-item">
+						Download
+					</a>
 
-										<div class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-invert mt-2">
+				</div>
+				<!-- /dropdown -->
 
-											<a href="#!" class="dropdown-item">
-												Export PDF
-											</a>
-
-											<a href="#!" class="dropdown-item">
-												Export Tasks
-											</a>
-
-											<a href="#!" class="dropdown-item">
-												Print
-											</a>
-
-										</div>
-										<!-- /dropdown -->
-
-									</div>
-									<!-- /dropdown options -->
+			</div>
 
 
-									<div class="mb-3">
-										<a href="#!" class="w--40 h--40 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="../../html_frontend/demo.files/images/unsplash/team/thumb_330/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg"></a>
-										<a href="#!" class="w--40 h--40 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="../../html_frontend/demo.files/images/unsplash/team/thumb_330/sage-kirk-Wx2AjoLtpcU-unsplash.jpg"></a>
-									</div>
-
-									<a href="#!" class="h6 text-dark">
-										Remarketing
-									</a>
-
-									<p class="font-weight-light fs--14">
-										Our client needs remarketing for his two projects!
-									</p>
-
-									<span class="fs--14">78%</span>
-									<div class="progress h--2">
-										<div class="progress-bar bg-warning" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-								</div>
+		</div>
+		<!-- /item -->
 
 
-								<div class="clearfix bg-light p-1 row-pill">
-									<a href="#!" class="btn btn-pill btn-sm btn-warning py-1 mb-0 float-start transition-hover-end" title="Detailed Revenue" aria-label="Detailed Revenue">View</a>
-									<span class="d-block pt-1 pl-2 pr-2 text-muted text-truncate">
-										view all projects
-									</span>
-								</div>
 
-							</div>
+		<!-- item -->
+		<div class="d-flex align-items-center p-3 border-bottom border-light">
 
-						</div>
+			<div class="flex-none w--40">
+				<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/csv.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+			</div>
 
+			<div class="flex-fill text-truncate px-3">
+				<span class="text-muted">12 items imported, 67 updated, 1 ignored</span>
+				<span class="fs--13 d-block text-gray-500">15 February, 2020 / 16:51</span>
+			</div>
+
+			<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end">
+				<a href="#!">view log</a>
+			</div>
+
+		</div>
+		<!-- /item -->
+
+
+
+		<!-- item -->
+		<div class="d-flex align-items-center p-3 border-bottom border-light">
+
+			<div class="flex-none w--40">
+				<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/jpg.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+			</div>
+
+			<div class="flex-fill text-truncate px-3">
+				<span class="text-muted">384 images imported to 281 products</span>
+				<span class="fs--13 d-block text-gray-500">1 February, 2020 / 13:43</span>
+			</div>
+
+			<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end">
+				<a href="#!">view log</a>
+			</div>
+
+		</div>
+		<!-- /item -->
+
+	</div>
+
+	<div class="d-flex align-self-baseline w-100 py-2">
+		<a href="#!" class="btn btn-sm text-gray-500 b-0 fs--16 shadow-none font-weight-light">
+			<i class="fi fi-arrow-end-slim"></i>
+			<span>View All</span>
+		</a>
+	</div>
+
+</div>
+
+</div>
 					</section>
 					<!-- /Primary -->
 
