@@ -27,7 +27,7 @@
 
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="/app">
 						<i class="fi fi-mollecules"></i>
 						应用管理
 					</a>
@@ -35,7 +35,7 @@
 
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="/channel">
 						<i class="fi fi-mollecules"></i>
 						渠道管理
 					</a>
@@ -44,13 +44,13 @@
 
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="/push">
 						<i class="fi fi-mollecules"></i>
 						消息推送
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="/user">
 						<i class="fi fi-mollecules"></i>
 						用户管理
 					</a>
@@ -59,13 +59,6 @@
 					<a class="nav-link" href="#">
 						<i class="fi fi-mollecules"></i>
 						安装统计
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<i class="fi fi-mollecules"></i>
-						帐户管理
 					</a>
 				</li>
 
