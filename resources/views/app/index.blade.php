@@ -44,7 +44,10 @@
 										<th>操作</th>
 									</tr>
 								@if ($list->isEmpty())
-									<p>尚无应用数据,请新增应用</p>
+									
+									<tr>
+										<td colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
+									</tr>
 								@else
 									@foreach ($list as $item)
 									<tr>
