@@ -35,8 +35,7 @@
 								<div class="portlet-body max-h-500 scrollable-vertical scrollable-styled-dark">
 
 									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light">
-
+									<div class="d-flex align-items-center p-3 border-bottom border-light" style="background-color:#cceeff;">
 
 										<div class="flex-fill text-truncate px-3">
 											<span class="fs--13 d-block">应用ID</span>
