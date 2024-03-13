@@ -12,5 +12,11 @@ class LoginController extends Controller
     	
     	return view('login.index',[]);
     }
+
+    // 表单动作
+    public function post(Request $request) {
+    	
+    	return view('login.index',[]);
+    }
 }
 

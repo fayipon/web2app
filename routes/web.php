@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
+Route::get('/login-post', 'App\Http\Controllers\LoginController@post');
+
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/app', 'App\Http\Controllers\AppController@index');
