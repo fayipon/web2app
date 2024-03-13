@@ -12,5 +12,12 @@ class AppController extends Controller
     	
     	return view('app.index',[]);
     }
+
+    
+    // 创建新应用
+    public function create(Request $request) {
+    	
+    	return view('app.create',[]);
+    }
 }
 
