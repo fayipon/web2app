@@ -16,6 +16,10 @@ class LoginController extends Controller
     // 表单动作
     public function post(Request $request) {
     	
+        
+        $input = $this->getRequest($request);
+
+        dd($input);
     	return view('login.index',[]);
     }
 }
