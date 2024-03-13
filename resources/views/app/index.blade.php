@@ -18,14 +18,14 @@
 									<div class="float-end dropdown">
 
 										<a href="#!" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
-											View All
+											新增应用
 										</a>
 
 									</div>
 
 
 									<span class="d-block text-muted text-truncate font-weight-medium">
-										Shop Imports	
+										搜寻条件区块	
 									</span>
 
 								</div>
@@ -53,17 +53,6 @@
 												<i class="fi fi-dots-vertical m-0"></i>
 											</a>
 
-											<div aria-labelledby="dropdownImport_1" class="prefix-link-icon prefix-icon-dot dropdown-menu mt-2">
-
-												<a href="#!" class="dropdown-item">
-													View Log
-												</a>
-
-												<a href="#!" class="dropdown-item">
-													Download
-												</a>
-
-											</div>
 											<!-- /dropdown -->
 
 										</div>
