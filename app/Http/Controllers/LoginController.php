@@ -36,7 +36,7 @@ class LoginController extends Controller
     // test
     public function test(Request $request) {
     	
-        $return = User::where("ACCOUNT","admin")->save([
+        $return = User::where("ACCOUNT","admin")->update([
             "PASSWORD" => MD5('123qwe')
         ]);
 
