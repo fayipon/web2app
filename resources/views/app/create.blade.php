@@ -13,12 +13,16 @@
 
 							<div class="portlet-header">
 
-								<span class="d-block text-muted text-truncate font-weight-medium">
-									<a href="/app">返回</a>
-								</span>
+								<div class="float-start dropdown">
+
+									<a href="/app" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
+										返回
+									</a>
+
+								</div>
+
 
 							</div>
-
 							<div class="portlet-body">
 								<div class="container py-6">
 
