@@ -31,104 +31,33 @@
 								</div>
 
 
-								<!-- content loaded via ajax! -->
-								<div class="portlet-body max-h-500 scrollable-vertical scrollable-styled-dark">
+								<table>
 
-									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light" style="background-color:#cceeff;">
+									<tr style="background-color:#cceeff;">
+										<th>应用ID</th>
+										<th>应用名称</th>
+										<th>状态</th>
+										<th>屏幕方向</th>
+										<th>安装量</th>
+										<th>创建时间</th>
+										<th>备注</th>
+										<th>链接</th>
+										<th>操作</th>
+									</tr>
 
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">应用ID</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">应用名称</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">状态</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">屏幕方向</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">安装量</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">创建时间</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">备注</span>
-										</div>
-										
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">链接</span>
-										</div>
-										
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">操作</span>
-										</div>
-
-									</div>
-									<!-- /item -->
-
-
-
-									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light">
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">ac79044b83c9b42</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">fayitest01</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">上架</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">竖屏</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">9</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">2024/03/11<br>15:49:13</span>
-										</div>
-
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block"> </span>
-										</div>
-										
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">获取</span>
-										</div>
-										
-										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">下架 统计 编辑 删除</span>
-										</div>
-
-									</div>
-									<!-- /item -->
-
-								</div>
-
-								<div class="d-flex align-self-baseline w-100 py-2">
-									<a href="#!" class="btn btn-sm text-gray-500 b-0 fs--16 shadow-none font-weight-light">
-										<i class="fi fi-arrow-end-slim"></i>
-										<span>View All</span>
-									</a>
-								</div>
-
+									<tr>
+										<td>ac79044b83c9b42</td>
+										<td>fayitest01</td>
+										<td>上架</td>
+										<td>竖屏</td>
+										<td>9</td>
+										<td>2024/03/11<br>15:49:13</td>
+										<td> </td>
+										<td>获取</td>
+										<td>下架 统计 编辑 删除</td>
+									</tr>
+								</table>
+								
 							</div>
 
 						</div>
