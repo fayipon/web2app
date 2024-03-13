@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Smarty V3</title>
+		<title>Smarty Web2App</title>
 		<meta name="description" content="...">
 
         <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
@@ -34,7 +34,7 @@
 
 
 			<!-- light logo -->
-			<a aria-label="go back" href="index.html" class="position-absolute top-0 start-0 my-2 mx-4 z-index-3 h--70 d-inline-flex align-items-center">
+			<a aria-label="go back" href="/" class="position-absolute top-0 start-0 my-2 mx-4 z-index-3 h--70 d-inline-flex align-items-center">
 				<img src="admin/assets/images/logo/logo_light.svg" width="110" alt="...">
 			</a>
 
@@ -47,7 +47,7 @@
 
 						<div class="py-7">
 							<h1 class="d-inline-block text-align-end text-center-md text-center-xs display-4 h2-xs w-100 max-w-600 w-100-md w-100-xs">
-								Sign in
+								登入
 								<span class="display-3 h1-xs d-block font-weight-medium">
 									Smarty
 								</span>
@@ -73,19 +73,15 @@
 							-->
 
 							<div class="form-label-group mb-3">
-								<input required placeholder="Email" id="account_email" name="account_email" type="email" class="form-control">
-								<label for="account_email">Email</label>
+								<input required placeholder="请输入帐号" id="account" name="account" type="text" class="form-control">
+								<label for="account">帐号</label>
 							</div>
 
 							<div class="input-group-over">
 								<div class="form-label-group mb-3">
-									<input required placeholder="Password" id="account_password" name="account_password" type="password" class="form-control">
-									<label for="account_password">Password</label>
+									<input required placeholder="请输入密码" id="password" name="password" type="password" class="form-control">
+									<label for="password">密码</label>
 								</div>
-
-								<a href="account-signin-password.html" class="btn fs--12">
-									FORGOT?
-								</a>
 
 							</div>
 
@@ -99,24 +95,9 @@
 									</button>
 								</div>
 
-								<div class="col-12 col-md-6 mt-4 text-align-end text-center-xs">
-									<a href="account-signup.html" class="btn px-0">
-										Don't have an account yet?
-									</a>
-								</div>
-
 							</div>
 
 						</form>
-
-
-						<!-- cookie alert -->
-						<div class="alert bg-white text-dark p-3 my-2 b-0 rounded d-inline-block w-100 max-w-600">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span class="fi fi-close" aria-hidden="true"></span>
-							</button>
-							Smarty uses cookies for best experience! <a href="#!" class="link-muted">Learn more</a>
-						</div>
 
 					</div>
 				</div>
