@@ -10,8 +10,6 @@ class IndexController extends Controller
     // 首頁
     public function index(Request $request) {
     	
-      $this->isLogin();
- 		
     	return view('index.index',$this->data);
     }
 }
