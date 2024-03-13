@@ -15,10 +15,16 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
 
         //////////////////////////////////////
+
+        // 取得当前用户的应用列表
+        
+        dd($session);
     	
-    	return view('app.index',[]);
+    	return view('app.index',$this->data);
     }
 
     
@@ -32,10 +38,6 @@ class AppController extends Controller
         $this->assign("search",$input);
 
         //////////////////////////////////////
-
-        // 取得当前用户的应用列表
-        
-        dd($session);
 
     	
     	return view('app.create',$this->data);
