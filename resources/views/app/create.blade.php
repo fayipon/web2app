@@ -45,7 +45,7 @@
 										<div class="form-group">
 											<label> </label>
 											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="radio" name="-" value="1" checked="">
+												<input type="checkbox" name="-" value="1" checked="">
 												<i data-on="允许" data-off="不允许"></i>
 												网址是否允许修改
 											</label>
@@ -53,7 +53,7 @@
 										<div class="form-group">
 											<label>在iframe打开</label>
 											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="radio" name="-" value="1" checked="">
+												<input type="checkbox" name="-" value="1" checked="">
 												<i data-on="是" data-off="否"></i>
 											</label>
 										</div>
