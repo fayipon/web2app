@@ -16,7 +16,6 @@ class DashboardController extends Controller
 
         //////////////////////////////////////
 
-        dd($input);
 
     	return view('dashboard.index',[]);
     }
