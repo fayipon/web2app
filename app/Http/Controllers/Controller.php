@@ -37,7 +37,7 @@ class Controller extends BaseController
     	$class = strtolower($class);
     	
     	$msg = "SUCCESS_" . $class . "_" . $method . "_" . $num;
-    	$msg = L($msg);
+    	//$msg = L($msg);
     	
     	session()->flash("success", $msg);
     }
@@ -50,7 +50,7 @@ class Controller extends BaseController
     	$class = strtolower($class);
     	
     	$msg = "ERROR_" . $class . "_" . $method . "_" . $num;
-    	$msg = L($msg);
+    	//$msg = L($msg);
     	
     	session()->flash("error", $msg);
     }
