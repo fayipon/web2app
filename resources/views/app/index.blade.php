@@ -39,8 +39,9 @@
 
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="text-muted">384 items imported, 766 updated, 12 ignored</span>
-											<span class="fs--13 d-block text-gray-500">29 June, 2020 / 18:44</span>
+											<span class="fs--13 d-block text-gray-500">应用ID</span>
+											<span class="fs--13 d-block text-gray-500">应用名称</span>
+											<span class="fs--13 d-block text-gray-500">应用状态</span>
 										</div>
 
 
