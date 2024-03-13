@@ -1441,72 +1441,27 @@
 						<nav class="nav-deep nav-deep-dark nav-deep-hover pb-5">
 							<ul class="nav flex-column">
 
-								<li class="nav-item active">
-									<a class="nav-link js-ajax" href="index.html">
-										<i class="fi fi-menu-dots"></i>
-										<b>概况</b>
-									</a>
-								</li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link js-ajax" href="/dashboard">
+                                            <i class="fi fi-menu-dots"></i>
+                                            <b>概况</b>
+                                        </a>
+                                    </li>
 
 
-								<li class="nav-item">
-									<a class="nav-link" href="#">
-										<span class="group-icon float-end">
-											<i class="fi fi-arrow-end-slim"></i>
-											<i class="fi fi-arrow-down-slim"></i>
-										</span>
-										<i class="fi fi-code"></i>
-										<span class="badge badge-warning float-end fs--11 mt-1">new</span>
-										应用管理
-									</a>
-								
-									<ul class="nav flex-column fs--15">
-
-										<li class="nav-item">
-											<a class="nav-link js-ajax" href="components-alerts.html">
-												Alerts
-											</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link js-ajax" href="components-accordions.html">
-												Accordions
-											</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link js-ajax" href="components-badges.html">
-												Badges
-											</a>
-										</li>
-
-									</ul>
-
-
+                                    <li class="nav-item">
+										<a class="nav-link" href="#">
+											<i class="fi fi-mollecules"></i>
+											应用管理
+										</a>
+									</li>
 
 
 									<li class="nav-item">
 										<a class="nav-link" href="#">
-											<span class="group-icon float-end">
-												<i class="fi fi-arrow-end-slim"></i>
-												<i class="fi fi-arrow-down-slim"></i>
-											</span>
-											<i class="fi fi-shape-3dots"></i>
+											<i class="fi fi-mollecules"></i>
 											渠道管理
 										</a>
-
-										<ul class="nav flex-column fs--15">
-
-											<li class="nav-item">
-												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
-													Text &amp; Backgrouns
-												</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link js-ajax" href="util-borders.html">
-													Borders
-												</a>
-											</li>
-
-										</ul>
 									</li>
 
 
