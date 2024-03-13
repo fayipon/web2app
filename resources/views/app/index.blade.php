@@ -42,13 +42,36 @@
 										</div>
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">应用ID</span>
+											<span class="fs--13 d-block">应用名称</span>
 										</div>
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block">应用ID</span>
+											<span class="fs--13 d-block">状态</span>
 										</div>
 
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">屏幕方向</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">安装量</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">创建时间</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">备注</span>
+										</div>
+										
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">链接</span>
+										</div>
+										
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">操作</span>
+										</div>
 
 									</div>
 									<!-- /item -->
