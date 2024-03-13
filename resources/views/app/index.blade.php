@@ -43,7 +43,9 @@
 										<th>链接</th>
 										<th>操作</th>
 									</tr>
-
+								@if ($data->isEmpty())
+									<p>尚无应用数据,请新增应用</p>
+								@else
 									@foreach ($list as $item)
 									<tr>
 										<td>{{ $item['ID'] }}</td>
@@ -57,6 +59,7 @@
 										<td>下架 统计 编辑 删除</td>
 									</tr>
 									@endforeach
+								@endif
 								</table>
 								
 							</div>
