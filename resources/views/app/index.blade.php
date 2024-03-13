@@ -43,7 +43,7 @@
 										<th>链接</th>
 										<th>操作</th>
 									</tr>
-								@if ($data->isEmpty())
+								@if ($list->isEmpty())
 									<p>尚无应用数据,请新增应用</p>
 								@else
 									@foreach ($list as $item)
