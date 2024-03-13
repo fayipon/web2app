@@ -42,6 +42,13 @@ class LoginController extends Controller
             return redirect('/login');
         }
 
+        // 保存至session
+        unset($return['PASSWORD']);
+    	Session::put("user",$return);
+    	Session::put("is_login",1);
+        Session::Save();
+
+        
         // 更新最后登入时间
         $return = User::where("ACCOUNT",$input['account'])->update([
             "UPDATE_TIME" => date("Y-m-d H:i:s")
@@ -50,12 +57,6 @@ class LoginController extends Controller
             $this->error(__CLASS__, __FUNCTION__, "03");
             return redirect('/login');
         }
-
-        // 保存至session
-        unset($return['PASSWORD']);
-    	Session::put("user",$return);
-    	Session::put("is_login",1);
-        Session::Save();
 
         // 操作纪录 TODO
 
