@@ -12,6 +12,7 @@ class LoginController extends Controller
     // 首頁
     public function index(Request $request) {
     	
+        $this->error(__CLASS__, __FUNCTION__, "01");
     	return view('login.index',[]);
     }
 
