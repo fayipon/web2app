@@ -47,5 +47,22 @@ class AppController extends Controller
     	
     	return view('app.create',$this->data);
     }
+    
+    // 创建新应用
+    public function post(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        dd($input);
+
+    	
+    	return view('app.create',$this->data);
+    }
 }
 

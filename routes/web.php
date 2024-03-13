@@ -24,6 +24,7 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/app', 'App\Http\Controllers\AppController@index');
 Route::get('/app-create', 'App\Http\Controllers\AppController@create');
+Route::get('/app-post', 'App\Http\Controllers\AppController@post');
 
 Route::get('/channel', 'App\Http\Controllers\ChannelController@index');
 Route::get('/push', 'App\Http\Controllers\PushController@index');
