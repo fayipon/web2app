@@ -44,17 +44,19 @@
 										<th>操作</th>
 									</tr>
 
+									@foreach ($list as $item)
 									<tr>
-										<td>ac79044b83c9b42</td>
-										<td>fayitest01</td>
-										<td>上架</td>
-										<td>竖屏</td>
-										<td>9</td>
-										<td>2024/03/11<br>15:49:13</td>
-										<td> </td>
-										<td>获取</td>
+										<td>{{ $item['ID'] }}</td>
+										<td>{{ $item['APP_NAME'] }}</td>
+										<td>{{ $item['STATUS'] }}</td>
+										<td>{{ $item['SCREEN_TYPE'] }}</td>
+										<td>--</td>
+										<td>{{ $item['CREATE_TIME'] }}</td>
+										<td>{{ $item['MARK'] }}</td>
+										<td>{{ $item['APP_URL'] }}</td>
 										<td>下架 统计 编辑 删除</td>
 									</tr>
+									@endforeach
 								</table>
 								
 							</div>

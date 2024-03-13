@@ -27,7 +27,7 @@ class AppController extends Controller
             return redirect('/dashboard');
         }
         
-        dd($return);
+        $this->assign("list",$return);
     	
     	return view('app.index',$this->data);
     }
