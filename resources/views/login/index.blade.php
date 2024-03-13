@@ -107,5 +107,21 @@
 		<script src="admin/assets/js/core.min.js"></script>
 		<script src="admin/assets/js/vendor_bundle.min.js"></script>
 
+		<!-- Your custom javascripts -->
+		<script>
+		// toast
+				var error_message = "{{ Session::get('error') }}";
+				if (error_message != "") {
+					$.SOW.core.toast.show('danger', '', error_message, 'top-end', 0, true);
+				}
+				
+				var success_message = "{{ Session::get('success') }}";
+				if (success_message != "") {
+					$.SOW.core.toast.show('success', '', success_message, 'top-end', 0, true);
+				}
+
+
+		</script>
+
 	</body>
 </html>
