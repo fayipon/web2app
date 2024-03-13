@@ -1504,21 +1504,6 @@
 				<div id="middle" class="flex-fill">
 
 
-
-					<!--
-						PAGE TITLE
-					-->
-					<div class="page-title bg-transparent b-0">
-
-						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
-							Dashboard
-						</h1>
-						
-					</div>
-					
-
-
-
 					<!-- Primary -->
 					<section class="rounded mb-3">
 
