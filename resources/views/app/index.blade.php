@@ -79,40 +79,42 @@
 
 
 									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light">
+									<div class="d-flex align-items-center p-3 border-bottom border-light" style="background-color:#cceeff;">
 
-										<div class="flex-none w--40">
-											<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/csv.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">ac79044b83c9b42</span>
 										</div>
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="text-muted">12 items imported, 67 updated, 1 ignored</span>
-											<span class="fs--13 d-block text-gray-500">15 February, 2020 / 16:51</span>
-										</div>
-
-										<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end">
-											<a href="#!">view log</a>
-										</div>
-
-									</div>
-									<!-- /item -->
-
-
-
-									<!-- item -->
-									<div class="d-flex align-items-center p-3 border-bottom border-light">
-
-										<div class="flex-none w--40">
-											<img width="40" height="40" class="img-fluid lazy" data-src="../../html_frontend/demo.files/svg/icons/files/jpg.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+											<span class="fs--13 d-block">fayitest01</span>
 										</div>
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="text-muted">384 images imported to 281 products</span>
-											<span class="fs--13 d-block text-gray-500">1 February, 2020 / 13:43</span>
+											<span class="fs--13 d-block">上架</span>
 										</div>
 
-										<div class="w--180 fs--14 text-gray-500 font-weight-light text-align-end">
-											<a href="#!">view log</a>
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">竖屏</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">9</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">2024/03/11<br>15:49:13</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block"> </span>
+										</div>
+										
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">获取</span>
+										</div>
+										
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">下架 统计 编辑 删除</span>
 										</div>
 
 									</div>
