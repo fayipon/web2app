@@ -39,9 +39,15 @@
 
 
 										<div class="flex-fill text-truncate px-3">
-											<span class="fs--13 d-block text-gray-500">应用ID</span>
-											<span class="fs--13 d-block text-gray-500">应用名称</span>
-											<span class="fs--13 d-block text-gray-500">应用状态</span>
+											<span class="fs--13 d-block">应用ID</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">应用ID</span>
+										</div>
+
+										<div class="flex-fill text-truncate px-3">
+											<span class="fs--13 d-block">应用ID</span>
 										</div>
 
 
