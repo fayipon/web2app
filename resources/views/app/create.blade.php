@@ -147,6 +147,7 @@
 											<label>数据埋点 </label>
 											<div class="form-label-group mb-3">
 												<select id="select_options" class="form-control bs-select">
+													<option value="0"> </option>
 													<option value="1">Google Analytics</option>
 													<option value="2">Facebook Meta Pixel</option>
 												</select>
