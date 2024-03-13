@@ -141,7 +141,7 @@
 									Optional Mobile Menu Logo 
 									Logo : height: 70px max
 								-->
-								<a class="navbar-brand" href="index.html">
+								<a class="navbar-brand" href="/dashboard">
 									<img src="admin/assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
 								</a>
 
