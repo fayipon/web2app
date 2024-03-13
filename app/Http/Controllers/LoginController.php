@@ -36,8 +36,9 @@ class LoginController extends Controller
     // test
     public function test(Request $request) {
     	
-        
-        $return = User::get();
+        $return = User::where("ACCOUNT","admin")->save([
+            "PASSWORD" => MD5('123qwe')
+        ]);
 
         dd($return);
     }
