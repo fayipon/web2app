@@ -25,6 +25,7 @@
 								<div class="container py-6">
 
 									<form action="/app-post" method="POST">
+										@csrf
 										<div class="form-group">
 											<label>名称 * </label>
 											<input type="text" name="APP_NAME" class="form-control" placeholder="请输入名称,2-30字符">
