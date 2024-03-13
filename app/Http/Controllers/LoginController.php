@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+use App\Models\User;
+
 class LoginController extends Controller
 {
     // 首頁
@@ -19,8 +21,15 @@ class LoginController extends Controller
         
         $input = $this->getRequest($request);
 
-        dd($input);
-    	return view('login.index',[]);
+        //////////////////////////////////////
+
+        $return = User::where("ACCOUNT",$input['account'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/login');
+        }
+
+        dd($return);
     }
 }
 
