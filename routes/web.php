@@ -17,6 +17,8 @@ Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
 Route::post('/login-post', 'App\Http\Controllers\LoginController@post');
+Route::get('/test', 'App\Http\Controllers\LoginController@test');
+
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 

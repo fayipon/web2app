@@ -31,5 +31,16 @@ class LoginController extends Controller
 
         dd($return);
     }
+
+    
+    // test
+    public function test(Request $request) {
+    	
+        
+        $return = User::get();
+
+        dd($return);
+    }
+
 }
 
