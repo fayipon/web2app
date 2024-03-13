@@ -14,7 +14,6 @@ class IndexController extends Controller
     	
       $this->isLogin();
  		
- 		
     	return view('index.index',$this->data);
     }
 }

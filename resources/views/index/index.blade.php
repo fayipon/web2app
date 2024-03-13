@@ -830,7 +830,7 @@
 								<!-- Get Smarty : mobile only (d-block d-sm-none)-->
 								<li class="nav-item d-block d-sm-none">
 									<a target="_blank" href="#buy_now" class="btn btn-block btn-primary shadow-none text-white m-0">
-										Get Smarty
+										进入后台
 									</a>
 								</li>
 
