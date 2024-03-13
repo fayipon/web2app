@@ -42,13 +42,14 @@ class LoginController extends Controller
             return redirect('/login');
         }
 
-        // 保存至session
+        // remove password
         unset($return['PASSWORD']);
+
+        // 保存至session
     	Session::put("user",$return);
     	Session::put("is_login",1);
         Session::Save();
 
-        
         // 更新最后登入时间
         $return = User::where("ACCOUNT",$input['account'])->update([
             "UPDATE_TIME" => date("Y-m-d H:i:s")

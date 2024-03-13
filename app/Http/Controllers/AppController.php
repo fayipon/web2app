@@ -22,7 +22,7 @@ class AppController extends Controller
 
         // 取得当前用户的应用列表
         
-        dd($session);
+        dd($session['user']);
     	
     	return view('app.index',$this->data);
     }
