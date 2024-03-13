@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Route::get('/login', 'App\Http\Controllers\LoginController@index');
+Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
