@@ -190,8 +190,10 @@ class AppController extends Controller
         $this->assign("search",$input);
 
         //////////////////////////////////////
+
         $data = $input;
         unset($data['_token']);
+        unset($data['ID']);
 
         // 检查栏位
         $check_columns = [
@@ -231,15 +233,8 @@ class AppController extends Controller
     	
         $data['STATUS'] = 1;
 
-        // 判断APP 是否已用 目前只对URL判断
-        $count = App::where("APP_URL",$data['APP_URL'])->count();
-        if ($count > 0) {
-            $this->error(__CLASS__, __FUNCTION__, "02");
-            return redirect('/app');
-        }
-
         // 填入APP
-        $return = App::insert($data);
+        $return = App::where("ID",$input['ID'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');
