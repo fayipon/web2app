@@ -60,8 +60,7 @@ class AppController extends Controller
         //////////////////////////////////////
 
         $data = $input;
-
-        dd($data);
+        unset($data['_token']);
 
         // 检查栏位
         $check_columns = [

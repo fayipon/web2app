@@ -21,11 +21,6 @@ class Controller extends BaseController
     	$input = $request->input();
     	
     	foreach ($input as $k => $v) {
-
-			// 略过crsf
-			if ($k == "_token") {
-				continue;
-			}
     		$input[$k] = trim($v);
     	}
 
