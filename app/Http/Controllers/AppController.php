@@ -192,8 +192,10 @@ class AppController extends Controller
         //////////////////////////////////////
 
         $data = $input;
-        unset($data['_token']);
-        unset($data['ID']);
+        // 通用过滤 , 非大写的值一律排除
+        $data = $this->filiterUpper($data);
+
+        dd($data);
 
         // 检查栏位
         $check_columns = [
@@ -234,7 +236,7 @@ class AppController extends Controller
         $data['STATUS'] = 1;
 
         // 填入APP
-        $return = App::where("ID",$input['ID'])->update($data);
+        $return = App::where("ID",$input['id'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');

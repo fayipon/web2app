@@ -97,4 +97,16 @@ class Controller extends BaseController
     	exit();
     }
 
+	// 排除非大写的key值参数
+	protected function filiterUpper($data) {
+		foreach ($data as $k => $v) {
+			if ($k != strtoupper($k)) {
+				unset($data[$k]);
+			}
+		}
+
+		return $data;
+
+	}
+
 }
