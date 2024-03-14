@@ -61,6 +61,8 @@ class AppController extends Controller
 
         $data = $input;
 
+        dd($data);
+
         // 检查栏位
         $check_columns = [
             "APP_NAME",
