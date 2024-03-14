@@ -93,7 +93,8 @@ class AppController extends Controller
             }
         }
 
-        // 设定create_time , update_time, status 
+        // 设定其他参数
+        $data['USER_ID'] = $session['user']['ID'];
         $data['CREATE_TIME'] = date("Y-m-d H:i:s");
         $data['UPDATE_TIME'] = date("Y-m-d H:i:s");
     	
