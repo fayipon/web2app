@@ -52,13 +52,22 @@
 									<tr>
 										<td>{{ MD5($item['ID']) }}</td>
 										<td>{{ $item['APP_NAME'] }}</td>
-										<td>{{ $item['STATUS'] }}</td>
+										<td>{{ $item['STATUS'] ? '上架' : '下架' }}</td>
 										<td>{{ $item['SCREEN_TYPE'] }}</td>
 										<td>--</td>
 										<td>{{ $item['CREATE_TIME'] }}</td>
 										<td>{{ $item['MARK'] }}</td>
 										<td>{{ $item['APP_URL'] }}</td>
-										<td><a href="/app-delist?id={{ $item['ID'] }}">下架</a> 统计 编辑 删除</td>
+										<td>
+											@if ($item['STATUS'] == 1)
+											<a href="/app-delist?id={{ $item['ID'] }}">下架</a> 
+											@else
+											<a href="/app-delist?id={{ $item['ID'] }}">上架</a> 
+											@endif
+											统计 
+											编辑 
+											删除
+										</td>
 									</tr>
 									@endforeach
 								@endif
