@@ -62,8 +62,6 @@ class AppController extends Controller
         $data = $input;
         $data = $this->filiterUpper($data);
 
-        dd($data);
-
         // 检查栏位
         $check_columns = [
             "APP_NAME",
