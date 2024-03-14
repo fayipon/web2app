@@ -25,7 +25,9 @@
 								<div class="container py-6">
 
 									<form action="/app-edit-post" method="POST">
-										@csrf	
+										@csrf		
+										<input type="text" name="id" value="{{ $data['ID'] }}" class="form-control" placeholder="请输入名称,2-30字符">
+										
 										<div class="form-group">
 											<label>名称 * </label>
 											<input type="text" name="APP_NAME" value="{{ $data['APP_NAME'] }}" class="form-control" placeholder="请输入名称,2-30字符">
