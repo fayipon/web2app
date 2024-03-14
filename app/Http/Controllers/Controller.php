@@ -70,7 +70,7 @@ class Controller extends BaseController
     	
     	$msg = "ERROR_" . $class . "_" . $method . "_" . $num;
     	//$msg = L($msg);
-    	
+    	dd($msg);
     	session()->flash("error", $msg);
     }
     
@@ -106,7 +106,6 @@ class Controller extends BaseController
 		}
 
 		return $data;
-
 	}
 
 }

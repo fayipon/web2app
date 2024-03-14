@@ -88,7 +88,7 @@ class AppController extends Controller
 
         foreach ($check_columns as $v) {
             if (!isset($data[$v]) || $data[$v] == "") {
-                $this->error(__CLASS__, __FUNCTION__, "02");
+                $this->error(__CLASS__, __FUNCTION__, "01");
                 return redirect('/app');
             }
         }
@@ -100,8 +100,6 @@ class AppController extends Controller
     	
         $data['STATUS'] = 1;
 
-        dd($data);
-
         // 判断APP 是否已用 目前只对URL判断
         $count = App::where("APP_URL",$data['APP_URL'])->where("USER_ID",$session['user']['ID'])->count();
         if ($count > 0) {
@@ -112,7 +110,7 @@ class AppController extends Controller
         // 填入APP
         $return = App::insert($data);
         if ($return === false) {
-            $this->error(__CLASS__, __FUNCTION__, "01");
+            $this->error(__CLASS__, __FUNCTION__, "03");
             return redirect('/app');
         }
         
