@@ -28,6 +28,7 @@ Route::get('/app-edit', 'App\Http\Controllers\AppController@edit');
 Route::post('/app-edit-post', 'App\Http\Controllers\AppController@edit_post');
 Route::post('/app-post', 'App\Http\Controllers\AppController@post');
 Route::get('/app-delist', 'App\Http\Controllers\AppController@delist');
+Route::get('/app-delete', 'App\Http\Controllers\AppController@delete');
 
 Route::get('/channel', 'App\Http\Controllers\ChannelController@index');
 Route::get('/push', 'App\Http\Controllers\PushController@index');
