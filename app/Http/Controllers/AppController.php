@@ -101,7 +101,7 @@ class AppController extends Controller
         $data['STATUS'] = 1;
 
         // 判断APP 是否已用 目前只对URL判断
-        $count = App::where("APP_URL",$data['APP_URL'])->count();
+        $count = App::where("APP_URL",$data['APP_URL'])->where("USER_ID",$session['user']['ID'])->count();
         if ($count > 0) {
             $this->error(__CLASS__, __FUNCTION__, "02");
             return redirect('/app');
@@ -132,7 +132,7 @@ class AppController extends Controller
         $data = array();
 
         // 取得目前APP的status
-        $return = App::where("ID", $input['id'])->first();
+        $return = App::where("ID", $input['id'])->where("USER_ID",$session['user']['ID'])->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');
@@ -146,7 +146,7 @@ class AppController extends Controller
         }
 
         // 更新APP
-        $return = App::where("ID", $input['id'])->update($data);
+        $return = App::where("ID", $input['id'])->where("USER_ID",$session['user']['ID'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');
@@ -168,7 +168,7 @@ class AppController extends Controller
         //////////////////////////////////////
 
         // 取得应用资料
-        $return = App::where("ID", $input['id'])->first();
+        $return = App::where("ID", $input['id'])->where("USER_ID",$session['user']['ID'])->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');
@@ -193,7 +193,7 @@ class AppController extends Controller
 
         $data = $input;
         $data = $this->filiterUpper($data);
-        
+
         // 检查栏位
         $check_columns = [
             "APP_NAME",
@@ -233,7 +233,7 @@ class AppController extends Controller
         $data['STATUS'] = 1;
 
         // 填入APP
-        $return = App::where("ID",$input['id'])->update($data);
+        $return = App::where("ID",$input['id'])->where("USER_ID",$session['user']['ID'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/app');
