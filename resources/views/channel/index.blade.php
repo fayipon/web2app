@@ -17,7 +17,7 @@
 
 									<div class="float-end dropdown">
 
-										<a href="/app-create" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
+										<a href="/channel-create-page" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
 											新增渠道
 										</a>
 
