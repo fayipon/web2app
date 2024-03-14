@@ -24,7 +24,7 @@
 							<div class="portlet-body">
 								<div class="container py-6">
 
-									<form action="/app-post" method="POST">
+									<form action="/app-edit-post" method="POST">
 										@csrf
 										<div class="form-group">
 											<label>名称 * </label>
@@ -122,7 +122,7 @@
 
 										<div class="form-group">
 											<label>应用介绍 * </label>
-											<textarea placeholder="Textarea" name="APP_DESCRIPTION" value="{{ $data['APP_DESCRIPTION'] }}" id="description" class="form-control" rows="3"></textarea>
+											<textarea placeholder="Textarea" name="APP_DESCRIPTION" id="description" class="form-control" rows="3">{{ $data['APP_DESCRIPTION'] }}</textarea>
 										</div>
 
 										<div class="form-group">

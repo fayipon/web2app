@@ -25,6 +25,7 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 Route::get('/app', 'App\Http\Controllers\AppController@index');
 Route::get('/app-create', 'App\Http\Controllers\AppController@create');
 Route::get('/app-edit', 'App\Http\Controllers\AppController@edit');
+Route::get('/app-edit-post', 'App\Http\Controllers\AppController@edit_post');
 Route::post('/app-post', 'App\Http\Controllers\AppController@post');
 Route::get('/app-delist', 'App\Http\Controllers\AppController@delist');
 
