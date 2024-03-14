@@ -49,7 +49,7 @@ class AppController extends Controller
     }
     
     // 创建新应用
-    public function post(Request $request) {
+    public function insert(Request $request) {
     	
         $this->isLogin();
 
@@ -61,6 +61,8 @@ class AppController extends Controller
 
         $data = $input;
         $data = $this->filiterUpper($data);
+
+        dd($data);
 
         // 检查栏位
         $check_columns = [

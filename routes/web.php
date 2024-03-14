@@ -26,7 +26,7 @@ Route::get('/app', 'App\Http\Controllers\AppController@index');
 Route::get('/app-create', 'App\Http\Controllers\AppController@create');
 Route::get('/app-edit', 'App\Http\Controllers\AppController@edit');
 Route::post('/app-edit-post', 'App\Http\Controllers\AppController@edit_post');
-Route::post('/app-post', 'App\Http\Controllers\AppController@post');
+Route::post('/app-post', 'App\Http\Controllers\AppController@insert');
 Route::get('/app-delist', 'App\Http\Controllers\AppController@delist');
 Route::get('/app-delete', 'App\Http\Controllers\AppController@delete');
 
