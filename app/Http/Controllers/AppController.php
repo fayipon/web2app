@@ -130,7 +130,7 @@ class AppController extends Controller
         //////////////////////////////////////
 
         $data = array();
-        
+
         // 取得目前APP的status
         $return = App::where("ID", $input['id'])->first();
         if ($return === false) {
@@ -154,6 +154,32 @@ class AppController extends Controller
         
         $this->success(__CLASS__, __FUNCTION__, "01");
         return redirect('/app');
+    }
+
+    // 编辑页
+    public function edit(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        // 取得应用资料
+        $return = App::where("ID", $input['id'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/app');
+        }
+
+        $this->assign("data",$return);
+
+        dd($return);
+        
+    	return view('app.edit',$this->data);
+
     }
 
 }

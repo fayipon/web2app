@@ -59,14 +59,10 @@
 										<td>{{ $item['MARK'] }}</td>
 										<td>{{ $item['APP_URL'] }}</td>
 										<td>
-											@if ($item['STATUS'] == 1)
-											<a href="/app-delist?id={{ $item['ID'] }}">下架</a> 
-											@else
-											<a href="/app-delist?id={{ $item['ID'] }}">上架</a> 
-											@endif
+											<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
 											统计 
-											编辑 
-											删除
+											<a href="/app-edit?id={{ $item['ID'] }}">编辑</a>
+											<a href="/app-delete?id={{ $item['ID'] }}">删除</a>
 										</td>
 									</tr>
 									@endforeach
