@@ -50,7 +50,7 @@
 									</tr>
 									@foreach ($list as $item)
 									<tr>
-										<td>{{ $item['ID'] }}</td>
+										<td>{{ MD5($item['ID']) }}</td>
 										<td>{{ $item['APP_NAME'] }}</td>
 										<td>{{ $item['STATUS'] }}</td>
 										<td>{{ $item['SCREEN_TYPE'] }}</td>
@@ -58,7 +58,7 @@
 										<td>{{ $item['CREATE_TIME'] }}</td>
 										<td>{{ $item['MARK'] }}</td>
 										<td>{{ $item['APP_URL'] }}</td>
-										<td>下架 统计 编辑 删除</td>
+										<td><a href="/app-delist?id={{ $item['ID'] }}">下架</a> 统计 编辑 删除</td>
 									</tr>
 									@endforeach
 								@endif

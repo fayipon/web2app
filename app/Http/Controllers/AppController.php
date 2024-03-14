@@ -117,5 +117,44 @@ class AppController extends Controller
         $this->success(__CLASS__, __FUNCTION__, "01");
         return redirect('/app');
     }
+
+    // 上下架
+    public function delist(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        $data = array();
+        
+        // 取得目前APP的status
+        $return = App::where("ID", $input['id'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/app');
+        }
+
+        // 设定其他参数
+        if ($return['STATUS'] == 1) {
+            $data['STATUS'] = 0;
+        } else {
+            $data['STATUS'] = 1;
+        }
+
+        // 更新APP
+        $return = App::where("ID", $input['id'])->update($data);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/app');
+        }
+        
+        $this->success(__CLASS__, __FUNCTION__, "01");
+        return redirect('/app');
+    }
+
 }
 
