@@ -115,7 +115,7 @@ class AppController extends Controller
         }
         
         $this->success(__CLASS__, __FUNCTION__, "01");
-    	return view('app.create',$this->data);
+        return redirect('/app');
     }
 }
 
