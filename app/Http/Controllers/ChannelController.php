@@ -31,5 +31,35 @@ class ChannelController extends Controller
     	
     	return view('channel.index',$this->data);
     }
+
+    // 新增页
+    public function create_page(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+    	return view('channel.create-page',$this->data);
+
+    }
+
+    // 新增
+    public function create(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        dd($input);
+
+    }
 }
 

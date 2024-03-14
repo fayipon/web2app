@@ -31,6 +31,10 @@ Route::get('/app-delist', 'App\Http\Controllers\AppController@delist');
 Route::get('/app-delete', 'App\Http\Controllers\AppController@delete');
 
 Route::get('/channel', 'App\Http\Controllers\ChannelController@index');
+Route::get('/channel-create-page', 'App\Http\Controllers\ChannelController@create_page');
+Route::post('/channel-create', 'App\Http\Controllers\ChannelController@create');
+
+
 Route::get('/push', 'App\Http\Controllers\PushController@index');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
 Route::get('/statistics', 'App\Http\Controllers\StatisticsController@index');
