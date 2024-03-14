@@ -175,8 +175,6 @@ class AppController extends Controller
         }
 
         $this->assign("data",$return);
-
-        dd($return);
         
     	return view('app.edit',$this->data);
 
