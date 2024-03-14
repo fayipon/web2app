@@ -100,6 +100,8 @@ class AppController extends Controller
     	
         $data['STATUS'] = 1;
 
+        dd($data);
+
         // 判断APP 是否已用 目前只对URL判断
         $count = App::where("APP_URL",$data['APP_URL'])->where("USER_ID",$session['user']['ID'])->count();
         if ($count > 0) {
