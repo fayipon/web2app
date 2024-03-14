@@ -60,7 +60,7 @@ class AppController extends Controller
         //////////////////////////////////////
 
         $data = $input;
-        unset($data['_token']);
+        $data = $this->filiterUpper($data);
 
         // 检查栏位
         $check_columns = [
@@ -192,11 +192,8 @@ class AppController extends Controller
         //////////////////////////////////////
 
         $data = $input;
-        // 通用过滤 , 非大写的值一律排除
         $data = $this->filiterUpper($data);
-
-        dd($data);
-
+        
         // 检查栏位
         $check_columns = [
             "APP_NAME",
