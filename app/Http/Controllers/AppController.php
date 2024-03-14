@@ -59,9 +59,60 @@ class AppController extends Controller
 
         //////////////////////////////////////
 
-        dd($input);
+        $data = $input;
 
+        // 检查栏位
+        $check_columns = [
+            "APP_NAME",
+            "APP_SORT_NAME",
+            "APP_SETUP_ICON",
+            "APP_DESKTOP_ICON",
+            "APP_BROWSER_ICON",
+            "APP_URL",
+            "IS_APP_URL_EDIT",
+            "IS_IFRAME",
+            "SETUP_URL",
+            "SETUP_DEV_NAME",
+            "SETUP_RATE",
+            "SETUP_RATE_P",
+            "SETUP_SETUP_P",
+            "SETUP_AGE",
+            "SCREEN_TYPE",
+            "APP_SCREEN",
+            "APP_DESCRIPTION",
+            "SETUP_TEMPLE",
+            "IS_ANYWHERE_INSTALL",
+            "MARK"
+        ];
+
+        foreach ($check_columns as $v) {
+            if (!isset($data[$v]) || $data[$v] == "") {
+                $this->error(__CLASS__, __FUNCTION__, "02");
+                return redirect('/app');
+            }
+        }
+
+        // 设定create_time , update_time, status 
+        $data['CREATE_TIME'] = date("Y-m-d H:i:s");
+        $data['UPDATE_TIME'] = date("Y-m-d H:i:s");
     	
+        $data['STATUS'] = 1;
+
+        // 判断APP 是否已用 目前只对URL判断
+        $count = App::where("APP_URL",$data['APP_URL'])->count();
+        if ($count > 0) {
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/app');
+        }
+
+        // 填入APP
+        $return = App::insert($data);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/app');
+        }
+        
+        $this->success(__CLASS__, __FUNCTION__, "01");
     	return view('app.create',$this->data);
     }
 }

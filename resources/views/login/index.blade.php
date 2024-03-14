@@ -64,7 +64,7 @@
 
 
 						<!-- optional class: .form-control-pill -->
-						<form novalidate action="/login-post" method="POST" class="bs-validate p-5 py-6 rounded d-inline-block bg-white text-dark w-100 max-w-600">
+						<form action="/login-post" method="POST" class="bs-validate p-5 py-6 rounded d-inline-block bg-white text-dark w-100 max-w-600">
 							@csrf
 							<div class="form-label-group mb-3">
 								<input required placeholder="请输入帐号" id="account" name="account" type="text" class="form-control">
