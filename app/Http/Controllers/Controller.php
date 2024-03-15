@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Session;use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Cache;
 
 class Controller extends BaseController
@@ -106,6 +107,21 @@ class Controller extends BaseController
 		}
 
 		return $data;
+	}
+
+	// 设定cookie_id
+	protected function setCookieID() {
+		
+        $cookie_id = Cookie::get('COOKIE_ID');
+
+        if ($cookie_id == null) {
+            $cookie_id = session()->getId();
+            $cookie_id = hash('sha256', $cookie_id);
+            $cookie_id = substr($cookie_id, 0, 16);
+            Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
+        }
+        
+		return $cookie_id;
 	}
 
 }
