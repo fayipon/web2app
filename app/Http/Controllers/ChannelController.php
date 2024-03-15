@@ -141,7 +141,7 @@ class ChannelController extends Controller
         }
 
         // 编辑渠道
-        $return = Channel::where("ID",$input['ID'])->update($data);
+        $return = Channel::where("ID",$input['id'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "02");
             return redirect('/channel');
