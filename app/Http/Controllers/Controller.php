@@ -119,9 +119,11 @@ class Controller extends BaseController
             $cookie_id = hash('sha256', $cookie_id);
             $cookie_id = substr($cookie_id, 0, 16);
             Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
+            Cookie::queue('FIRST_TIME', now(), 60*24*12);
         }
         
-		return $cookie_id;
+		Cookie::queue('FIRST_TIME', now(), 60*24*12);
+		return Cookie::all();
 	}
 
 }
