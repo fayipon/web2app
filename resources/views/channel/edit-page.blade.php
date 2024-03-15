@@ -15,7 +15,7 @@
 
 								<div class="float-start dropdown">
 
-									<a href="/app" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
+									<a href="/channel" class="btn btn-sm btn-light px-2 py-1 fs--15 mt--n3">
 										返回
 									</a>
 
