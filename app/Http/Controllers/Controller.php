@@ -123,6 +123,8 @@ class Controller extends BaseController
         }
         
     	$cookies = request()->cookie();
+		unset($cookies['XSRF-TOKEN']);
+		unset($cookies['laravel_session']);
 		return $cookies;
 	}
 
