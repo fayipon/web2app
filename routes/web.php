@@ -34,6 +34,7 @@ Route::get('/channel', 'App\Http\Controllers\ChannelController@index');
 Route::get('/channel-create-page', 'App\Http\Controllers\ChannelController@create_page');
 Route::post('/channel-create', 'App\Http\Controllers\ChannelController@create');
 Route::get('/channel-edit-page', 'App\Http\Controllers\ChannelController@edit_page');
+Route::post('/channel-edit', 'App\Http\Controllers\ChannelController@edit');
 
 
 Route::get('/push', 'App\Http\Controllers\PushController@index');
