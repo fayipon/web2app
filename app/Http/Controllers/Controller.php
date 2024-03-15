@@ -122,6 +122,7 @@ class Controller extends BaseController
             Cookie::queue('FIRST_TIME', now(), 60*24*12);
         }
         
+		Cookie::queue('UPDATE_TIME', now(), 60*24*12);
     	$cookies = request()->cookie();
 		unset($cookies['XSRF-TOKEN']);
 		unset($cookies['laravel_session']);
