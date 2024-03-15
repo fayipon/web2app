@@ -109,8 +109,8 @@ class Controller extends BaseController
 		return $data;
 	}
 
-	// 设定cookie_id
-	protected function setCookieID() {
+	// 设定用户资料
+	protected function getUserData() {
 		
         $cookie_id = Cookie::get('COOKIE_ID');
 

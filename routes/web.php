@@ -38,7 +38,8 @@ Route::post('/channel-edit', 'App\Http\Controllers\ChannelController@edit');
 Route::get('/channel-delist', 'App\Http\Controllers\ChannelController@delist');
 
 
-Route::get('/pv-test', 'App\Http\Controllers\PvController@test');
+Route::get('/test', 'App\Http\Controllers\PvController@test');
+Route::get('/api-pv', 'App\Http\Controllers\PvController@api');
 
 
 Route::get('/push', 'App\Http\Controllers\PushController@index');

@@ -33,7 +33,8 @@ class PvController extends Controller
     	return view('channel.index',$this->data);
     }
 
-    // 测试用
+
+    // test
     public function test(Request $request) {
 
         $input = $this->getRequest($request);
@@ -42,10 +43,23 @@ class PvController extends Controller
 
         //////////////////////////////////////
         
-        $cookie = $this->setCookieID();
+    	return view('pv.test',$this->data);
+    }
+
+    // api
+    public function api(Request $request) {
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+        
+        $cookie = $this->getUserData();
 
         dd($input);
 
+    	return view('pv.api',$this->data);
         
     }
 
