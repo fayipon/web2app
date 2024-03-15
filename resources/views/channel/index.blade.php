@@ -51,7 +51,7 @@
 										<td>
 											<a href="/channel-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
 											
-											<a href="/channel-edit?id={{ $item['ID'] }}">编辑</a>
+											<a href="/channel-edit-page?id={{ $item['ID'] }}">编辑</a>
 										</td>
 									</tr>
 									@endforeach
