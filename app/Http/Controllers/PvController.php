@@ -44,7 +44,7 @@ class PvController extends Controller
         
         $cookie = $this->setCookieID();
 
-        dd($cookie);
+        dd($input);
 
         
     }
