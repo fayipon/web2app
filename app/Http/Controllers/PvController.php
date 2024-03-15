@@ -46,9 +46,15 @@ class PvController extends Controller
 
         if ($cookie_id == null) {
             $cookie_id = session()->getId();
+            $cookie_id = hash('sha256', $cookie_id);
+            $cookie_id = substr($cookie_id, 0, 16);
             Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
         }
 
+        $cookie_id = session()->getId();
+        $cookie_id = hash('sha256', $cookie_id);
+        $cookie_id = substr($cookie_id, 0, 16);
+        Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
         
         dd($cookie_id);
 
