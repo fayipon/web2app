@@ -44,14 +44,13 @@ class PvController extends Controller
         
         $cookie_id = Cookie::get('COOKIE_ID');
 
-        dd($cookie_id);
-        
-        $sessionId = session()->getId();
-        $minutes = 60*24*12;    // 1 year
-        
-        Cookie::queue('COOKIE_ID', $sessionId, $minutes);
+        if ($cookie_id == null) {
+            $cookie_id = session()->getId();
+            Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
+        }
 
-        //
+        
+        dd($cookie_id);
 
         
     }
