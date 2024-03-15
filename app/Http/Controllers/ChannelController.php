@@ -151,5 +151,44 @@ class ChannelController extends Controller
         return redirect('/channel');
     }
 
+
+    // 禁用启用
+    public function delist(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+        
+        $data = array();
+
+        $return = Channel::where("USER_ID",$session['user']['ID'])->where("ID",$input['id'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/dashboard');
+        }
+
+        // 设定其他参数
+        if ($return['STATUS'] == 1) {
+            $data['STATUS'] = 0;
+        } else {
+            $data['STATUS'] = 1;
+        }
+        
+        // 更新
+        $return = Channel::where("ID", $input['id'])->where("USER_ID",$session['user']['ID'])->update($data);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/app');
+        }
+        
+        $this->success(__CLASS__, __FUNCTION__, "01");
+        return redirect('/app');
+
+    }
+
 }
 
