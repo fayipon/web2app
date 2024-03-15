@@ -5,9 +5,11 @@
                 <!-- TEST -->
                 <script>
 
+                var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', '/api-pv', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
 
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 201) {
