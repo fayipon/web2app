@@ -64,34 +64,32 @@ class ChannelController extends Controller
         
         // 检查栏位
         $check_columns = [
-            "APP_NAME",
-            "APP_SORT_NAME",
-            "APP_SETUP_ICON",
-            "APP_DESKTOP_ICON",
-            "APP_BROWSER_ICON",
-            "APP_URL",
-            "IS_APP_URL_EDIT",
-            "IS_IFRAME",
-            "SETUP_URL",
-            "SETUP_DEV_NAME",
-            "SETUP_RATE",
-            "SETUP_RATE_P",
-            "SETUP_SETUP_P",
-            "SETUP_AGE",
-            "SCREEN_TYPE",
-            "APP_SCREEN",
-            "APP_DESCRIPTION",
-            "SETUP_TEMPLE",
-            "IS_ANYWHERE_INSTALL",
-            "MARK"
+            "CHANNEL_NAME"
         ];
 
         foreach ($check_columns as $v) {
             if (!isset($data[$v]) || $data[$v] == "") {
                 $this->error(__CLASS__, __FUNCTION__, "01");
-                return redirect('/app');
+                return redirect('/channel');
             }
         }
+
+        
+        // 设定其他参数
+        $data['USER_ID'] = $session['user']['ID'];
+        $data['CREATE_TIME'] = date("Y-m-d H:i:s");
+        $data['UPDATE_TIME'] = date("Y-m-d H:i:s");
+    	
+        $data['STATUS'] = 1;
+
+        // 填入APP
+        $return = App::insert($data);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "03");
+            return redirect('/channel');
+        }
+        
+        $this->success(__CLASS__, __FUNCTION__, "01");
 
     }
 }
