@@ -115,5 +115,41 @@ class ChannelController extends Controller
 
     }
 
+    // 编辑
+    public function edit(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+        $data = $input;
+        $data = $this->filiterUpper($data);
+
+        // 检查栏位
+        $check_columns = [
+            "CHANNEL_NAME"
+        ];
+
+        foreach ($check_columns as $v) {
+            if (!isset($data[$v]) || $data[$v] == "") {
+                $this->error(__CLASS__, __FUNCTION__, "01");
+                return redirect('/channel');
+            }
+        }
+
+        // 编辑渠道
+        $return = Channel::where("ID",$input['ID'])->update($data);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/channel');
+        }
+
+        $this->success(__CLASS__, __FUNCTION__, "01");
+        return redirect('/channel');
+    }
+
 }
 

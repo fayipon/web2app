@@ -24,12 +24,12 @@
 							<div class="portlet-body">
 								<div class="container py-6">
 
-									<form action="/channel-create" method="POST">
+									<form action="/channel-edit" method="POST">
 										@csrf
 										<div class="form-group">
 											<label>渠道名称 * </label>
 											<input type="text" name="CHANNEL_NAME" value="{{ $data['CHANNEL_NAME'] }}" class="form-control" placeholder="请输入名称,2-30字符">
-											<input type="hidden" name="ID" class="form-control" value="{{ $search['id'] }}">
+											<input type="hidden" name="id" class="form-control" value="{{ $search['id'] }}">
 										</div>
 										<button type="submit" class="btn btn-primary">提交</button>
 									</form>
