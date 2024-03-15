@@ -122,8 +122,8 @@ class Controller extends BaseController
             Cookie::queue('FIRST_TIME', now(), 60*24*12);
         }
         
-		Cookie::queue('FIRST_TIME', now(), 60*24*12);
-		return Cookie::all();
+    	$cookies = request()->cookie();
+		return $cookies;
 	}
 
 }
