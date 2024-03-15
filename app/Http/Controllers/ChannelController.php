@@ -92,5 +92,28 @@ class ChannelController extends Controller
         $this->success(__CLASS__, __FUNCTION__, "01");
         return redirect('/channel');
     }
+
+    // 编辑页
+    public function edit_page(Request $request) {
+    	
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        $return = Channel::where("USER_ID",$session['user']['ID'])->where("ID",$input['id'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/dashboard');
+        }
+        $this->assign("data",$return);
+
+    	return view('channel.edit-page',$this->data);
+
+    }
+
 }
 

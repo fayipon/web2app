@@ -33,6 +33,7 @@ Route::get('/app-delete', 'App\Http\Controllers\AppController@delete');
 Route::get('/channel', 'App\Http\Controllers\ChannelController@index');
 Route::get('/channel-create-page', 'App\Http\Controllers\ChannelController@create_page');
 Route::post('/channel-create', 'App\Http\Controllers\ChannelController@create');
+Route::post('/channel-edit-page', 'App\Http\Controllers\ChannelController@edit_page');
 
 
 Route::get('/push', 'App\Http\Controllers\PushController@index');
