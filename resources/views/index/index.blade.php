@@ -829,7 +829,7 @@
 
 								<!-- Get Smarty : mobile only (d-block d-sm-none)-->
 								<li class="nav-item d-block d-sm-none">
-									<a target="_blank" href="#buy_now" class="btn btn-block btn-primary shadow-none text-white m-0">
+									<a target="_blank" href="/login" class="btn btn-block btn-primary shadow-none text-white m-0">
 										进入后台
 									</a>
 								</li>
@@ -905,7 +905,7 @@
 							</li>
 
 							<li class="list-inline-item ml--6 mr--6 float-start d-none d-lg-inline-block">
-								<a target="_blank" href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-light bg-transparent text-muted shadow-none m-0">
+								<a target="_blank" href="/login" class="btn btn-sm btn-light bg-transparent text-muted shadow-none m-0">
 									进入后台
 								</a>
 							</li>
