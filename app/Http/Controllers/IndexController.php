@@ -10,7 +10,7 @@ class IndexController extends Controller
     // 首頁
     public function index(Request $request) {
     	
-    	return view('index.index',[]);
+    	return view('index.index',$this->data);
     }
 }
 
