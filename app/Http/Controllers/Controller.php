@@ -123,6 +123,7 @@ class Controller extends BaseController
         }
         
 		Cookie::queue('UPDATE_TIME', now(), 60*24*12);
+		
     	$cookies = request()->cookie();
 		unset($cookies['XSRF-TOKEN']);
 		unset($cookies['laravel_session']);
