@@ -115,19 +115,24 @@ class Controller extends BaseController
         $cookie_id = Cookie::get('COOKIE_ID');
 
         if ($cookie_id == null) {
+
+			// 用session id 加密为16位, 设定为cookie id
             $cookie_id = session()->getId();
             $cookie_id = hash('sha256', $cookie_id);
             $cookie_id = substr($cookie_id, 0, 16);
             Cookie::queue('COOKIE_ID', $cookie_id, 60*24*12);
             Cookie::queue('FIRST_TIME', now(), 60*24*12);
         }
-        
-		Cookie::queue('UPDATE_TIME', now(), 60*24*12);
-		
+
+		//////////////////////////
+
     	$cookies = request()->cookie();
 		unset($cookies['XSRF-TOKEN']);
 		unset($cookies['laravel_session']);
+
 		return $cookies;
 	}
+
+	
 
 }
