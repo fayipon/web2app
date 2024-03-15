@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\App;
+use App\Models\Channel;
 
 class ChannelController extends Controller
 {
@@ -83,7 +84,7 @@ class ChannelController extends Controller
         $data['STATUS'] = 1;
 
         // 填入APP
-        $return = App::insert($data);
+        $return = Channel::insert($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "03");
             return redirect('/channel');
