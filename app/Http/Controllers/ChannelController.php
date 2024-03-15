@@ -168,7 +168,7 @@ class ChannelController extends Controller
         $return = Channel::where("USER_ID",$session['user']['ID'])->where("ID",$input['id'])->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
-            return redirect('/dashboard');
+            return redirect('/channel');
         }
 
         // 设定其他参数
@@ -182,11 +182,11 @@ class ChannelController extends Controller
         $return = Channel::where("ID", $input['id'])->where("USER_ID",$session['user']['ID'])->update($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
-            return redirect('/app');
+            return redirect('/channel');
         }
         
         $this->success(__CLASS__, __FUNCTION__, "01");
-        return redirect('/app');
+        return redirect('/channel');
 
     }
 
