@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use App\Models\App;
 use App\Models\Channel;
 
 class ChannelController extends Controller
@@ -22,7 +21,7 @@ class ChannelController extends Controller
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = App::where("USER_ID",$session['user']['ID'])->get();
+        $return = Channel::where("USER_ID",$session['user']['ID'])->get();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');

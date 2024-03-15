@@ -38,31 +38,20 @@
 									</tr>
 								@else
 									<tr style="background-color:#cceeff;">
-										<th>应用ID</th>
-										<th>应用名称</th>
-										<th>状态</th>
-										<th>屏幕方向</th>
-										<th>安装量</th>
+										<th>渠道名称</th>
 										<th>创建时间</th>
-										<th>备注</th>
-										<th>链接</th>
+										<th>状态</th>
 										<th>操作</th>
 									</tr>
 									@foreach ($list as $item)
 									<tr>
-										<td>{{ MD5($item['ID']) }}</td>
-										<td>{{ $item['APP_NAME'] }}</td>
-										<td>{{ $item['STATUS'] ? '上架' : '下架' }}</td>
-										<td>{{ $item['SCREEN_TYPE'] }}</td>
-										<td>--</td>
+										<td>{{ $item['CHANNEL_NAME'] }}</td>
 										<td>{{ $item['CREATE_TIME'] }}</td>
-										<td>{{ $item['MARK'] }}</td>
-										<td>{{ $item['APP_URL'] }}</td>
+										<td>{{ $item['STATUS'] }}</td>
 										<td>
-											<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
-											统计 
-											<a href="/app-edit?id={{ $item['ID'] }}">编辑</a>
-											<a href="/app-delete?id={{ $item['ID'] }}">删除</a>
+											<a href="/channel-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
+											
+											<a href="/channel-edit?id={{ $item['ID'] }}">编辑</a>
 										</td>
 									</tr>
 									@endforeach
