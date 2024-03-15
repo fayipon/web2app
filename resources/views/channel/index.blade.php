@@ -47,9 +47,9 @@
 									<tr>
 										<td>{{ $item['CHANNEL_NAME'] }}</td>
 										<td>{{ $item['CREATE_TIME'] }}</td>
-										<td>{{ $item['STATUS'] }}</td>
+										<td>{{ $item['STATUS'] ? '启用' : '禁用' }}</td>
 										<td>
-											<a href="/channel-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
+											<a href="/channel-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '禁用' : '启用' }}</a> 
 											
 											<a href="/channel-edit-page?id={{ $item['ID'] }}">编辑</a>
 										</td>
