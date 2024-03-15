@@ -91,7 +91,7 @@ class ChannelController extends Controller
         }
         
         $this->success(__CLASS__, __FUNCTION__, "01");
-
+        return redirect('/channel');
     }
 }
 
