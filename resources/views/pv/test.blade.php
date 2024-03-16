@@ -16,11 +16,15 @@
                         var responseData = JSON.parse(xhr.responseText);
                         console.log(responseData);
                     }
+
                 };
-                
+
+                var currentLocalTime = new Date().toLocaleString();
+
                 // 准备要发送的数据
                 var postData = {
                     APP_ID: 'foo',
+                    CURRENT_TIME: currentLocalTime,
                     DEVICE: window.navigator.userAgent,
                     LANGUAGE: window.navigator.language,
                     SCREEN_WIDTH: window.screen.width,
