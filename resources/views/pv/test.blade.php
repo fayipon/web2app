@@ -22,6 +22,7 @@
                 // 准备要发送的数据
                 var postData = {
                     APP_ID: 'foo',
+                    ACTION: 'test',
                     CURRENT_TIME: getCurrentDateTime(),
                     DEVICE: window.navigator.userAgent,
                     LANGUAGE: window.navigator.language,

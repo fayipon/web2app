@@ -57,10 +57,37 @@ class PvController extends Controller
         
         $cookie = $this->getUserData();
 
-        dd($cookie, $input);
+
+        // 将资料包装一下后填入
+        $data = array(
+            "COOKIE_ID" => $cookie['COOKIE_ID'],
+            "APP_ID" => $input['APP_ID'],
+            "DEVICE_TYPE" => $this->checkDevice($input['DEVICE']),
+            "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
+            "ACTION_TYPE" => $input['ACTION'],
+            "FIRST_TIME" => $cookie['FIRST_TIME'],
+            "CREATE_TIME" => $input['CURRENT_TIME'],
+        );
+
+        
+        dd($data);
 
     	return view('pv.api',$this->data);
         
+    }
+
+    // 检查设备
+    protected function checkDevice($data) {
+
+        return "iPhone";
+
+    }
+
+    // 用URL 获取Channel ID
+    protected function getChannelID($url) {
+
+        return "aaa";
+
     }
 
 }
