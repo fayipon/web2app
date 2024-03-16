@@ -19,12 +19,10 @@
 
                 };
 
-                var currentLocalTime = new Date().toLocaleString();
-
                 // 准备要发送的数据
                 var postData = {
                     APP_ID: 'foo',
-                    CURRENT_TIME: currentLocalTime,
+                    CURRENT_TIME: getCurrentDateTime(),
                     DEVICE: window.navigator.userAgent,
                     LANGUAGE: window.navigator.language,
                     SCREEN_WIDTH: window.screen.width,
@@ -40,6 +38,17 @@
                 xhr.send(jsonData);
 
 
+                // 取得当前时间 Y-m-d H:i:s
+                function getCurrentDateTime() {
+                    var currentDate = new Date();
+                    var formattedDateTime = currentDate.getFullYear() + '-' +
+                        ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' +
+                        ('0' + currentDate.getDate()).slice(-2) + ' ' +
+                        ('0' + currentDate.getHours()).slice(-2) + ':' +
+                        ('0' + currentDate.getMinutes()).slice(-2) + ':' +
+                        ('0' + currentDate.getSeconds()).slice(-2);
+                    return formattedDateTime;
+                }
                 </script>
                 <!-- /TEST -->
 @endsection
