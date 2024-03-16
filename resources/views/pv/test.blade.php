@@ -17,12 +17,15 @@
                         console.log(responseData);
                     }
                 };
-
+                
                 // 准备要发送的数据
                 var postData = {
                     APP_ID: 'foo',
-                    USER_ID: 'bar',
-                    DEVICE: 1
+                    DEVICE: window.navigator.userAgent,
+                    LANGUAGE: window.navigator.language,
+                    SCREEN_WIDTH: window.screen.width,
+                    SCREEN_HEIGHT: window.screen.height,
+                    URL: window.location.href
                 };
 
                 // 将 JavaScript 对象转换为 JSON 字符串
