@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Cookie;
 
 use App\Models\Channel;
+use App\Models\Pv;
 
 class PvController extends Controller
 {
@@ -46,7 +47,7 @@ class PvController extends Controller
     	return view('pv.test',$this->data);
     }
 
-    // api
+    // api , ajax type
     public function api(Request $request) {
 
         $input = $this->getRequest($request);
@@ -69,11 +70,9 @@ class PvController extends Controller
             "CREATE_TIME" => $input['CURRENT_TIME'],
         );
 
-        
-        dd($data);
+        Pv::insert($data);
 
-    	return view('pv.api',$this->data);
-        
+        $this->ajaxSuccess("SUCCESS_01");
     }
 
     // 检查设备
