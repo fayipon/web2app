@@ -57,7 +57,7 @@ class PvController extends Controller
         
         $cookie = $this->getUserData();
 
-        dd($input);
+        dd($cookie);
 
     	return view('pv.api',$this->data);
         
