@@ -85,7 +85,7 @@ class PvController extends Controller
     // 用URL 获取Channel ID
     protected function getChannelID($url) {
 
-        return "aaa";
+        return 1;
 
     }
 
