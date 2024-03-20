@@ -4,10 +4,10 @@
 <script>
 
     const xxx_appName = "名称字段对应的信息22";
-    const xxx_devName = "开发者名称";
+    const xxx_devName = "开发者名称22";
     const xxx_reviews = 1e3;
     const xxx_downloads = 1e4;
-    const xxx_appDesc = "应用介绍";
+    const xxx_appDesc = "应用介绍22";
     const xxx_updateDate = "2024-03-12";
     const xxx_logo = "https://static.w2.app/20240312/10589f99216266d.png";
     const xxx_rates = 4.5;

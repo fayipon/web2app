@@ -95,18 +95,14 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     }
     
     const appName = ref(xxx_appName);
-    const devName = ref("开发者名称");
-    const reviews = ref(1e3);
-    const downloads = ref(1e4);
-    const appDesc = ref("应用介绍");
-    const updateDate = ref("2024-03-12");
-    const logo = ref("https://static.w2.app/20240312/10589f99216266d.png");
-    const rates = ref(4.5);
-    const bannerList = ref([
-      "https://static.w2.app/20240312/b5dde525f819109.jpg",
-      "https://static.w2.app/20240312/b5dde525f819109.jpg",
-      "https://static.w2.app/20240312/b5dde525f819109.jpg"
-    ]);
+    const devName = ref(xxx_devName);
+    const reviews = ref(xxx_reviews);
+    const downloads = ref(xxx_downloads);
+    const appDesc = ref(xxx_appDesc);
+    const updateDate = ref(xxx_updateDate);
+    const logo = ref(xxx_logo);
+    const rates = ref(xxx_rates);
+    const bannerList = ref(xxx_bannerList);
     
     computed(() => {
       var _a, _b;
