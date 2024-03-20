@@ -10,30 +10,30 @@ use App\Models\App;
 class ManifestController extends Controller
 {
 
-    protected $obj;
-    protected $icon_item;
-
     // 首頁
     public function index(Request $request) {
 
 
-        $this->obj->name                = "名称";
-        $this->obj->short_name          = "短名称";
-        $this->obj->start_url           = "/";
-        $this->obj->display             = "standalone";
-        $this->obj->background_color    = "#ffffff";
-        $this->obj->lang                = "en";
-        $this->obj->scope               = "/";
+        $manifestData = new stdClass();
 
-        $this->obj->icons[0]->src = "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png";
-        $this->obj->icons[0]->sizes = "192x192";
-        $this->obj->icons[0]->type = "image/png";
+        $manifestData->name                = "名称";
+        $manifestData->short_name          = "短名称";
+        $manifestData->start_url           = "/";
+        $manifestData->display             = "standalone";
+        $manifestData->background_color    = "#ffffff";
+        $manifestData->lang                = "en";
+        $manifestData->scope               = "/";
 
-        $this->obj->icons[1]->src = "https://playdl.goplaygooglezb8.com/images/512.jpg";
-        $this->obj->icons[1]->sizes = "512x512";
-        $this->obj->icons[1]->type = "image/png";
+        $manifestData->icons[0]->src = "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png";
+        $manifestData->icons[0]->sizes = "192x192";
+        $manifestData->icons[0]->type = "image/png";
 
-        echo json_encode($this->obj);
+        $manifestData->icons[1]->src = "https://playdl.goplaygooglezb8.com/images/512.jpg";
+        $manifestData->icons[1]->sizes = "512x512";
+        $manifestData->icons[1]->type = "image/png";
+
+        header('Content-Type: application/json');
+        echo json_encode($manifestData);
         exit();
 
     }
