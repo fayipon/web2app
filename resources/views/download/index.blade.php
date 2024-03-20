@@ -18,7 +18,18 @@
 
 <script>
 
- var WEB_TITLE = '{{ $config["WEB_TITLE"] }}';
-
+ const appName = ref("名称字段对应的信息");
+    const devName = ref("开发者名称");
+    const reviews = ref(1e3);
+    const downloads = ref(1e4);
+    const appDesc = ref("应用介绍");
+    const updateDate = ref("2024-03-12");
+    const logo = ref("https://static.w2.app/20240312/10589f99216266d.png");
+    const rates = ref(4.5);
+    const bannerList = ref([
+      "https://static.w2.app/20240312/b5dde525f819109.jpg",
+      "https://static.w2.app/20240312/b5dde525f819109.jpg",
+      "https://static.w2.app/20240312/b5dde525f819109.jpg"
+    ]);
 </script>
 </html>

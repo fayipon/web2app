@@ -93,6 +93,8 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         installPrompt.value = null;
       });
     }
+    /*
+    
     const appName = ref("名称字段对应的信息");
     const devName = ref("开发者名称");
     const reviews = ref(1e3);
@@ -106,6 +108,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg"
     ]);
+    */
     computed(() => {
       var _a, _b;
       return (_b = (_a = navigator.userAgentData) == null ? void 0 : _a.brands) == null ? void 0 : _b.some((b) => b.brand === "Google Chrome");
