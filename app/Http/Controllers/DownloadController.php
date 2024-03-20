@@ -13,6 +13,7 @@ class DownloadController extends Controller
     	
         $input = $this->getRequest($request);
 
+        dd($input);
         $this->assign("id",$input['id']);
         ///////////////////////////////////
 
