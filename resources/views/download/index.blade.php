@@ -18,6 +18,19 @@
 
 <script>
 
+function isRef(r) {
+  return !!(r && r.__v_isRef === true);
+}
+function ref(value) {
+  return createRef(value, false);
+}
+function createRef(rawValue, shallow) {
+  if (isRef(rawValue)) {
+    return rawValue;
+  }
+  return new RefImpl(rawValue, shallow);
+}
+
  const appName = ref("名称字段对应的信息22");
     const devName = ref("开发者名称");
     const reviews = ref(1e3);

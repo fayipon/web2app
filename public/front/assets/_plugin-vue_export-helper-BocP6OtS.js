@@ -1124,6 +1124,7 @@ function triggerRefValue(ref2, dirtyLevel = 4, newVal) {
     );
   }
 }
+/*
 function isRef(r) {
   return !!(r && r.__v_isRef === true);
 }
@@ -1136,6 +1137,7 @@ function createRef(rawValue, shallow) {
   }
   return new RefImpl(rawValue, shallow);
 }
+*/
 class RefImpl {
   constructor(value, __v_isShallow) {
     this.__v_isShallow = __v_isShallow;
