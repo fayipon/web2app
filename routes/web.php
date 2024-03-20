@@ -48,4 +48,4 @@ Route::get('/statistics', 'App\Http\Controllers\StatisticsController@index');
 
 Route::get('/download', 'App\Http\Controllers\DownloadController@index');
 Route::get('/manifest', 'App\Http\Controllers\ManifestController@index');
-Route::get('/myapp', 'App\Http\Controllers\AppUrlController@index');
+Route::get('/myapp', 'App\Http\Controllers\MyAppController@index');
