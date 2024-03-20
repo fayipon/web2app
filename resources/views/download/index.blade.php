@@ -67,17 +67,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('#reInstall');
   console.log('btn', btn);
-  // 如果installPrompt为null，可能是已经安装了PWA应用
-  if (installPrompt == null) {
-    btn.innerText = 'play';
-    btn.addEventListener('click', () => {
-      // 获取当前页面的根目录URL
-      const rootUrl = window.location.origin;
-      // 在新窗口或标签页中打开根目录URL
-      window.open(rootUrl, '_blank');
-    });
-    return;
-  }
+
   btn.addEventListener('click', () => {
     installPrompt.prompt();
     installPrompt.userChoice.then((choiceResult) => {
