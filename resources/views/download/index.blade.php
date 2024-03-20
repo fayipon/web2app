@@ -3,32 +3,19 @@
 
 <script>
 
-function isRef(r) {
-  return !!(r && r.__v_isRef === true);
-}
-function ref(value) {
-  return createRef(value, false);
-}
-function createRef(rawValue, shallow) {
-  if (isRef(rawValue)) {
-    return rawValue;
-  }
-  return new RefImpl(rawValue, shallow);
-}
-
- const appName = ref("名称字段对应的信息22");
-    const devName = ref("开发者名称");
-    const reviews = ref(1e3);
-    const downloads = ref(1e4);
-    const appDesc = ref("应用介绍");
-    const updateDate = ref("2024-03-12");
-    const logo = ref("https://static.w2.app/20240312/10589f99216266d.png");
-    const rates = ref(4.5);
-    const bannerList = ref([
+    const xxx_appName = "名称字段对应的信息22";
+    const xxx_devName = "开发者名称";
+    const xxx_reviews = 1e3;
+    const xxx_downloads = 1e4;
+    const xxx_appDesc = "应用介绍";
+    const xxx_updateDate = "2024-03-12";
+    const xxx_logo = "https://static.w2.app/20240312/10589f99216266d.png";
+    const xxx_rates = 4.5;
+    const xxx_bannerList = [
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg"
-    ]);
+    ];
 </script>
 <head>
   <meta charset="UTF-8">
