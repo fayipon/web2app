@@ -24,7 +24,7 @@
 							<div class="portlet-body">
 								<div class="container py-6">
 
-									<form action="/app-create" method="POST">
+									<form action="/app-post" method="POST">
 										@csrf
 										<div class="form-group">
 											<label>名称 * </label>
