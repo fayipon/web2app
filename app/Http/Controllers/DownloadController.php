@@ -13,6 +13,7 @@ class DownloadController extends Controller
     	
         $input = $this->getRequest($request);
 
+        $this->assign("id",$input['id']);
         ///////////////////////////////////
 
         $return = App::where("ID",$input['id'])->first();

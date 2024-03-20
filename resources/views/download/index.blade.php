@@ -29,7 +29,7 @@
   <script type="module" crossorigin src="/front/assets/download-DUmsG0Yw.js?v={{ $version }}"></script>
   <link rel="modulepreload" crossorigin href="/front/assets/_plugin-vue_export-helper-BocP6OtS.js?v={{ $version }}">
   <link rel="stylesheet" crossorigin href="/front/assets/_plugin-vue_export-helper-CdAkKE9q.css?v={{ $version }}">
-<link rel="manifest" href="/manifest?id=12345">
+<link rel="manifest" href="/manifest?id={{ $id }}">
 <script id="vite-plugin-pwa:register-sw" src="/registerSW.js?v={{ $version }}"></script></head>
 
 <body data-type="INSTALL">
