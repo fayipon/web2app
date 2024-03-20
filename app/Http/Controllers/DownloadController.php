@@ -14,6 +14,9 @@ class DownloadController extends Controller
         $session = Session::all();
         $this->assign("search",$input);
         
+        // 配置
+        $this->assign("config",["WEB_TITLE"=>'AAAA']);
+        
     	return view('download.index',$this->data);
     }
 }

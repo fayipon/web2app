@@ -16,4 +16,9 @@
   <div id="app"></div>
 </body>
 
+<script>
+
+ var config = '{{ $config }}';
+
+</script>
 </html>
