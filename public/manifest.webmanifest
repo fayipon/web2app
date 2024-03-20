@@ -1,5 +1,5 @@
 {
-    "name": xxx_name,
+    "name": "名称",
     "short_name": "短名称",
     "start_url": "/",
     "display": "standalone",
