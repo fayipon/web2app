@@ -14,6 +14,21 @@ class ManifestController extends Controller
     public function index(Request $request) {
 
 
+        $input = $this->getRequest($request);
+
+        ///////////////////////////////////
+
+
+        $app_id = $input['id'];
+
+        $return = App::where("ID",$input['id'])->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/');
+        }
+
+        dd($return);
+        
         $manifestData = new \stdClass();
 
         $manifestData->name                = "名称";
