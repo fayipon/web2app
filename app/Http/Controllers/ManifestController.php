@@ -14,7 +14,7 @@ class ManifestController extends Controller
     public function index(Request $request) {
 
 
-        $manifestData = new stdClass();
+        $manifestData = new \stdClass();
 
         $manifestData->name                = "名称";
         $manifestData->short_name          = "短名称";
