@@ -3,42 +3,22 @@
 
 <script>
 
-    const xxx_appName = "名称字段对应的信息22";
-    const xxx_devName = "开发者名称22";
-    const xxx_reviews = 1e3;
-    const xxx_downloads = 1e4;
-    const xxx_appDesc = "应用介绍22";
-    const xxx_updateDate = "2024-03-12";
-    const xxx_logo = "https://static.w2.app/20240312/10589f99216266d.png";
-    const xxx_rates = 4.5;
+    const xxx_appName = "{{ $app_config['APP_NAME'] }}";
+    const xxx_devName = "{{ $app_config['SETUP_DEV_NAME'] }}";
+    const xxx_reviews = "{{ $app_config['SETUP_RATE_P'] }}";
+    const xxx_downloads = "{{ $app_config['SETUP_SETUP_P'] }}";
+    const xxx_appDesc = "{{ $app_config['SETUP_SETUP_P'] }}";
+    const xxx_updateDate = "{{ $app_config['UPDATE_TIME'] }}";
+    const xxx_logo = "{{ $app_config['APP_BROWSER_ICON'] }}";
+    const xxx_rates = "{{ $app_config['SETUP_RATE'] }}";
     const xxx_bannerList = [
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg"
     ];
 
-    const xxx_url = "https://m.fhcp.app/index";
+    const xxx_url = "{{ $app_config['APP_URL'] }}";
 
-    // manifest.webmanifest
-    const xxx_name = "名称";
-    const xxx_short_name = "短名称";
-    const xxx_start_url = "/";
-    const xxx_display = "standalone";
-    const xxx_background_color = "#ffffff";
-    const xxx_lang = "en";
-    const xxx_scope = "/";
-    const xxx_icons = [
-        {
-            "src": "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "https://playdl.goplaygooglezb8.com/images/512.jpg",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ];
 </script>
 <head>
   <meta charset="UTF-8">
