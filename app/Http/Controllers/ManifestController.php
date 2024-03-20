@@ -29,7 +29,7 @@ class ManifestController extends Controller
 
         $manifestData->name                = $return['APP_NAME'];
         $manifestData->short_name          = $return['APP_SORT_NAME'];
-        $manifestData->start_url           = $return['APP_URL'];
+        $manifestData->start_url           = "/myapp/" . $return['ID'];
         $manifestData->display             = "standalone";
         $manifestData->background_color    = "#ffffff";
         $manifestData->lang                = "en";
