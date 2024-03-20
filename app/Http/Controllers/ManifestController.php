@@ -37,13 +37,13 @@ class ManifestController extends Controller
 
         // icon
         $icon1 = new \stdClass();
-        $icon1->src = $return['APP_DESKTOP_ICON'];
+        $icon1->src = $return['APP_SETUP_ICON'];
         $icon1->sizes = "192x192";
         $icon1->type = "image/png";
         $manifestData->icons[] = $icon1;
         
         $icon2 = new \stdClass();
-        $icon2->src = $return['APP_SETUP_ICON'];
+        $icon2->src = $return['APP_DESKTOP_ICON'];
         $icon2->sizes = "512x512";
         $icon2->type = "image/png";
         $manifestData->icons[] = $icon2;
