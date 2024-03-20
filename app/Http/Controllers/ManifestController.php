@@ -24,13 +24,18 @@ class ManifestController extends Controller
         $manifestData->lang                = "en";
         $manifestData->scope               = "/";
 
-        $manifestData->icons[0]->src = "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png";
-        $manifestData->icons[0]->sizes = "192x192";
-        $manifestData->icons[0]->type = "image/png";
-
-        $manifestData->icons[1]->src = "https://playdl.goplaygooglezb8.com/images/512.jpg";
-        $manifestData->icons[1]->sizes = "512x512";
-        $manifestData->icons[1]->type = "image/png";
+        // icon
+        $icon1 = new \stdClass();
+        $icon1->src = "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png";
+        $icon1->sizes = "192x192";
+        $icon1->type = "image/png";
+        $manifestData->icons[] = $icon1;
+        
+        $icon2 = new \stdClass();
+        $icon2->src = "https://playdl.goplaygooglezb8.com/images/512.jpg";
+        $icon2->sizes = "512x512";
+        $icon2->type = "image/png";
+        $manifestData->icons[] = $icon2;
 
         header('Content-Type: application/json');
         echo json_encode($manifestData);
