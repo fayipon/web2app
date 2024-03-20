@@ -18,7 +18,7 @@
 
 <script>
 
- var config = '{{ $config }}';
+ var WEB_TITLE = '{{ $config["WEB_TITLE"] }}';
 
 </script>
 </html>
