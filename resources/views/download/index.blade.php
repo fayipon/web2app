@@ -49,30 +49,33 @@
   <script type="module" crossorigin src="/front/assets/download-DUmsG0Yw.js?v={{ $version }}"></script>
   <link rel="modulepreload" crossorigin href="/front/assets/_plugin-vue_export-helper-BocP6OtS.js?v={{ $version }}">
   <link rel="stylesheet" crossorigin href="/front/assets/_plugin-vue_export-helper-CdAkKE9q.css?v={{ $version }}">
-<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js?v={{ $version }}"></script></head>
+<link rel="manifest" href="/manifest.webmanifest">
+<script id="vite-plugin-pwa:register-sw" src="/registerSW.js?v={{ $version }}"></script></head>
 
 <body data-type="INSTALL">
   <div id="app"></div>
 </body>
 <script>
-  var installPrompt = null
+var installPrompt = null;
   window.addEventListener('beforeinstallprompt', (e) => {
     console.log('beforeinstallprompt');
     e.preventDefault();
     installPrompt = e;
     console.log('e', e);
   });
-
-  document.querySelector('#reInstall').addEventListener('click', () => {
-    installPrompt.prompt();
-    console.log('installPrompt', installPrompt);
-    installPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('用户接受安装应用');
-      } else {
-        console.log('用户拒绝安装应用');
-      }
-      installPrompt.value = null;
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('#reInstall');
+    console.log('btn', btn);
+    btn.addEventListener('click', () => {
+      installPrompt.prompt();
+      installPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('用户接受安装应用');
+        } else {
+          console.log('用户拒绝安装应用');
+        }
+      });
     });
   });
 </script>
