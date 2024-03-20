@@ -2,7 +2,7 @@ import { _ as _export_sfc, c as createElementBlock, o as openBlock, a as createA
 const _sfc_main = {};
 const _hoisted_1 = {
   id: "id-iframe",
-  src: "https://m.fhcp.app/index",
+  src: xxx_url,
   frameborder: "0"
 };
 function _sfc_render(_ctx, _cache) {

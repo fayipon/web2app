@@ -16,6 +16,8 @@
       "https://static.w2.app/20240312/b5dde525f819109.jpg",
       "https://static.w2.app/20240312/b5dde525f819109.jpg"
     ];
+
+    const xxx_url = "https://m.fhcp.app/index";
 </script>
 <head>
   <meta charset="UTF-8">
