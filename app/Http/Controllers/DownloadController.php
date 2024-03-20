@@ -15,7 +15,7 @@ class DownloadController extends Controller
         $this->assign("search",$input);
         
         // 配置
-        $this->assign("config",["WEB_TITLE"=>'AAAA']);
+        $this->assign("version",'demo001');
         
     	return view('download.index',$this->data);
     }
