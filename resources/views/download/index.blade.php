@@ -18,7 +18,7 @@
 
 <script>
 
- const appName = ref("名称字段对应的信息");
+ const appName = ref("名称字段对应的信息22");
     const devName = ref("开发者名称");
     const reviews = ref(1e3);
     const downloads = ref(1e4);
