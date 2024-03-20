@@ -18,6 +18,27 @@
     ];
 
     const xxx_url = "https://m.fhcp.app/index";
+
+    // manifest.webmanifest
+    const xxx_name = "名称";
+    const xxx_short_name = "短名称";
+    const xxx_start_url = "/";
+    const xxx_display = "standalone";
+    const xxx_background_color = "#ffffff";
+    const xxx_lang = "en";
+    const xxx_scope = "/";
+    const xxx_icons = [
+        {
+            "src": "https://w2app.s3.ap-southeast-1.amazonaws.com/20240312/846b5b205e49ad4.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://playdl.goplaygooglezb8.com/images/512.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ];
 </script>
 <head>
   <meta charset="UTF-8">
