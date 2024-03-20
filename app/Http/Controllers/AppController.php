@@ -266,5 +266,79 @@ class AppController extends Controller
 
     }
 
+    // CF API
+    public function createSubDomain(Request $request) {
+
+        $this->isLogin();
+
+        $input = $this->getRequest($request);
+        $session = Session::all();
+        $this->assign("search",$input);
+
+        //////////////////////////////////////
+
+        // Cloudflare API 令牌
+        $api_token = 'YOUR_API_TOKEN';
+
+        // Cloudflare 账户邮箱
+        $email = 'YOUR_EMAIL_ADDRESS';
+
+        // 域名
+        $zone_name = 'YOUR_DOMAIN_NAME';
+
+        // 新增 DNS 记录的数据
+        $new_dns_record = array(
+            'name' => 'example.com',   // 记录名称
+            'type' => 'A',              // 记录类型
+            'content' => '192.0.2.1',   // 记录值
+            'ttl' => 120,               // TTL（以秒为单位）
+            'proxied' => false          // 是否启用代理
+        );
+
+        // 使用 cURL 发送请求
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.cloudflare.com/client/v4/zones");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(array('name' => $zone_name)));
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $headers = array();
+        $headers[] = "X-Auth-Email: $email";
+        $headers[] = "X-Auth-Key: $api_token";
+        $headers[] = "Content-Type: application/json";
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $response = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        // 解析响应
+        $response_data = json_decode($response, true);
+
+        // 获取域名 ID
+        $zone_id = $response_data['result'][0]['id'];
+
+        // 使用 cURL 发送添加 DNS 记录的请求
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($new_dns_record));
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $headers = array();
+        $headers[] = "X-Auth-Email: $email";
+        $headers[] = "X-Auth-Key: $api_token";
+        $headers[] = "Content-Type: application/json";
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        // 输出结果
+        echo $result;
+
+    }
+
 }
 
