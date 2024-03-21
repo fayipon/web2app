@@ -25,25 +25,38 @@ class ReportController extends Controller
 
 
     // 查询每天、每个APPID、每个ACTION_TYPE的数量
-    $return = Pv::select(
-        DB::raw('DATE(FIRST_TIME) as date'),
-        'APP_ID',
-        'ACTION_TYPE',
-        DB::raw('COUNT(*) as count')
-    )
-    ->groupBy('date', 'APP_ID', 'ACTION_TYPE')
-    ->get();
+    $return = Pv::get();
 
-    dd($return);
+    $list = array();
     // 处理统计结果
-    foreach ($return as $statistic) {
-        // $statistic->date 是日期
-        // $statistic->APP_ID 是应用程序ID
-        // $statistic->ACTION_TYPE 是操作类型
-        // $statistic->count 是数量
-        // 在这里可以根据需要处理统计结果，比如输出到视图或者返回给前端等
+    foreach ($return as $k => $v) {
+        $date = explode(" ", $v['CREATE_TIME']);
+
+        $app_id = $v['APP_ID'] ?? 0;
+
+        $list[$date][$app_id]['APP_NAME'] = $app_id;
+        $list[$date][$app_id]['SETUP_PAGE_PV'] = $app_id;
+
+        switch ($v['ACTION_TYPE']) {
+            case "SETUP_01":
+                $list[$date][$app_id]['SETUP_PAGE_PV']++;
+                break;
+            case "SETUP_02":
+                $list[$date][$app_id]['SETUP_COUNT']++;
+                break;
+            case "SETUP_03":
+                $list[$date][$app_id]['APP_PV']++;
+                break;
+        }
+
+        if ($list[$date][$app_id]['USER_COUNT'] > 0) {
+            $count = Pv::where("APP_ID",$v['APP_ID'])->count();
+         //   $list[$date][$app_id]['USER_COUNT'] = $count;
+        }
+        
     }
 
+    dd($list);
         
         $this->assign("list",$return);
     	
