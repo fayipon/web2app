@@ -54,7 +54,7 @@
 										<td>{{ $item['CREATE_TIME'] }}</td>
 										<td>  </td>
 										<td>{{ $item['APP_ID'] }}</td>
-										<td> </td>
+										<td>{{ $item['SOURCE_URL'] }}</td>
 										<td>{{ $item['DEVICE_TYPE'] }}</td>
 										<td>{{ $item['CHANNEL_ID'] }}</td>
 										<td>{{ $item['ACTION_TYPE'] }}</td>
