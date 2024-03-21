@@ -34,6 +34,7 @@ class ReportController extends Controller
             $date = explode(" ", $v['CREATE_TIME']);
             $date = $date[0];
 
+            dd($date);
             if ($v['APP_ID'] == "") {
                 continue;
             }
