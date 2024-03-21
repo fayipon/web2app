@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-type="google" lang="en">
 
-<script src="pv.js"></script>
+<script src="pv.js?v={{ $version }}"></script>
 <script>
 
     const xxx_appName = "{{ $app_config['APP_NAME'] }}";
