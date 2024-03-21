@@ -20,6 +20,6 @@
     </style>
 </head>
 <body>
-    <iframe src="https://example.com" frameborder="0"></iframe>
+    <iframe src="{{ $app_config['APP_URL'] }}" frameborder="0"></iframe>
 </body>
 </html>
