@@ -14,6 +14,11 @@ class DownloadController extends Controller
         $this->assign("id",$id);
         ///////////////////////////////////
 
+
+        $subDomain = $this->parseDomain();
+
+        dd($subDomain);
+
         $return = App::where("ID",$id)->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
