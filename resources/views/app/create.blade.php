@@ -24,7 +24,7 @@
 							<div class="portlet-body">
 								<div class="container py-6">
 
-									<form action="/app-post" method="POST" enctype="multipart/form-data">
+									<form action="/app-post" method="post" enctype="multipart/form-data">
 										@csrf
 										<div class="form-group">
 											<label>名称 * </label>
