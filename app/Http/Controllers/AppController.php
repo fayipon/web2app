@@ -61,7 +61,7 @@ class AppController extends Controller
 
         $data = $input;
         $data = $this->filiterUpper($data);
-
+        
         // 检查栏位
         $check_columns = [
             "APP_NAME",
@@ -92,6 +92,21 @@ class AppController extends Controller
                 return redirect('/app');
             }
         }
+
+        // 处理图片 
+        $request->validate([
+            'APP_SETUP_ICON' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 限制文件类型和大小
+        ]);
+
+        if ($request->file('APP_SETUP_ICON')) {
+            $APP_SETUP_ICON_imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $APP_SETUP_ICON_imageName); // 保存图片到指定目录
+            return back()->with('success', 'Image uploaded successfully.');
+        }
+
+        $data['APP_SETUP_ICON'] = $APP_SETUP_ICON_imageName;
+
+        ///////////////////////
 
         // 设定其他参数
         $data['USER_ID'] = $session['user']['ID'];
