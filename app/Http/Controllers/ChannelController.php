@@ -15,8 +15,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -38,8 +40,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -53,8 +57,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -99,8 +105,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -121,8 +129,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
         $data = $input;
@@ -158,8 +168,10 @@ class ChannelController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
         

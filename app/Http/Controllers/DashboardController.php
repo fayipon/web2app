@@ -12,9 +12,12 @@ class DashboardController extends Controller
     	
         $this->isLogin();
 
+
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
