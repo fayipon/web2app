@@ -282,6 +282,8 @@ class AppController extends Controller
         $email = env('CF_EMAIL');
         $zone_name = env('CF_DOMAIN');
 
+        dd($api_token, $email , $zone_name);
+
         // 新增 DNS 记录的数据
         $new_dns_record = array(
             'name' => 'testsub01',   // 记录名称
@@ -312,7 +314,7 @@ class AppController extends Controller
         $response_data = json_decode($response, true);
 
         dd($response_data);
-        
+
         // 获取域名 ID
         $zone_id = $response_data['result'][0]['id'];
 
