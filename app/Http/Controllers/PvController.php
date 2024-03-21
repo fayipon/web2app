@@ -58,7 +58,7 @@ class PvController extends Controller
         $data = array(
             "COOKIE_ID" => $cookie['COOKIE_ID'],
             "APP_ID" => $return['APP_ID'],
-            "SOURCE_URL" => $fullUrl,
+            "SOURCE_URL" => $input['URL'],
             "DEVICE_TYPE" => $this->checkDevice($input['DEVICE']),
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
             "ACTION_TYPE" => $input['ACTION'],
