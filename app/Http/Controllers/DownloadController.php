@@ -9,7 +9,7 @@ use App\Models\App;
 class DownloadController extends Controller
 {
     // 首頁
-    public function index($id) {
+    public function index(Request $request) {
     	
         $this->assign("id",$id);
         ///////////////////////////////////
