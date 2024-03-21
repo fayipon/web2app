@@ -278,13 +278,9 @@ class AppController extends Controller
         //////////////////////////////////////
 
         // Cloudflare API 令牌
-        $api_token = '4maO6pOKI1Mgh8sRXiUOGMdPjkQL3hAz24VMxR1K';
-
-        // Cloudflare 账户邮箱
-        $email = 'bc02025js@outlook.com';
-
-        // 域名
-        $zone_name = 'chjdhbyk.top';
+        $api_token = env('CF_API');
+        $email = env('CF_EMAIL');
+        $zone_name = env('CF_DOMAIN');
 
         // 新增 DNS 记录的数据
         $new_dns_record = array(
