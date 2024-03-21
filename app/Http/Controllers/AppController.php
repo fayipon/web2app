@@ -94,8 +94,8 @@ class AppController extends Controller
 
         foreach ($check_columns as $v) {
             if (!isset($data[$v]) || $data[$v] == "") {
-                $this->error(__CLASS__, __FUNCTION__, "01");
-                return redirect('/app');
+              //  $this->error(__CLASS__, __FUNCTION__, "01");
+              //  return redirect('/app');
             }
         }
 

@@ -343,18 +343,18 @@
 			</div>
 
 
-@if (session('success'))
-    <div class="message success">{{ session('success') }}</div>
-@endif
-
-@if (session('error'))
-    <div class="message error">{{ session('error') }}</div>
-@endif
 		</div><!-- /#wrapper -->
 
 		<script src="admin/assets/js/core.min.js"></script>
 
 		<div id="page_js_files"><!-- specific page javascript files here --></div>
 
+	@if (session('success'))
+		<div class="message success">{{ session('success') }}</div>
+	@endif
+
+	@if (session('error'))
+		<div class="message error">{{ session('error') }}</div>
+	@endif
 	</body>
 </html>
