@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Request;
 
 class Controller extends BaseController
 {
@@ -133,6 +134,21 @@ class Controller extends BaseController
 		return $cookies;
 	}
 
+	// 解析子域名
+	protected function parseDomain() {
+		
+		// 获取当前域名
+		$current_domain = Request::getHost();
+
+		// 按照 . 分割域名
+		$parts = explode('.', $current_domain);
+
+		// 如果域名中有子域名，则第一个元素即为子域名
+		$subdomain = $parts[0];
+
+		return $subdomain;
+
+	}
 	
 
 }
