@@ -111,7 +111,7 @@ class AppController extends Controller
         $file = $request->file('APP_SETUP_ICON');
         // $name = Str::random(10);
         $name = "temp001";
-        $url = Storage::putFileAs('images', $file, $name . '.' . $file->extension());
+        $url = Storage::putFileAs('public/upload', $file, $name . '.' . $file->extension());
 
         dd($url);
 
