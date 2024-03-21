@@ -95,7 +95,7 @@ class AppController extends Controller
 
         // 处理图片 
         $request->validate([
-            'APP_SETUP_ICON' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 限制文件类型和大小
+            'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
         if ($request->file('APP_SETUP_ICON')) {
