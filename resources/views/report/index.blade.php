@@ -47,7 +47,7 @@
 									@foreach ($v as $kk => $vv)
 									<tr>
 										<td>{{ $k }}</td>
-										<td>{{ $vv['APP_NAME'] }}</td>
+										<td>{{ $vv['APP_NAME'] ?? '-' }}</td>
 										<td>{{ $vv['SETUP_PAGE_PV'] ?? 0 }}</td>
 										<td> - </td>
 										<td>{{ $vv['SETUP_COUNT'] ?? 0 }}</td>
