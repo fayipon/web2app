@@ -57,7 +57,7 @@
 										<td> </td>
 										<td>{{ $item['DEVICE_TYPE'] }}</td>
 										<td>{{ $item['CHANNEL_ID'] }}</td>
-										<td> </td>
+										<td>{{ $item['ACTION_TYPE'] }}</td>
 										<td> </td>
 										<td> </td>
 									</tr>
