@@ -27,7 +27,27 @@
 
 		<link rel="manifest" href="admin/assets/images/manifest/manifest.json">
 		<meta name="theme-color" content="#377dff">
+		<style>
+			.message {
+				position: fixed;
+				top: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+				padding: 10px;
+				border-radius: 5px;
+				z-index: 9999;
+			}
 
+			.success {
+				background-color: #4CAF50;
+				color: white;
+			}
+
+			.error {
+				background-color: #f44336;
+				color: white;
+			}
+		</style>
 	</head>
 
 
@@ -323,7 +343,13 @@
 			</div>
 
 
+@if (session('success'))
+    <div class="message success">{{ session('success') }}</div>
+@endif
 
+@if (session('error'))
+    <div class="message error">{{ session('error') }}</div>
+@endif
 		</div><!-- /#wrapper -->
 
 		<script src="admin/assets/js/core.min.js"></script>
