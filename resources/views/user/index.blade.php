@@ -57,7 +57,17 @@
 										<td>{{ $item['SOURCE_URL'] }}</td>
 										<td style="font-size: 10px;width: 15%;">{{ $item['DEVICE_TYPE'] }}</td>
 										<td>{{ $item['CHANNEL_ID'] }}</td>
-										<td>{{ $item['ACTION_TYPE'] }}</td>
+										<td>
+										@if ($item['ACTION_TYPE'] === 'SETUP_01')
+											进入安装页
+										@elseif ($item['ACTION_TYPE'] === 'SETUP_02')
+											点击安装
+										@elseif ($item['ACTION_TYPE'] === 'SETUP_03')
+											打开应用
+										@else
+											其他操作
+										@endif
+										</td>
 										<td> </td>
 										<td> </td>
 									</tr>
