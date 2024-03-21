@@ -56,6 +56,8 @@ class PvController extends Controller
         //////////////////////////////////////
         
         $cookie = $this->getUserData();
+
+        dd($cookie);
         $subDomain = $this->parseDomain();
 
         $return = App::where("SETUP_URL",$subDomain)->first();
