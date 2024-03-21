@@ -280,18 +280,13 @@ class AppController extends Controller
         // Cloudflare API 令牌
         $api_key = env('CF_API');
         $auth_email = env('CF_EMAIL');
-        $zone_name = env('CF_DOMAIN');
         $zone_id = env('CF_ZONEID');
 
         $data = array(
             "content" => "154.204.176.128",
             "name" => "testsub01",
-            "proxied" => true,
+            "proxied" => false,
             "type" => "A",
-            "comment" => "",
-            "tags" => array(
-              "owner:dns-team"
-            ),
             "ttl" => 3600
           );
           
