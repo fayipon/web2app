@@ -14,7 +14,6 @@ function sendDataToAPI(ACTION_TYPE) {
 
     // 准备要发送的数据
     var postData = {
-        APP_ID: 'foo',
         ACTION: ACTION_TYPE,
         CURRENT_TIME: getCurrentDateTime(),
         DEVICE: window.navigator.userAgent,

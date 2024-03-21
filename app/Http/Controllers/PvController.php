@@ -36,18 +36,6 @@ class PvController extends Controller
     }
 
 
-    // test
-    public function test(Request $request) {
-
-        $input = $this->getRequest($request);
-        $session = Session::all();
-        $this->assign("search",$input);
-
-        //////////////////////////////////////
-        
-    	return view('pv.test',$this->data);
-    }
-
     // api , ajax type
     public function api(Request $request) {
 
@@ -58,6 +46,7 @@ class PvController extends Controller
         $cookie = $this->getUserData();
 
         $subDomain = $this->parseDomain();
+        $fullUrl = $request->fullUrl();
 
         $return = App::where("SETUP_URL",$subDomain)->first();
         if ($return === false) {
@@ -69,6 +58,7 @@ class PvController extends Controller
         $data = array(
             "COOKIE_ID" => $cookie['COOKIE_ID'],
             "APP_ID" => $return['APP_ID'],
+            "SOURCE_URL" => $fullUrl,
             "DEVICE_TYPE" => $this->checkDevice($input['DEVICE']),
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
             "ACTION_TYPE" => $input['ACTION'],
