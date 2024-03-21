@@ -326,14 +326,6 @@
 
 		</div><!-- /#wrapper -->
 
-	@if (session('success'))
-        <script>alert({{ session('success') }});</script>
-    @endif
-
-    @if (session('error'))
-        <script>alert({{ session('error') }});</script>
-    @endif
-
 		<script src="admin/assets/js/core.min.js"></script>
 
 		<div id="page_js_files"><!-- specific page javascript files here --></div>
