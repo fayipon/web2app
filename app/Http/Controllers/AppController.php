@@ -100,8 +100,8 @@ class AppController extends Controller
     	
         $data['STATUS'] = 1;
 
-        // 判断APP 是否已用 目前只对URL判断
-        $count = App::where("APP_URL",$data['APP_URL'])->where("USER_ID",$session['user']['ID'])->count();
+        // 判断SETUP_URL 是否已用 目前只对URL判断
+        $count = App::where("SETUP_URL",$data['SETUP_URL'])->count();
         if ($count > 0) {
             $this->error(__CLASS__, __FUNCTION__, "02");
             return redirect('/app');
@@ -111,6 +111,13 @@ class AppController extends Controller
         $return = App::insert($data);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "03");
+            return redirect('/app');
+        }
+
+        // 执行动态新增子域名
+        $return = $this->createSubDomain($data['SETUP_URL']);
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "04");
             return redirect('/app');
         }
         
@@ -267,15 +274,8 @@ class AppController extends Controller
     }
 
     // CF API
-    public function createSubDomain(Request $request) {
+    protected function createSubDomain($subDomain) {
 
-        $this->isLogin();
-
-        $input = $this->getRequest($request);
-        $session = Session::all();
-        $this->assign("search",$input);
-
-        //////////////////////////////////////
 
         // Cloudflare API 令牌
         $api_key = env('CF_API');
@@ -284,7 +284,7 @@ class AppController extends Controller
 
         $data = array(
             "content" => "154.204.176.128",
-            "name" => "testsub02",
+            "name" => $subDomain,
             "proxied" => true,
             "type" => "A",
             "ttl" => 3600
@@ -314,11 +314,10 @@ class AppController extends Controller
           curl_close($curl);
         
         if ($err) {
-          echo "cURL Error #:" . $err;
-          exit();
+          return false;
         } 
 
-        dd($response);
+        return true;
 
 
     }
