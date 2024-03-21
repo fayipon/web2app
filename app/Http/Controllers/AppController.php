@@ -108,8 +108,7 @@ class AppController extends Controller
             return response()->json(['message' => 'APP_SETUP_ICON Missing file'], 422);
         }
         $file = $request->file('APP_SETUP_ICON');
-        // $name = Str::random(10);
-        $name = "temp001";
+         $name = time();
         $extension = $file->extension();
         $file->move(public_path('upload'), $name . '.' . $extension);
         $data['APP_SETUP_ICON'] = 'upload/setup/' . $name . '.' . $extension;
@@ -119,8 +118,7 @@ class AppController extends Controller
             return response()->json(['message' => 'APP_DESKTOP_ICON Missing file'], 422);
         }
         $file = $request->file('APP_DESKTOP_ICON');
-        // $name = Str::random(10);
-        $name = "temp001";
+        $name = time();
         $extension = $file->extension();
         $file->move(public_path('upload'), $name . '.' . $extension);
         $data['APP_DESKTOP_ICON'] = 'upload/desktop/' . $name . '.' . $extension;
@@ -130,8 +128,7 @@ class AppController extends Controller
             return response()->json(['message' => 'APP_BROWSER_ICON Missing file'], 422);
         }
         $file = $request->file('APP_BROWSER_ICON');
-        // $name = Str::random(10);
-        $name = "temp001";
+        $name = time();
         $extension = $file->extension();
         $file->move(public_path('upload'), $name . '.' . $extension);
         $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
