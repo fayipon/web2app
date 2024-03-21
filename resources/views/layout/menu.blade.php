@@ -56,7 +56,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="/report">
 						<i class="fi fi-mollecules"></i>
 						安装统计
 					</a>

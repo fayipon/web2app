@@ -50,3 +50,4 @@ Route::get('/myapp/{id}', 'App\Http\Controllers\MyAppController@index');
 
 
 Route::get('/user', 'App\Http\Controllers\UserController@index');
+Route::get('/report', 'App\Http\Controllers\ReportController@index');
