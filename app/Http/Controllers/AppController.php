@@ -91,7 +91,8 @@ class AppController extends Controller
 
         foreach ($check_columns as $v) {
             if (!isset($data[$v]) || $data[$v] == "") {
-                return response()->json(['message' => 'ERROR 01'], 422);
+                $this->error(__CLASS__, __FUNCTION__, "02");
+                return redirect('/app');
             }
         }
 
@@ -104,7 +105,8 @@ class AppController extends Controller
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
-            return response()->json(['message' => 'APP_SETUP_ICON Missing file'], 422);
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/app');
         }
         $file = $request->file('APP_SETUP_ICON');
          $name = time();
@@ -114,7 +116,8 @@ class AppController extends Controller
 
 
         if (!$request->has('APP_DESKTOP_ICON')) {
-            return response()->json(['message' => 'APP_DESKTOP_ICON Missing file'], 422);
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/app');
         }
         $file = $request->file('APP_DESKTOP_ICON');
         $name = time();
@@ -124,7 +127,8 @@ class AppController extends Controller
 
 
         if (!$request->has('APP_BROWSER_ICON')) {
-            return response()->json(['message' => 'APP_BROWSER_ICON Missing file'], 422);
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/app');
         }
         $file = $request->file('APP_BROWSER_ICON');
         $name = time();
@@ -133,7 +137,8 @@ class AppController extends Controller
         $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
 
         if (!$request->has('APP_SCREEN')) {
-            return response()->json(['message' => 'APP_SCREEN Missing file'], 422);
+            $this->error(__CLASS__, __FUNCTION__, "02");
+            return redirect('/app');
         }
         $file = $request->file('APP_SCREEN');
         $name = time();
