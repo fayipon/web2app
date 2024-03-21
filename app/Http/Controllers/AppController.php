@@ -105,10 +105,10 @@ class AppController extends Controller
             'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
-        if (!$request->has('image')) {
+        if (!$request->has('SETUP_ICON')) {
             return response()->json(['message' => 'Missing file'], 422);
         }
-        $file = $request->file('image');
+        $file = $request->file('SETUP_ICON');
         // $name = Str::random(10);
         $name = "temp001";
         $url = Storage::putFileAs('images', $file, $name . '.' . $file->extension());
