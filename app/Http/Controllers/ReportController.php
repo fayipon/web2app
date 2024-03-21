@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Pv;
+use App\Models\App;
 use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
@@ -39,7 +40,8 @@ class ReportController extends Controller
         $app_id = $v['APP_ID'];
         
 
-        $list[$date][$app_id]['APP_NAME'] = $app_id;
+        $cc = App::where("ID",$app_id)->first();
+        $list[$date][$app_id]['APP_NAME'] = $cc['APP_NAME'];
 
         switch ($v['ACTION_TYPE']) {
             case "SETUP_01":
