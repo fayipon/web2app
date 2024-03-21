@@ -55,7 +55,7 @@
 										<td>  </td>
 										<td>{{ $item['APP_ID'] }}</td>
 										<td>{{ $item['SOURCE_URL'] }}</td>
-										<td>{{ $item['DEVICE_TYPE'] }}</td>
+										<td style="font-size: 10px;width: 15%;">{{ $item['DEVICE_TYPE'] }}</td>
 										<td>{{ $item['CHANNEL_ID'] }}</td>
 										<td>{{ $item['ACTION_TYPE'] }}</td>
 										<td> </td>
