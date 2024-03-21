@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html data-type="google" lang="en">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script src="pv.js?v={{ $version }}"></script>
 <script>
 
