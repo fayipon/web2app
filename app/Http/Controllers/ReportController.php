@@ -33,7 +33,7 @@ class ReportController extends Controller
         $date = explode(" ", $v['CREATE_TIME']);
 
         if ($v['APP_ID'] == "") {
-            $app_id = 0;
+            $app_id = "-";
         } else {
             $app_id = $v['APP_ID'];
         }
