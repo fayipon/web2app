@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     installPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('用户接受安装应用');
+        sendDataToAPI('SETUP_02');
       } else {
         console.log('用户拒绝安装应用');
       }
