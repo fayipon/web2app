@@ -98,10 +98,10 @@ class AppController extends Controller
 
         // 处理图片 
         $request->validate([
-            'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
-            'APP_DESKTOP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
-            'APP_BROWSER_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
-            'APP_SCREEN' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
+            'APP_SETUP_ICON' => 'required|image|mimes:jpg,png|max:2048', // 限制文件类型和大小
+            'APP_DESKTOP_ICON' => 'required|image|mimes:jpg,png|max:2048', // 限制文件类型和大小
+            'APP_BROWSER_ICON' => 'required|image|mimes:jpg,png|max:2048', // 限制文件类型和大小
+            'APP_SCREEN' => 'required|image|mimes:jpg,png|max:2048', // 限制文件类型和大小
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
