@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Cookie;
 
 use App\Models\Channel;
 use App\Models\Pv;
+use App\Models\App;
 
 class PvController extends Controller
 {
@@ -52,11 +53,17 @@ class PvController extends Controller
 
         $input = $this->getRequest($request);
         $session = Session::all();
-        $this->assign("search",$input);
-
         //////////////////////////////////////
         
         $cookie = $this->getUserData();
+        $subDomain = $this->parseDomain();
+
+        $return = App::where("SETUP_URL",$subDomain)->first();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/');
+        }
+        
 
 
         // 将资料包装一下后填入
