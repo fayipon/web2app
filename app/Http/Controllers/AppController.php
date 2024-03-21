@@ -284,8 +284,8 @@ class AppController extends Controller
 
         $data = array(
             "content" => "154.204.176.128",
-            "name" => "testsub01",
-            "proxied" => false,
+            "name" => "testsub02",
+            "proxied" => true,
             "type" => "A",
             "ttl" => 3600
           );
