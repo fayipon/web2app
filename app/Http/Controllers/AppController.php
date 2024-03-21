@@ -103,20 +103,41 @@ class AppController extends Controller
         // 处理图片 
         $request->validate([
             'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
+            'APP_DESKTOP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
+            'APP_BROWSER_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
-            return response()->json(['message' => 'Missing file'], 422);
+            return response()->json(['message' => 'APP_SETUP_ICON Missing file'], 422);
         }
         $file = $request->file('APP_SETUP_ICON');
         // $name = Str::random(10);
         $name = "temp001";
         $extension = $file->extension();
         $file->move(public_path('upload'), $name . '.' . $extension);
-    
-        $url = 'upload/' . $name . '.' . $extension;
+        $data['APP_SETUP_ICON'] = 'upload/setup/' . $name . '.' . $extension;
 
-        dd($url);
+
+        if (!$request->has('APP_DESKTOP_ICON')) {
+            return response()->json(['message' => 'APP_DESKTOP_ICON Missing file'], 422);
+        }
+        $file = $request->file('APP_DESKTOP_ICON');
+        // $name = Str::random(10);
+        $name = "temp001";
+        $extension = $file->extension();
+        $file->move(public_path('upload'), $name . '.' . $extension);
+        $data['APP_DESKTOP_ICON'] = 'upload/desktop/' . $name . '.' . $extension;
+
+
+        if (!$request->has('APP_BROWSER_ICON')) {
+            return response()->json(['message' => 'APP_BROWSER_ICON Missing file'], 422);
+        }
+        $file = $request->file('APP_BROWSER_ICON');
+        // $name = Str::random(10);
+        $name = "temp001";
+        $extension = $file->extension();
+        $file->move(public_path('upload'), $name . '.' . $extension);
+        $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
 
         ///////////////////////
 
