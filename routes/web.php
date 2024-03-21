@@ -51,3 +51,4 @@ Route::get('/manifest', 'App\Http\Controllers\ManifestController@index');
 Route::get('/myapp/{id}', 'App\Http\Controllers\MyAppController@index');
 
 
+Route::get('/user', 'App\Http\Controllers\UserController@index');
