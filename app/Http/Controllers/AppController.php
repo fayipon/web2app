@@ -20,6 +20,8 @@ class AppController extends Controller
 
         //////////////////////////////////////
 
+        dd($session);
+
         // 取得当前用户的应用列表
         $return = App::where("USER_ID",$session['user']['ID'])->get();
         if ($return === false) {
