@@ -36,7 +36,8 @@
 <body data-type="INSTALL">
   <div id="app"></div>
 </body>
-<script>var installPrompt = null;
+<script>
+var installPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   console.log('beforeinstallprompt');
   e.preventDefault();
@@ -52,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     installPrompt.prompt();
     installPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
-        console.log('用户接受安装应用');
         sendDataToAPI('SETUP_02');
+        console.log('用户接受安装应用');
       } else {
         console.log('用户拒绝安装应用');
       }
@@ -63,12 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('appinstalled', (e) => {
   localStorage.setItem('isInstalled', true);
+  let countdownSeconds = 5;
+  const intervalId = setInterval(() => {
+    countdownSeconds--;
+    if (countdownSeconds <= 0) {
+      // 停止倒计时
+      clearInterval(intervalId);
+      // 显示 alert 对话框
+      alert('倒计时结束！');
+      window.location.reload();
+    }
+  }, 1000);
 });
 
 if (localStorage.getItem('isInstalled') === 'true'){
-  document.body.dataset.installed = "PLAY";
+  document.body.dataset.type = "PLAY";
 }
 
+var playLink = window.location.origin
 window.playClick = function() {
   const rootUrl = window.location.origin
   window.open(rootUrl, '_blank');
