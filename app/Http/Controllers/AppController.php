@@ -83,7 +83,6 @@ class AppController extends Controller
             "SETUP_SETUP_P",
             "SETUP_AGE",
             "SCREEN_TYPE",
-            "APP_SCREEN",
             "APP_DESCRIPTION",
             "SETUP_TEMPLE",
             "IS_ANYWHERE_INSTALL",
@@ -101,6 +100,7 @@ class AppController extends Controller
             'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
             'APP_DESKTOP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
             'APP_BROWSER_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
+            'APP_SCREEN' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
@@ -131,6 +131,15 @@ class AppController extends Controller
         $extension = $file->extension();
         $file->move(public_path('upload'), $name . '.' . $extension);
         $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
+
+        if (!$request->has('APP_SCREEN')) {
+            return response()->json(['message' => 'APP_SCREEN Missing file'], 422);
+        }
+        $file = $request->file('APP_SCREEN');
+        $name = time();
+        $extension = $file->extension();
+        $file->move(public_path('upload'), $name . '.' . $extension);
+        $data['APP_SCREEN'] = 'upload/browser/' . $name . '.' . $extension;
 
         ///////////////////////
 

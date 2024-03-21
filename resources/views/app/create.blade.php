@@ -51,30 +51,19 @@
 										</div>
 										<div class="form-group">
 											<label>推广网址 * </label>
-											<input type="text" name="APP_URL" class="form-control" placeholder="请输入自已网站地址">
+											<input type="text" name="APP_URL" value="https://example.com/" class="form-control" placeholder="请输入自已网站地址">
 										</div>
+										
 										<div class="form-group">
-											<label>网址是否允许修改</label>
-											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="checkbox" name="IS_APP_URL_EDIT" value="1" checked="">
-												<i data-on="允许" data-off="不允许"></i>
-											</label>
-										</div>
-										<div class="form-group">
-											<label>在iframe打开</label>
-											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="checkbox" name="IS_IFRAME" value="1" checked="">
-												<i data-on="是" data-off="否"></i>
-											</label>
-										</div>
-										<div class="form-group">
-											<label>应用安装地址 * </label>
+											<label>应用安装地址 (子域名) * </label>
 											<input type="text" name="SETUP_URL" class="form-control" placeholder="请输入自已网站地址">网站地址.chjdhbyk.top/download
 										</div>
+										<!--
 										<div class="form-group">
 											<label>iOS跳转地址 * </label>
 											<input type="text" name="" class="form-control" placeholder="请输入自已网站地址">
 										</div>
+										-->
 										<div class="form-group">
 											<label>开发者名称 * </label>
 											<input type="text" name="SETUP_DEV_NAME" class="form-control" placeholder="请输入开发者名称,2-30字符">
@@ -106,17 +95,10 @@
 												<label for="select_options">Bootstrap Select Vendor</label>
 											</div>
 										</div>
-										<div class="form-group">
-											<label>屏幕方向</label>
-											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="checkbox" name="SCREEN_TYPE" value="1" checked="">
-												<i data-on="竖屏" data-off="横屏"></i>
-											</label>
-										</div>
 										
 										<div class="form-group">
 											<label>应用截图 * </label>
-											<input type="text" name="APP_SCREEN" class="form-control" placeholder="请输入名称,2-30字符">
+											<input type="file" name="APP_SCREEN" class="form-control" placeholder="请输入名称,2-30字符">
 											<small class="form-text text-muted">330x587尺寸, png格式,大小不超过1MB</small>
 										</div>
 
@@ -125,19 +107,12 @@
 											<textarea placeholder="Textarea" name="APP_DESCRIPTION" id="description" class="form-control" rows="3"></textarea>
 										</div>
 
-										<div class="form-group">
-											<label>安装模版 * </label>
-											<input type="text" name="SETUP_TEMPLE" class="form-control" placeholder="请输入名称,2-30字符">
-											<small class="form-text text-muted">330x587尺寸, png格式,大小不超过1MB</small>
-										</div>
-
-										<div class="form-group">
-											<label>点击任意位置安装</label>
-											<label class="form-switch form-switch-pill form-switch-primary d-block">
-												<input type="checkbox" name="IS_ANYWHERE_INSTALL" value="1" checked="">
-												<i data-on="是" data-off="否"></i>
-											</label>
-										</div>
+											<input type="hidden" name="IS_APP_URL_EDIT" value="0" checked="">
+											<input type="hidden" name="IS_IFRAME" value="1">
+											<input type="hidden" name="SCREEN_TYPE" value="1" >
+											<input type="hidden" name="SETUP_TEMPLE" class="form-control" value="1" placeholder="请输入名称,2-30字符">
+											<input type="hidden" name="IS_ANYWHERE_INSTALL" value="1" checked="">
+												
 
 										<div class="form-group">
 											<label>备注 </label>
