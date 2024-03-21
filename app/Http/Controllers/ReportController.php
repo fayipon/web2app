@@ -53,10 +53,6 @@ class ReportController extends Controller
                 break;
         }
 
-        if ($list[$date][$app_id]['USER_COUNT'] > 0) {
-            $count = Pv::where("APP_ID",$v['APP_ID'])->count();
-         //   $list[$date][$app_id]['USER_COUNT'] = $count;
-        }
         
     }
 
