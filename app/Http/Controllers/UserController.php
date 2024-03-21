@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use App\Models\Channel;
+use App\Models\Pv;
 
 class UserController extends Controller
 {
@@ -23,7 +23,7 @@ class UserController extends Controller
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = Channel::where("USER_ID",$session['user']['ID'])->get();
+        $return = Pv::where("USER_ID",$session['user']['ID'])->order("ID","DESC")->get();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');
