@@ -31,6 +31,7 @@ class ReportController extends Controller
     // 处理统计结果
     foreach ($return as $k => $v) {
         $date = explode(" ", $v['CREATE_TIME']);
+        $date = $date[0];
 
         if ($v['APP_ID'] == "") {
             continue;
@@ -42,13 +43,13 @@ class ReportController extends Controller
 
         switch ($v['ACTION_TYPE']) {
             case "SETUP_01":
-                @$list[$date][$app_id]['SETUP_PAGE_PV']++;
+                $list[$date][$app_id]['SETUP_PAGE_PV']++;
                 break;
             case "SETUP_02":
-                @$list[$date][$app_id]['SETUP_COUNT']++;
+                $list[$date][$app_id]['SETUP_COUNT']++;
                 break;
             case "SETUP_03":
-                @$list[$date][$app_id]['APP_PV']++;
+                $list[$date][$app_id]['APP_PV']++;
                 break;
         }
 
