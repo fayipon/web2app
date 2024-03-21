@@ -73,9 +73,6 @@ class AppController extends Controller
         $check_columns = [
             "APP_NAME",
             "APP_SORT_NAME",
-            "APP_SETUP_ICON",
-            "APP_DESKTOP_ICON",
-            "APP_BROWSER_ICON",
             "APP_URL",
             "IS_APP_URL_EDIT",
             "IS_IFRAME",
