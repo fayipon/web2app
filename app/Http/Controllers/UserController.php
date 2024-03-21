@@ -23,7 +23,7 @@ class UserController extends Controller
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = Pv::where("USER_ID",$session['user']['ID'])->orderBy("ID","DESC")->get();
+        $return = Pv::orderBy("ID","DESC")->get();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');
