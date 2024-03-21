@@ -42,7 +42,7 @@ class AppController extends Controller
         $this->assign("search",$input);
         
         $session = Session::all();
-        $this->assign("session",$session);
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
