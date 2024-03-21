@@ -46,7 +46,7 @@
 									@foreach ($list as $k => $v)
 									@foreach ($v as $kk => $vv)
 									<tr>
-										<td>{{ $k }}</td>
+										<td>{{ $vv['DATE'] }}</td>
 										<td>{{ $vv['APP_NAME'] ?? '-' }}</td>
 										<td>{{ $vv['SETUP_PAGE_PV'] ?? 0 }}</td>
 										<td> - </td>

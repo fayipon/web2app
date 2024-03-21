@@ -42,6 +42,7 @@ class ReportController extends Controller
 
             $cc = App::where("ID",$app_id)->first();
             $list[$date][$app_id]['APP_NAME'] = $cc['APP_NAME'];
+            $list[$date][$app_id]['DATE'] = $date;
 
             switch ($v['ACTION_TYPE']) {
                 case "SETUP_01":
