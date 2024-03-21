@@ -59,7 +59,7 @@ class PvController extends Controller
             "COOKIE_ID" => $cookie['COOKIE_ID'],
             "APP_ID" => $return['APP_ID'],
             "SOURCE_URL" => $input['URL'],
-            "DEVICE_TYPE" => $this->checkDevice($input['DEVICE']),
+            "DEVICE_TYPE" => $input['DEVICE'],
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
             "ACTION_TYPE" => $input['ACTION'],
             "FIRST_TIME" => $cookie['FIRST_TIME'],
