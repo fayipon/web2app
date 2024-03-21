@@ -57,10 +57,9 @@ class ReportController extends Controller
                     break;
             }
 
-            
         }
         
-        $this->assign("list",$return);
+        $this->assign("list",$list);
     	
     	return view('report.index',$this->data);
     }
