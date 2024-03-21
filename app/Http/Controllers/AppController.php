@@ -278,21 +278,21 @@ class AppController extends Controller
         //////////////////////////////////////
 
         // Cloudflare API 令牌
-        $api_token = 'YOUR_API_TOKEN';
+        $api_token = '4maO6pOKI1Mgh8sRXiUOGMdPjkQL3hAz24VMxR1K';
 
         // Cloudflare 账户邮箱
-        $email = 'YOUR_EMAIL_ADDRESS';
+        $email = 'bc02025js@outlook.com';
 
         // 域名
-        $zone_name = 'YOUR_DOMAIN_NAME';
+        $zone_name = 'chjdhbyk.top';
 
         // 新增 DNS 记录的数据
         $new_dns_record = array(
-            'name' => 'example.com',   // 记录名称
+            'name' => 'testsub01',   // 记录名称
             'type' => 'A',              // 记录类型
-            'content' => '192.0.2.1',   // 记录值
+            'content' => '154.204.176.128',   // 记录值
             'ttl' => 120,               // TTL（以秒为单位）
-            'proxied' => false          // 是否启用代理
+            'proxied' => true          // 是否启用代理
         );
 
         // 使用 cURL 发送请求
