@@ -36,8 +36,7 @@
 <body data-type="INSTALL">
   <div id="app"></div>
 </body>
-<script>
-var installPrompt = null;
+<script>var installPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   console.log('beforeinstallprompt');
   e.preventDefault();
@@ -77,15 +76,17 @@ window.addEventListener('appinstalled', (e) => {
   }, 1000);
 });
 
-if (localStorage.getItem('isInstalled') === 'true'){
-  document.body.dataset.type = "PLAY";
-}
+window.onload = function () {
+  if (localStorage.getItem('isInstalled') === 'true') {
+    document.body.dataset.type = 'PLAY';
+  }
+};
 
-var playLink = window.location.origin
-window.playClick = function() {
-  const rootUrl = window.location.origin
+var playLink = window.location.origin;
+window.playClick = function () {
+  const rootUrl = window.location.origin;
   window.open(rootUrl, '_blank');
-}
+};
 </script>
 
 <script>
