@@ -28,11 +28,6 @@
 
 								<table>
 
-								@if ($list->isEmpty())
-									<tr>
-										<td colspan="9"><h4>尚无数据</h4></td>
-									</tr>
-								@else
 									<tr style="background-color:#cceeff;">
 										<th>日期</th>
 										<th>应用</th>
@@ -58,7 +53,7 @@
 									
 									@endforeach
 									@endforeach
-								@endif
+								
 								</table>
 								
 							</div>
