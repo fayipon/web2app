@@ -57,7 +57,6 @@ class PvController extends Controller
         
         $cookie = $this->getUserData();
 
-        dd($cookie);
         $subDomain = $this->parseDomain();
 
         $return = App::where("SETUP_URL",$subDomain)->first();
@@ -69,12 +68,12 @@ class PvController extends Controller
         // 将资料包装一下后填入
         $data = array(
             "COOKIE_ID" => $cookie['COOKIE_ID'],
-            "APP_ID" => $input['APP_ID'],
+            "APP_ID" => $return['APP_ID'],
             "DEVICE_TYPE" => $this->checkDevice($input['DEVICE']),
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
             "ACTION_TYPE" => $input['ACTION'],
             "FIRST_TIME" => $cookie['FIRST_TIME'],
-            "CREATE_TIME" => $input['CURRENT_TIME'],
+            "CREATE_TIME" => date("Y-m-d H:i:s"),
         );
 
         Pv::insert($data);
