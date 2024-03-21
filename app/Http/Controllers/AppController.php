@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Models\App;
 
 class AppController extends Controller
@@ -104,15 +105,15 @@ class AppController extends Controller
             'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
-        dd($request);
-        if ($request->hasFile('APP_SETUP_ICON') && $request->file('APP_SETUP_ICON')->isValid()) {
-            $APP_SETUP_ICON_imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('upload'), $APP_SETUP_ICON_imageName); // 保存图片到指定目录
-            $data['APP_SETUP_ICON'] = $APP_SETUP_ICON_imageName;
-        } else {
-            dd(1111);
+        if (!$request->has('image')) {
+            return response()->json(['message' => 'Missing file'], 422);
         }
+        $file = $request->file('image');
+        // $name = Str::random(10);
+        $name = "temp001";
+        $url = Storage::putFileAs('images', $file, $name . '.' . $file->extension());
 
+        dd($url);
 
         ///////////////////////
 
