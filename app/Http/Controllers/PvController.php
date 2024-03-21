@@ -66,8 +66,6 @@ class PvController extends Controller
             return redirect('/');
         }
         
-
-
         // 将资料包装一下后填入
         $data = array(
             "COOKIE_ID" => $cookie['COOKIE_ID'],
