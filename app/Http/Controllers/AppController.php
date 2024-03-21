@@ -311,6 +311,8 @@ class AppController extends Controller
         // 解析响应
         $response_data = json_decode($response, true);
 
+        dd($response_data);
+        
         // 获取域名 ID
         $zone_id = $response_data['result'][0]['id'];
 
