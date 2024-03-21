@@ -104,6 +104,7 @@ class AppController extends Controller
             'APP_SETUP_ICON' => 'required|image|mimes:png|max:2048', // 限制文件类型和大小
         ]);
 
+        dd($request);
         if ($request->hasFile('APP_SETUP_ICON') && $request->file('APP_SETUP_ICON')->isValid()) {
             $APP_SETUP_ICON_imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('upload'), $APP_SETUP_ICON_imageName); // 保存图片到指定目录
