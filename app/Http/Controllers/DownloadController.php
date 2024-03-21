@@ -21,7 +21,7 @@ class DownloadController extends Controller
         
         // 配置
         $this->assign("app_config",$return);
-        $this->assign("version","demo0004");
+        $this->assign("version","demo0005");
         
     	return view('download.index',$this->data);
     }

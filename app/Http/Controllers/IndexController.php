@@ -19,6 +19,7 @@ class IndexController extends Controller
         }
 
         $this->assign("app_config",$return);
+        $this->assign("version","demo0005");
 
     	return view('index.index',$this->data);
     }
