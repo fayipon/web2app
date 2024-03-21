@@ -15,8 +15,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -56,8 +58,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -149,8 +153,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -187,8 +193,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -211,8 +219,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -274,8 +284,10 @@ class AppController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
@@ -293,7 +305,6 @@ class AppController extends Controller
 
     // CF API
     protected function createSubDomain($subDomain) {
-
 
         // Cloudflare API 令牌
         $api_key = env('CF_API');

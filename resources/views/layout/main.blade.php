@@ -206,7 +206,7 @@
 										<i class="fi w--15 fi-close"></i>
 									</span>
 
-									<span class="fs--14 d-none d-sm-inline-block font-weight-medium">{{ $session['user']->ACCOUNT }}</span>
+									<span class="fs--14 d-none d-sm-inline-block font-weight-medium">{{ $session['user'] ?? '' }}</span>
 								</a>
 
 
