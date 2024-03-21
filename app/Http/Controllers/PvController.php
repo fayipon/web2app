@@ -57,7 +57,7 @@ class PvController extends Controller
         // 将资料包装一下后填入
         $data = array(
             "COOKIE_ID" => $cookie['COOKIE_ID'],
-            "APP_ID" => $return['APP_ID'],
+            "APP_ID" => $return['ID'],
             "SOURCE_URL" => $input['URL'],
             "DEVICE_TYPE" => $input['DEVICE'],
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
