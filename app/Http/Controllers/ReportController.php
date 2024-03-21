@@ -34,17 +34,17 @@ class ReportController extends Controller
             $date = explode(" ", $v['CREATE_TIME']);
             $date = $date[0];
 
-            dd($date);
             if ($v['APP_ID'] == "") {
                 continue;
             }
             $app_id = $v['APP_ID'];
             
+            ////////////////////////
+
+            $list[$date][$app_id]['DATE'] = $date;
 
             $cc = App::where("ID",$app_id)->first();
             $list[$date][$app_id]['APP_NAME'] = $cc['APP_NAME'];
-            $list[$date][$app_id]['DATE'] = $date;
-
             switch ($v['ACTION_TYPE']) {
                 case "SETUP_01":
                     @$list[$date][$app_id]['SETUP_PAGE_PV']++;
