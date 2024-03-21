@@ -102,6 +102,8 @@ class AppController extends Controller
             $APP_SETUP_ICON_imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images'), $APP_SETUP_ICON_imageName); // 保存图片到指定目录
             $data['APP_SETUP_ICON'] = $APP_SETUP_ICON_imageName;
+        } else {
+            dd(1111);
         }
 
 
