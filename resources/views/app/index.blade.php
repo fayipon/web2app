@@ -56,7 +56,7 @@
 										<td>--</td>
 										<td>{{ $item['CREATE_TIME'] }}</td>
 										<td>{{ $item['MARK'] }}</td>
-										<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top" target="_blank">连接</a></td>
+										<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top/download" target="_blank">连接</a></td>
 										<td>
 											<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
 											统计 
