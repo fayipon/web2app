@@ -32,7 +32,11 @@ class ReportController extends Controller
     foreach ($return as $k => $v) {
         $date = explode(" ", $v['CREATE_TIME']);
 
-        $app_id = $v['APP_ID'] ?? 0;
+        if ($v['APP_ID'] == "") {
+            $app_id = 0;
+        } else {
+            $app_id = $v['APP_ID'];
+        }
 
         $list[$date][$app_id]['APP_NAME'] = $app_id;
         $list[$date][$app_id]['SETUP_PAGE_PV'] = $app_id;
