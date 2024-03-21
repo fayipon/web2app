@@ -111,7 +111,7 @@ class AppController extends Controller
         $file = $request->file('APP_SETUP_ICON');
          $name = time();
         $extension = $file->extension();
-        $file->move(public_path('upload'), $name . '.' . $extension);
+        $file->move(public_path('upload/setup'), $name . '.' . $extension);
         $data['APP_SETUP_ICON'] = 'upload/setup/' . $name . '.' . $extension;
 
 
@@ -122,7 +122,7 @@ class AppController extends Controller
         $file = $request->file('APP_DESKTOP_ICON');
         $name = time();
         $extension = $file->extension();
-        $file->move(public_path('upload'), $name . '.' . $extension);
+        $file->move(public_path('upload/desktop'), $name . '.' . $extension);
         $data['APP_DESKTOP_ICON'] = 'upload/desktop/' . $name . '.' . $extension;
 
 
@@ -133,7 +133,7 @@ class AppController extends Controller
         $file = $request->file('APP_BROWSER_ICON');
         $name = time();
         $extension = $file->extension();
-        $file->move(public_path('upload'), $name . '.' . $extension);
+        $file->move(public_path('upload/browser'), $name . '.' . $extension);
         $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
 
         if (!$request->has('APP_SCREEN')) {
@@ -143,8 +143,8 @@ class AppController extends Controller
         $file = $request->file('APP_SCREEN');
         $name = time();
         $extension = $file->extension();
-        $file->move(public_path('upload'), $name . '.' . $extension);
-        $data['APP_SCREEN'] = 'upload/browser/' . $name . '.' . $extension;
+        $file->move(public_path('upload/screen/'), $name . '.' . $extension);
+        $data['APP_SCREEN'] = 'upload/screen/' . $name . '.' . $extension;
 
         ///////////////////////
 
