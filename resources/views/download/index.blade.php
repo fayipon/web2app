@@ -48,13 +48,22 @@ window.addEventListener('beforeinstallprompt', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('#reInstall');
   console.log('btn', btn);
-
+  // 如果installPrompt为null，可能是已经安装了PWA应用
+  if (installPrompt == null) {
+    btn.innerText = 'play';
+    btn.addEventListener('click', () => {
+      // 获取当前页面的根目录URL
+      const rootUrl = window.location.origin;
+      // 在新窗口或标签页中打开根目录URL
+      window.open(rootUrl, '_blank');
+    });
+    return;
+  }
   btn.addEventListener('click', () => {
     installPrompt.prompt();
     installPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('用户接受安装应用');
-            sendDataToAPI('SETUP_02');
       } else {
         console.log('用户拒绝安装应用');
       }
@@ -63,11 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('appinstalled', (e) => {
-  // 获取当前页面的根目录URL
-  const rootUrl = window.location.origin;
-  // 在新窗口或标签页中打开根目录URL
-  window.open(rootUrl, '_blank');
+  localStorage.setItem('isInstalled', true);
 });
+
+if (localStorage.getItem('isInstalled') === 'true'){
+  document.body.dataset.installed = "PLAY";
+}
+
+window.playClick = function() {
+  const rootUrl = window.location.origin
+  window.open(rootUrl, '_blank');
+}
 </script>
 
 <script>
