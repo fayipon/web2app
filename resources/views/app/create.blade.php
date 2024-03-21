@@ -41,12 +41,12 @@
 										</div>
 										<div class="form-group">
 											<label>桌页图标 * </label>
-											<input type="file" name="APP_DESKTOP_ICON" class="form-control" placeholder="请输入名称,2-30字符">
+											<input type="text" name="APP_DESKTOP_ICON" class="form-control" placeholder="请输入名称,2-30字符">
 											<small class="form-text text-muted">192x192尺寸, png格式,大小不超过1MB</small>
 										</div>
 										<div class="form-group">
 											<label>游览器网页图标 * </label>
-											<input type="file" name="APP_BROWSER_ICON" class="form-control" placeholder="请输入名称,2-30字符">
+											<input type="text" name="APP_BROWSER_ICON" class="form-control" placeholder="请输入名称,2-30字符">
 											<small class="form-text text-muted">192x192尺寸, png格式,大小不超过1MB</small>
 										</div>
 										<div class="form-group">
@@ -116,7 +116,7 @@
 										
 										<div class="form-group">
 											<label>应用截图 * </label>
-											<input type="file" name="APP_SCREEN" class="form-control" placeholder="请输入名称,2-30字符">
+											<input type="text" name="APP_SCREEN" class="form-control" placeholder="请输入名称,2-30字符">
 											<small class="form-text text-muted">330x587尺寸, png格式,大小不超过1MB</small>
 										</div>
 
