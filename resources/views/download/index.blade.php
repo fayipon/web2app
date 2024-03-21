@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     installPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
         console.log('用户接受安装应用');
+            sendDataToAPI('SETUP_02');
       } else {
         console.log('用户拒绝安装应用');
       }
@@ -67,4 +68,10 @@ window.addEventListener('appinstalled', (e) => {
   window.open(rootUrl, '_blank');
 });
 </script>
+
+<script src="pv.js"></script>
+<script>
+            sendDataToAPI('SETUP_01');
+</script>
+
 </html>

@@ -22,4 +22,10 @@
 <body>
     <iframe src="{{ $app_config['APP_URL'] }}" frameborder="0"></iframe>
 </body>
+
+		<script src="pv.js"></script>
+        <script>
+            sendDataToAPI('SETUP_03');
+        </script>
+
 </html>

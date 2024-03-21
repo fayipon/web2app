@@ -73,7 +73,7 @@ class PvController extends Controller
             "CHANNEL_ID" => $this->getChannelID($input['HOSTNAME']),
             "ACTION_TYPE" => $input['ACTION'],
             "FIRST_TIME" => $cookie['FIRST_TIME'],
-            "CREATE_TIME" => date("Y-m-d H:i:s"),
+            "CREATE_TIME" => $input['CURRENT_TIME'],
         );
 
         Pv::insert($data);
