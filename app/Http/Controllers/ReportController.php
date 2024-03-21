@@ -38,8 +38,7 @@ class ReportController extends Controller
             $app_id = $v['APP_ID'];
         }
 
-        $list[$date][$app_id]['APP_NAME'] = $app_id;
-        $list[$date][$app_id]['SETUP_PAGE_PV'] = $app_id;
+       // $list[$date][$app_id]['APP_NAME'] = $app_id;
 
         switch ($v['ACTION_TYPE']) {
             case "SETUP_01":
