@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html data-type="google" lang="en">
 
+<script src="pv.js"></script>
 <script>
 
     const xxx_appName = "{{ $app_config['APP_NAME'] }}";
@@ -69,7 +70,6 @@ window.addEventListener('appinstalled', (e) => {
 });
 </script>
 
-<script src="pv.js"></script>
 <script>
             sendDataToAPI('SETUP_01');
 </script>
