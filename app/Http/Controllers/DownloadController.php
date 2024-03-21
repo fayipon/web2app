@@ -11,12 +11,9 @@ class DownloadController extends Controller
     // 首頁
     public function index(Request $request) {
     	
-
         $subDomain = $this->parseDomain();
 
-        dd($subDomain);
-
-        $return = App::where("ID",$id)->first();
+        $return = App::where("SETUP_URL",$subDomain)->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/');
