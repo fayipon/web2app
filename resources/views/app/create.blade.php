@@ -69,7 +69,7 @@
 										</div>
 										<div class="form-group">
 											<label>应用安装地址 * </label>
-											<input type="text" name="SETUP_URL" class="form-control" placeholder="请输入自已网站地址">.xxxxx.com/download
+											<input type="text" name="SETUP_URL" class="form-control" placeholder="请输入自已网站地址">网站地址.chjdhbyk.top/download
 										</div>
 										<div class="form-group">
 											<label>iOS跳转地址 * </label>
