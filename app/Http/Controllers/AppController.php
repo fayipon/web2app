@@ -24,6 +24,14 @@ class AppController extends Controller
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
+        $return = App::where("USER_ID",$session['user']['ID'])->get();
+        if ($return === false) {
+            $this->error(__CLASS__, __FUNCTION__, "01");
+            return redirect('/dashboard');
+        }
+        $this->assign("app_list",$return);
+
+        // 取得当前用户的应用列表- 分页
         $return = App::where("USER_ID",$session['user']['ID'])->paginate(2);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
