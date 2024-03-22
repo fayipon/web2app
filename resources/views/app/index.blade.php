@@ -59,7 +59,7 @@
 												
 												<thead>
 													<tr>
-														<td colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
+														<td class="text-center" colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
 													</tr>
 												</thead>
 												<thead>
