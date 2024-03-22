@@ -62,6 +62,15 @@
         </li>
         @endif
 
+        {{-- Pagination Elements --}}
+        @foreach ($elements as $element)
+        {{-- "Three Dots" Separator --}}
+        @if (is_string($element))
+        <li class="paginate_button page-item active">
+            <a href="#" class="page-link">{{ $element }}</a>
+        </li>
+        @endif
+
         {{-- Array Of Links --}}
         @if (is_array($element))
         @foreach ($element as $page => $url)
