@@ -116,7 +116,7 @@ class AppController extends Controller
 
 
         if (!$request->has('APP_DESKTOP_ICON')) {
-            $this->error(__CLASS__, __FUNCTION__, "02");
+            $this->error(__CLASS__, __FUNCTION__, "03");
             return redirect('/app');
         }
         $file = $request->file('APP_DESKTOP_ICON');
@@ -127,7 +127,7 @@ class AppController extends Controller
 
 
         if (!$request->has('APP_BROWSER_ICON')) {
-            $this->error(__CLASS__, __FUNCTION__, "02");
+            $this->error(__CLASS__, __FUNCTION__, "04");
             return redirect('/app');
         }
         $file = $request->file('APP_BROWSER_ICON');
@@ -137,7 +137,7 @@ class AppController extends Controller
         $data['APP_BROWSER_ICON'] = 'upload/browser/' . $name . '.' . $extension;
 
         if (!$request->has('APP_SCREEN')) {
-            $this->error(__CLASS__, __FUNCTION__, "02");
+            $this->error(__CLASS__, __FUNCTION__, "05");
             return redirect('/app');
         }
         $file = $request->file('APP_SCREEN');
@@ -158,21 +158,21 @@ class AppController extends Controller
         // 判断SETUP_URL 是否已用 目前只对URL判断
         $count = App::where("SETUP_URL",$data['SETUP_URL'])->count();
         if ($count > 0) {
-            $this->error(__CLASS__, __FUNCTION__, "02");
+            $this->error(__CLASS__, __FUNCTION__, "06");
             return redirect('/app');
         }
 
         // 填入APP
         $return = App::insert($data);
         if ($return === false) {
-            $this->error(__CLASS__, __FUNCTION__, "03");
+            $this->error(__CLASS__, __FUNCTION__, "07");
             return redirect('/app');
         }
 
         // 执行动态新增子域名
         $return = $this->createSubDomain($data['SETUP_URL']);
         if ($return === false) {
-            $this->error(__CLASS__, __FUNCTION__, "04");
+            $this->error(__CLASS__, __FUNCTION__, "08");
             return redirect('/app');
         }
         
