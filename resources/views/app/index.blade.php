@@ -106,7 +106,7 @@
 														<td>{{ $item['MARK'] }}</td>
 														<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top/download" target="_blank">链接</a></td>
 														<td>
-															<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
+															<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '下架' : '上架' }}</a> 
 															统计 
 															<a href="/app-edit?id={{ $item['ID'] }}">编辑</a>
 															<a href="/app-delete?id={{ $item['ID'] }}">删除</a>
