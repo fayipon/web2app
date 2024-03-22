@@ -149,7 +149,7 @@
 
 					function redirect() {
 
-						var appId = document.getElementById('SEARCH_APP_id').value;
+						var appId = document.getElementById('SEARCH_APP_ID').value;
 						var appStatus = document.getElementById('SEARCH_APP_STATUS').value;
 						
 						// 打印到控制台
