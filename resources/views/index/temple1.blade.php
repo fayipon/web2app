@@ -63,13 +63,14 @@
 
     
 				<!-- PUSH -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(function(OneSignal) {
-    OneSignal.init({
-      appId: "cedb8b0e-ecff-465f-8f65-b49d851626de",
-    });
-  });
-</script>
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+        <script>
+        OneSignal.push(() => {
+            OneSignal.init({
+                appId: "cedb8b0e-ecff-465f-8f65-b49d851626de",
+            });
+
+            OneSignal.registerForPushNotifications();
+        });
+        </script>
 </html>
