@@ -60,7 +60,7 @@
 												<thead>
 													<tr>
 														<td class="text-center bg-light" colspan="9" style="height:250px;">
-															<h4 class="mt-6"><i class="fi fi-bell-full fs--25"></i>尚无应用数据,请新增应用</h4>
+															<h4 class="mt-6"><i class="fi fi-bell-full fs--25"></i>尚无应用数据,请<a href="/app-create">新增应用</a></h4>
 														</td>
 													</tr>
 												</thead>
