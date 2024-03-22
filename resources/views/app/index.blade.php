@@ -29,7 +29,7 @@
 														<select id="SEARCH_APP_ID" class="ml-3 custom-select custom-select-sm form-control form-control-sm">
 															<option value="-1">选择应用</option>
 														@foreach ($app_list as $item)
-															<option value="{{ $item['ID'] }}" @if(isset($search['ID']) && $item['ID'] == $idParam) selected @endif>{{ $item['APP_NAME'] }}</option>
+															<option value="{{ $item['ID'] }}" @if(isset($search['ID']) && $item['ID'] == $search['ID']) selected @endif>{{ $item['APP_NAME'] }}</option>
 														@endforeach
 														</select>
 													</label>
