@@ -56,6 +56,12 @@
 										<div class="row">
 											<div class="col-sm-12">
 												<table class="table-datatable table table-bordered table-hover table-striped js-datatableified dataTable dtr-inline" style="width: 1255px;">
+												
+												<thead>
+													<tr>
+														<td colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
+													</tr>
+												</thead>
 												<thead>
 													<tr style="background-color:#e1e1e1;">
 														<th style="width: 210px;">应用ID</th>
@@ -69,6 +75,7 @@
 														<th style="width: 210px;">操作</th>
 												</thead>
 												<tbody>
+												
 													<tr class="odd">
 														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
 														<td>Accountant</td>
