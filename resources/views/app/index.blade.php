@@ -155,8 +155,8 @@
 						
 						// 构建跳转链接
 						var url = "{{ url('/app') }}?t=1";
-						if (appId != -1 ) url = url + "&APP_ID="+appId;
-						if (appStatus != -1 ) url = url + "&APP_STATUS="+appStatus;
+						if (appId != -1 ) url = url + "&ID="+appId;
+						if (appStatus != -1 ) url = url + "&STATUS="+appStatus;
 						
 						
 						// 跳转到链接
