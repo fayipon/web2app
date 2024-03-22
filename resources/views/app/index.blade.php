@@ -147,44 +147,6 @@
 								</div>
 <!-- end new table -->
 
-								<table>
-								@if ($list->isEmpty())
-									<tr>
-										<td colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
-									</tr>
-								@else
-									<tr style="background-color:#cceeff;">
-										<th>应用ID</th>
-										<th>应用名称</th>
-										<th>状态</th>
-										<th>屏幕方向</th>
-										<th>安装量</th>
-										<th>创建时间</th>
-										<th>备注</th>
-										<th>链接</th>
-										<th>操作</th>
-									</tr>
-									@foreach ($list as $item)
-									<tr>
-										<td>{{ MD5($item['ID']) }}</td>
-										<td>{{ $item['APP_NAME'] }}</td>
-										<td>{{ $item['STATUS'] ? '上架' : '下架' }}</td>
-										<td>{{ $item['SCREEN_TYPE'] }}</td>
-										<td>--</td>
-										<td>{{ $item['CREATE_TIME'] }}</td>
-										<td>{{ $item['MARK'] }}</td>
-										<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top/download" target="_blank">连接</a></td>
-										<td>
-											<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
-											统计 
-											<a href="/app-edit?id={{ $item['ID'] }}">编辑</a>
-											<a href="/app-delete?id={{ $item['ID'] }}">删除</a>
-										</td>
-									</tr>
-									@endforeach
-								@endif
-								</table>
-								
 							</div>
 
 						</div>
