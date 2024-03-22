@@ -43,6 +43,16 @@
 														</select>
 													</label>
 												</div>
+
+												<div class="dataTables_length">
+													<label>
+														<a href="/app-create" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-info" tabindex="0" aria-controls="rand_ijU" type="button" title="Column Visibility" aria-haspopup="true">
+															<span>搜寻</span>
+															<span class="dt-down-arrow"></span>
+														</a>
+													</label>
+												</div>
+												
 											</div>
 											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-end">
 												<div class="dt-buttons btn-group flex-wrap mr-3"> 
