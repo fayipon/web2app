@@ -109,7 +109,7 @@
 
 									
 <!-- 显示分页链接 -->
-{{ $list->links() }}
+{{ $list->links(layout.pagination) }}
 								</div>
 							</div>
 							<div class="row">
