@@ -110,10 +110,10 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 col-md-5">
-									<div class="dataTables_info"> 第1-10笔  共57笔</div>
+									<div class="dataTables_info ml-3"> 第1-10笔  共57笔</div>
 								</div>
 								<div class="col-sm-12 col-md-7">
-									<div class="dataTables_paginate paging_simple_numbers" id="rand_ijU_paginate">
+									<div class="dataTables_paginate paging_simple_numbers mr-3" id="rand_ijU_paginate">
 										<ul class="pagination">
 											<li class="paginate_button page-item previous disabled" id="rand_ijU_previous">
 												<a href="#" aria-controls="rand_ijU" data-dt-idx="0" tabindex="0" class="page-link">
