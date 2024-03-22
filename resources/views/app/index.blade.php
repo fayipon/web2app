@@ -59,7 +59,9 @@
 												
 												<thead>
 													<tr>
-														<td class="text-center d-flex justify-content-center align-items-center" colspan="9"><h4>尚无应用数据,请新增应用</h4></td>
+														<td class="text-center d-flex justify-content-center align-items-center" colspan="9" style="height:300px;">
+															<h4>尚无应用数据,请新增应用</h4>
+														</td>
 													</tr>
 												</thead>
 												<thead>
