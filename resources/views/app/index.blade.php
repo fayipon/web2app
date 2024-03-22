@@ -34,7 +34,7 @@
 														</select>
 													</label>
 												</div>
-												<div class="dataTables_length" id="rand_ijU_length">
+												<div class="dataTables_length">
 													<label>
 														<select id="APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
 															<option>选择状态</option>
@@ -46,7 +46,7 @@
 
 												<div class="dataTables_length">
 													<label>
-														<a href="/app-create" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-info" tabindex="0" aria-controls="rand_ijU" type="button" title="Column Visibility" aria-haspopup="true">
+														<a href="javascript:alert(1);" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-info" type="button" title="Column Visibility">
 															<span>搜寻</span>
 															<span class="dt-down-arrow"></span>
 														</a>
