@@ -58,7 +58,7 @@
 												<table class="table-datatable table table-bordered table-hover table-striped js-datatableified dataTable dtr-inline" style="width: 1255px;">
 												<thead>
 													<tr>
-														<th class="sorting sorting_asc" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="0" style="width: 210px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+														<th style="width: 210px;">Name</th>
 														<th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="1" style="width: 316px;" aria-label="Position: activate to sort column ascending">Position</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="2" style="width: 155px;" aria-label="Office: activate to sort column ascending">Office</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="3" style="width: 67px;" aria-label="Age: activate to sort column ascending">Age</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="4" style="width: 135px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="5" style="width: 120px;" aria-label="Salary: activate to sort column ascending">Salary</th></tr>
 										</thead>
 										
