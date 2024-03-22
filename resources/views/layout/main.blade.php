@@ -253,7 +253,7 @@
 									<div class="dropdown-header fs--14 py-4">
 
 										<!-- profile image -->
-										<div class="w--60 h--60 rounded-circle bg-light bg-cover float-start" style="background-image:url('../../html_frontend/demo.files/images/icons/user80.png')"></div>
+										<div class="w--60 h--60 rounded-circle bg-light bg-cover float-start" style="background-image:url('../../demo.files/images/icons/user80.png')"></div>
 										
 										<!-- initials - no image -->
 										<!--
