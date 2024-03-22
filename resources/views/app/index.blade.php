@@ -36,7 +36,7 @@
 												</div>
 												<div class="dataTables_length">
 													<label>
-														<select id="SEARCH_APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
+														<select id="SEARCH_APP_STATUS" class="ml-3 custom-select custom-select-sm form-control form-control-sm">
 															<option value="-1">选择状态</option>
 															<option value="1">上架</option>
 															<option value="0">下架</option>
