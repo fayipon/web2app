@@ -11,9 +11,16 @@ class IndexController extends Controller
     // 首頁
     public function index(Request $request) {
     	
+        $this->assign("version","demo0005");
+
+        ///////////////////////////////////////
+
         $subDomain = $this->parseDomain();
 
-        dd($subDomain);
+        if ($subDomain == "chjdhbyk") {
+    	    return view('index.index',$this->data);
+        }
+
         $return = App::where("SETUP_URL",$subDomain)->first();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
@@ -21,9 +28,9 @@ class IndexController extends Controller
         }
 
         $this->assign("app_config",$return);
-        $this->assign("version","demo0005");
 
-    	return view('index.index',$this->data);
+        // 模版1
+    	return view('index.temple1',$this->data);
     }
 }
 
