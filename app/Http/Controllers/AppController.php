@@ -24,7 +24,7 @@ class AppController extends Controller
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = App::where("USER_ID",$session['user']['ID'])->get();
+        $return = App::where("USER_ID",$session['user']['ID'])->paginate($this->per_page);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');

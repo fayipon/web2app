@@ -106,6 +106,10 @@
 								@endif
 											
 									</table>
+
+									
+<!-- 显示分页链接 -->
+{{ $list->links() }}
 								</div>
 							</div>
 							<div class="row">

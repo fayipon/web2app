@@ -15,6 +15,8 @@ class Controller extends BaseController
     use DispatchesJobs, ValidatesRequests;
 	
     protected $data;
+
+	protected $per_page = 10;
     
 
     // 取得request
