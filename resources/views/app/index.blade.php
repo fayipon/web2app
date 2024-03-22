@@ -154,7 +154,7 @@
 						
 						
 						// 构建跳转链接
-						var url = "{{ url('/currentpage') }}?t=1";
+						var url = "{{ url('/app') }}?t=1";
 						if (appId != -1 ) url = url + "&APP_ID="+appId;
 						if (appStatus != -1 ) url = url + "&APP_STATUS="+appStatus;
 						
