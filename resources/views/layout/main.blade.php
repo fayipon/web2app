@@ -263,44 +263,14 @@
 										-->
 
 										<!-- user detail -->
-										<span class="d-block font-weight-medium text-truncate fs--16">John Doe</span>
-										<span class="d-block text-muted font-weight-medium text-truncate">john.doe@gmail.com</span>
-										<small class="d-block text-muted"><b>Last Login:</b> 2019-09-03 01:48</small>
+										<span class="d-block font-weight-medium text-truncate fs--16">{{ $session['user']['ACCOUNT'] ?? '' }}</span>
+										<small class="d-block text-muted"><b>最后登入:</b> {{ $session['user']['UPDATE_TIME'] ?? '' }}</small>
 
 									</div>
 
-									<div class="dropdown-divider"></div>
-
-									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
-										Notes
-										<small class="d-block text-muted">personal encypted notes</small>
-									</a>
-
-									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
-										<span class="badge badge-success float-end font-weight-normal mt-1">3 new</span>
-										Messages
-										<small class="d-block text-muted">internal messaging system</small>
-									</a>
-
-									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
-										<span class="badge badge-danger float-end font-weight-normal mt-1">1 unpaid</span>
-										Invoices
-										<small class="d-block text-muted">montly billing</small>
-									</a>
-
-									<a href="#!" class="dropdown-item text-truncate font-weight-medium">
-										Account Settings
-										<small class="d-block text-muted">profile, password and more...</small>
-									</a>
-
-									<a href="#!" class="dropdown-item text-truncate font-weight-medium">
-										Upgrade
-										<small class="d-block text-muted">upgrade your account</small>
-									</a>
-
 									<div class="dropdown-divider mb-0"></div>
 
-									<a href="#!" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
+									<a href="/logout" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
 										<i class="fi fi-power float-start"></i>
 										Log Out
 									</a>
