@@ -38,8 +38,8 @@
 													<label>
 														<select id="SEARCH_APP_STATUS" class="ml-3 custom-select custom-select-sm form-control form-control-sm">
 															<option value="-1">选择状态</option>
-															<option value="1" @if($item['STATUS'] == 1) selected @endif>上架</option>
-															<option value="0" @if($item['STATUS'] == 0) selected @endif>下架</option>
+															<option value="1" @if($item['STATUS'] == "1") selected @endif>上架</option>
+															<option value="0" @if($item['STATUS'] == "0") selected @endif>下架</option>
 														</select>
 													</label>
 												</div>
