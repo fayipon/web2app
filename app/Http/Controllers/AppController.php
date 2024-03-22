@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Pagination\Paginator;
+
 use App\Models\App;
 
 class AppController extends Controller
