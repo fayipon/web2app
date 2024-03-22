@@ -108,8 +108,8 @@
 									</table>
 
 									
-<!-- 显示分页链接 -->
-{{ $list->links('layout.pagination') }}
+
+
 								</div>
 							</div>
 							<div class="row">
@@ -117,37 +117,8 @@
 									<div class="dataTables_info ml-3"> 第1-10笔  共57笔</div>
 								</div>
 								<div class="col-sm-12 col-md-7">
-									<div class="dataTables_paginate paging_simple_numbers mr-3" id="rand_ijU_paginate">
-										<ul class="pagination">
-											<li class="paginate_button page-item previous disabled" id="rand_ijU_previous">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="0" tabindex="0" class="page-link">
-													<i class="fi fi-arrow-start fs--13"></i>
-												</a>
-											</li>
-											<li class="paginate_button page-item active">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-											</li>
-											<li class="paginate_button page-item ">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-											</li>
-											<li class="paginate_button page-item ">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-											</li>
-											<li class="paginate_button page-item ">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-											</li>
-											<li class="paginate_button page-item ">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-											</li>
-											<li class="paginate_button page-item ">
-												<a href="#" aria-controls="rand_ijU" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-											</li>
-											<li class="paginate_button page-item next" id="rand_ijU_next"><a href="#" aria-controls="rand_ijU" data-dt-idx="7" tabindex="0" class="page-link"><i class="fi fi-arrow-end fs--13"></i></a></li></ul></div></div></div></div>
-
-
-									
-									<div id="event_log"><!-- LOG ITEM/EVENT CLICK (keytable) --></div>
-
+								<!-- 显示分页链接 -->
+								{{ $list->links('layout.pagination') }}
 								</div>
 <!-- end new table -->
 
