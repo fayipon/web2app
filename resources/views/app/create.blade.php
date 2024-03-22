@@ -36,7 +36,6 @@
 										</div>
 										<div class="form-group">
 											<label>安装页图标 * </label>
-											<input class="form-control js-advancified" name="APP_SETUP_ICON" type="file" id="formFile" data-js-advanced-identifier="3721">
 											<input type="file" name="APP_SETUP_ICON" class="form-control" placeholder="请输入名称,2-30字符">
 											<small class="form-text text-muted">512x512尺寸, png格式,大小不超过1MB</small>
 										</div>
