@@ -37,12 +37,10 @@ Route::get('/channel-edit-page', 'App\Http\Controllers\ChannelController@edit_pa
 Route::post('/channel-edit', 'App\Http\Controllers\ChannelController@edit');
 Route::get('/channel-delist', 'App\Http\Controllers\ChannelController@delist');
 
+Route::get('/pv', 'App\Http\Controllers\PvController@index');
 Route::post('/api-pv', 'App\Http\Controllers\PvController@api');
 
-
 Route::get('/push', 'App\Http\Controllers\PushController@index');
-Route::get('/user', 'App\Http\Controllers\UserController@index');
-Route::get('/statistics', 'App\Http\Controllers\StatisticsController@index');
 
 Route::get('/download', 'App\Http\Controllers\DownloadController@index');
 Route::get('/manifest', 'App\Http\Controllers\ManifestController@index');

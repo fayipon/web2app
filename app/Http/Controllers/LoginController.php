@@ -65,16 +65,9 @@ class LoginController extends Controller
         return redirect('/dashboard');
     }
 
-    
-    // test
-    public function test(Request $request) {
-    	
-        $return = User::where("ACCOUNT","admin")->update([
-            "PASSWORD" => MD5('123qwe')
-        ]);
+    // logout
+    public function logout(Request $request) {
 
-        dd($return);
     }
-
 }
 

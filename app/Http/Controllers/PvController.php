@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Cookie;
 
-use App\Models\Channel;
 use App\Models\Pv;
 use App\Models\App;
 
@@ -18,13 +17,15 @@ class PvController extends Controller
         $this->isLogin();
 
         $input = $this->getRequest($request);
-        $session = Session::all();
         $this->assign("search",$input);
+        
+        $session = Session::all();
+        $this->assign("session", $session);
 
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = Channel::where("USER_ID",$session['user']['ID'])->get();
+        $return = Pv::orderBy("ID","DESC")->get();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');
@@ -32,8 +33,9 @@ class PvController extends Controller
         
         $this->assign("list",$return);
     	
-    	return view('channel.index',$this->data);
+    	return view('user.index',$this->data);
     }
+
 
 
     // api , ajax type

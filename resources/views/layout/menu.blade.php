@@ -50,7 +50,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/user">
+					<a class="nav-link" href="/pv">
 						<i class="fi fi-mollecules"></i>
 						用户管理
 					</a>
