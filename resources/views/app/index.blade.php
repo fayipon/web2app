@@ -27,7 +27,7 @@
 												<div id="rand_ijU_filter" class="dataTables_filter">
 													<label>
 														<select id="SEARCH_APP_ID" class="custom-select custom-select-sm form-control form-control-sm">
-															<option>选择应用</option>
+															<option value="-1">选择应用</option>
 														@foreach ($app_list as $item)
 															<option value="{{ $item['ID'] }}">{{ $item['APP_NAME'] }}</option>
 														@endforeach
@@ -37,7 +37,7 @@
 												<div class="dataTables_length">
 													<label>
 														<select id="SEARCH_APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
-															<option>选择状态</option>
+															<option value="-1">选择状态</option>
 															<option value="1">上架</option>
 															<option value="0">下架</option>
 														</select>
@@ -152,9 +152,15 @@
 						var appId = document.getElementById('SEARCH_APP_ID').value;
 						var appStatus = document.getElementById('SEARCH_APP_STATUS').value;
 						
-						// 打印到控制台
-						console.log('SEARCH_APP_id:', appId);
-						console.log('SEARCH_APP_STATUS:', appStatus);
+						
+						// 构建跳转链接
+						var url = "{{ url('/currentpage') }}?t=1";
+						if (appId != -1 ) url = url + "&APP_ID="+appId;
+						if (appStatus != -1 ) url = url + "&APP_STATUS="+appStatus;
+						
+						
+						// 跳转到链接
+						window.location.href = url;
 					}
 
 				</script>
