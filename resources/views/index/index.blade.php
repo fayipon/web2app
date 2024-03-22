@@ -118,21 +118,13 @@
 								<!-- about -->
 								<li class="nav-item">
 
-									<a class="nav-link scroll-to" href="#section_pricing">
-										PRICING
+									<a class="nav-link scroll-to" href="/login">
+										进入后台
 									</a>
 
 								</li>
 
 
-								<!-- about -->
-								<li class="nav-item">
-
-									<a class="nav-link scroll-to" href="#section_contact">
-										CONTACT US
-									</a>
-
-								</li>
 
 
 								<!-- social : mobile only (d-block d-sm-none)-->
