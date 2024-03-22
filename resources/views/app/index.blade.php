@@ -57,6 +57,7 @@
 											<div class="col-sm-12">
 												<table class="table-datatable table table-bordered table-hover table-striped js-datatableified dataTable dtr-inline" style="width: 1255px;">
 												
+								@if ($list->isEmpty())
 												<thead>
 													<tr>
 														<td class="text-center bg-light" colspan="9" style="height:250px;">
@@ -64,6 +65,10 @@
 														</td>
 													</tr>
 												</thead>
+								
+								@else
+
+									
 												<thead>
 													<tr style="background-color:#e1e1e1;">
 														<th style="width: 210px;">应用ID</th>
@@ -75,120 +80,30 @@
 														<th style="width: 210px;">备注</th>
 														<th style="width: 210px;">链接</th>
 														<th style="width: 210px;">操作</th>
-												</thead>
-												<tbody>
-												
+												</thead>	
+												<tbody>	
+									@foreach ($list as $item)
+
 													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
+														<td>{{ MD5($item['ID']) }}</td>
+														<td>{{ $item['APP_NAME'] }}</td>
+														<td>{{ $item['STATUS'] ? '上架' : '下架' }}</td>
+														<td>{{ $item['SCREEN_TYPE'] }}</td>
+														<td>--</td>
+														<td>{{ $item['CREATE_TIME'] }}</td>
+														<td>{{ $item['MARK'] }}</td>
+														<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top/download" target="_blank">连接</a></td>
+														<td>
+															<a href="/app-delist?id={{ $item['ID'] }}">{{ $item['STATUS'] ? '上架' : '下架' }}</a> 
+															统计 
+															<a href="/app-edit?id={{ $item['ID'] }}">编辑</a>
+															<a href="/app-delete?id={{ $item['ID'] }}">删除</a>
+														</td>
 													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-													<tr class="odd">
-														<td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-														<td>Accountant</td>
-														<td>Tokyo</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-														<td>33</td>
-														<td>2008/11/28</td>
-														<td>$162,700</td>
-													</tr>
-											</tbody>
+
+									@endforeach
+												</tbody>
+								@endif
 											
 									</table>
 								</div>
