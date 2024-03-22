@@ -114,7 +114,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 col-md-5">
-									<div class="dataTables_info ml-3"> 第1-10笔  共57笔</div>
+									<div class="dataTables_info ml-3">  </div>
 								</div>
 								<div class="col-sm-12 col-md-7">
 								<!-- 显示分页链接 -->
