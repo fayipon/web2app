@@ -21,8 +21,45 @@
 										data-enable-paging="true" 			false = show all, no pagination
 										data-items-per-page="10|15|30|50|100" 
 									-->
-									<div id="rand_ijU_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row mb-3"><div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start"><div id="rand_ijU_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="rand_ijU"></label></div><div class="dataTables_length" id="rand_ijU_length"><label><select name="rand_ijU_length" aria-controls="rand_ijU" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="100">100</option><option value="-1">All</option></select></label></div></div><div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-end"><div class="dt-buttons btn-group flex-wrap"> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-light" tabindex="0" aria-controls="rand_ijU" type="button" title="Column Visibility" aria-haspopup="true"><span>Column Visibility</span><span class="dt-down-arrow"></span></button></div> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle btn-sm btn-light pt--6 pb--6" tabindex="0" aria-controls="rand_ijU" type="button" aria-haspopup="true" aria-expanded="false"><span><i class="fi fi-squared-dots fs--18 line-height-1"></i></span><span class="dt-down-arrow"></span></button></div> </div></div></div><div class="row"><div class="col-sm-12"><table class="table-datatable table table-bordered table-hover table-striped js-datatableified dataTable dtr-inline" data-lng-empty="No data available in table" data-lng-page-info="Showing _START_ to _END_ of _TOTAL_ entries" data-lng-filtered="(filtered from _MAX_ total entries)" data-lng-loading="Loading..." data-lng-processing="Processing..." data-lng-search="Search..." data-lng-norecords="No matching records found" data-lng-sort-ascending=": activate to sort column ascending" data-lng-sort-descending=": activate to sort column descending" data-main-search="true" data-column-search="false" data-row-reorder="false" data-col-reorder="true" data-responsive="true" data-header-fixed="true" data-select-onclick="true" data-enable-paging="true" data-enable-col-sorting="true" data-autofill="false" data-group="false" data-items-per-page="10" data-enable-column-visibility="true" data-lng-column-visibility="Column Visibility" data-enable-export="true" data-lng-export="<i class='fi fi-squared-dots fs--18 line-height-1'></i>" data-lng-csv="CSV" data-lng-pdf="PDF" data-lng-xls="XLS" data-lng-copy="Copy" data-lng-print="Print" data-lng-all="All" data-export-pdf-disable-mobile="true" data-export="[&quot;csv&quot;, &quot;pdf&quot;, &quot;xls&quot;]" data-options="[&quot;copy&quot;, &quot;print&quot;]" data-custom-config="{}" id="rand_ijU" aria-describedby="rand_ijU_info" style="width: 1255px;"><thead>
-											<tr><th class="sorting sorting_asc" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="0" style="width: 210px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="1" style="width: 316px;" aria-label="Position: activate to sort column ascending">Position</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="2" style="width: 155px;" aria-label="Office: activate to sort column ascending">Office</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="3" style="width: 67px;" aria-label="Age: activate to sort column ascending">Age</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="4" style="width: 135px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="5" style="width: 120px;" aria-label="Salary: activate to sort column ascending">Salary</th></tr>
+									<div id="rand_ijU_wrapper" class="dataTables_wrapper dt-bootstrap4">
+										<div class="row mb-3">
+											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start">
+												<div id="rand_ijU_filter" class="dataTables_filter">
+													<label>
+														<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="rand_ijU">
+													</label>
+												</div>
+												<div class="dataTables_length" id="rand_ijU_length">
+													<label>
+														<select name="rand_ijU_length" aria-controls="rand_ijU" class="custom-select custom-select-sm form-control form-control-sm">
+															<option value="10">10</option>
+															<option value="15">15</option>
+															<option value="30">30</option>
+															<option value="50">50</option>
+															<option value="100">100</option>
+															<option value="-1">All</option>
+														</select>
+													</label>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-end">
+												<div class="dt-buttons btn-group flex-wrap"> 
+													<div class="btn-group">
+														<a href="/app-create" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-light" tabindex="0" aria-controls="rand_ijU" type="button" title="Column Visibility" aria-haspopup="true">
+															<span>创建应用</span>
+															<span class="dt-down-arrow"></span>
+														</a>
+													</div> 
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<table class="table-datatable table table-bordered table-hover table-striped js-datatableified dataTable dtr-inline" data-lng-empty="No data available in table" data-lng-page-info="Showing _START_ to _END_ of _TOTAL_ entries" data-lng-filtered="(filtered from _MAX_ total entries)" data-lng-loading="Loading..." data-lng-processing="Processing..." data-lng-search="Search..." data-lng-norecords="No matching records found" data-lng-sort-ascending=": activate to sort column ascending" data-lng-sort-descending=": activate to sort column descending" data-main-search="true" data-column-search="false" data-row-reorder="false" data-col-reorder="true" data-responsive="true" data-header-fixed="true" data-select-onclick="true" data-enable-paging="true" data-enable-col-sorting="true" data-autofill="false" data-group="false" data-items-per-page="10" data-enable-column-visibility="true" data-lng-column-visibility="Column Visibility" data-enable-export="true" data-lng-export="<i class='fi fi-squared-dots fs--18 line-height-1'></i>" data-lng-csv="CSV" data-lng-pdf="PDF" data-lng-xls="XLS" data-lng-copy="Copy" data-lng-print="Print" data-lng-all="All" data-export-pdf-disable-mobile="true" data-export="[&quot;csv&quot;, &quot;pdf&quot;, &quot;xls&quot;]" data-options="[&quot;copy&quot;, &quot;print&quot;]" data-custom-config="{}" id="rand_ijU" aria-describedby="rand_ijU_info" style="width: 1255px;">
+												<thead>
+													<tr>
+														<th class="sorting sorting_asc" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="0" style="width: 210px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+														<th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="1" style="width: 316px;" aria-label="Position: activate to sort column ascending">Position</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="2" style="width: 155px;" aria-label="Office: activate to sort column ascending">Office</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="3" style="width: 67px;" aria-label="Age: activate to sort column ascending">Age</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="4" style="width: 135px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="rand_ijU" rowspan="1" colspan="1" data-column-index="5" style="width: 120px;" aria-label="Salary: activate to sort column ascending">Salary</th></tr>
 										</thead>
 										
 										<tbody>
