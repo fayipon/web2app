@@ -68,6 +68,10 @@ class LoginController extends Controller
     // logout
     public function logout(Request $request) {
 
+        Session::flush();
+        
+        $this->success(__CLASS__, __FUNCTION__, "01");
+        return redirect('/login');
     }
 }
 
