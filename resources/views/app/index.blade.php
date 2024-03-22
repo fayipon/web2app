@@ -26,7 +26,7 @@
 											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start">
 												<div id="rand_ijU_filter" class="dataTables_filter">
 													<label>
-														<select id="APP_ID" class="custom-select custom-select-sm form-control form-control-sm">
+														<select id="SEARCH_APP_ID" class="custom-select custom-select-sm form-control form-control-sm">
 															<option>选择应用</option>
 														@foreach ($app_list as $item)
 															<option value="{{ $item['ID'] }}">{{ $item['APP_NAME'] }}</option>
@@ -36,7 +36,7 @@
 												</div>
 												<div class="dataTables_length">
 													<label>
-														<select id="APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
+														<select id="SEARCH_APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
 															<option>选择状态</option>
 															<option value="1">上架</option>
 															<option value="0">下架</option>
@@ -46,7 +46,7 @@
 
 												<div class="dataTables_length">
 													<label>
-														<a href="javascript:alert(1);" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-info" type="button" title="Column Visibility">
+														<a href="javascript:redirect();" class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis btn-sm btn-info ml-3" type="button" title="Column Visibility">
 															<span>搜寻</span>
 															<span class="dt-down-arrow"></span>
 														</a>
@@ -143,5 +143,20 @@
 
 				</div>
 				<!-- /MIDDLE -->
+
+				<!-- 跳转JS -->
+				<script>
+
+					function redirect() {
+
+						var appId = document.getElementById('SEARCH_APP_id').value;
+						var appStatus = document.getElementById('SEARCH_APP_STATUS').value;
+						
+						// 打印到控制台
+						console.log('SEARCH_APP_id:', appId);
+						console.log('SEARCH_APP_STATUS:', appStatus);
+					}
+
+				</script>
 
 @endsection
