@@ -272,7 +272,7 @@
 
 									<a href="/logout" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
 										<i class="fi fi-power float-start"></i>
-										Log Out
+										登出
 									</a>
 								</div>
 
