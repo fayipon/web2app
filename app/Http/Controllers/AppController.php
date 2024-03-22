@@ -96,8 +96,7 @@ class AppController extends Controller
             "SCREEN_TYPE",
             "APP_DESCRIPTION",
             "SETUP_TEMPLE",
-            "IS_ANYWHERE_INSTALL",
-            "MARK"
+            "IS_ANYWHERE_INSTALL"
         ];
 
         foreach ($check_columns as $v) {
@@ -116,6 +115,8 @@ class AppController extends Controller
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
+
+            dd($request);
             $this->error(__CLASS__, __FUNCTION__, "02");
             return redirect('/app');
         }
