@@ -71,15 +71,15 @@
 									
 												<thead>
 													<tr style="background-color:#e1e1e1;">
-														<th style="width: 210px;">应用ID</th>
-														<th style="width: 210px;">应用名称</th>
-														<th style="width: 210px;">状态</th>
-														<th style="width: 210px;">屏幕方向</th>
-														<th style="width: 210px;">安装量</th>
-														<th style="width: 210px;">创建时间</th>
-														<th style="width: 210px;">备注</th>
-														<th style="width: 210px;">链接</th>
-														<th style="width: 210px;">操作</th>
+														<th>应用ID</th>
+														<th>应用名称</th>
+														<th>状态</th>
+														<th>屏幕方向</th>
+														<th>安装量</th>
+														<th>创建时间</th>
+														<th>备注</th>
+														<th>链接</th>
+														<th>操作</th>
 												</thead>	
 												<tbody>	
 									@foreach ($list as $item)
