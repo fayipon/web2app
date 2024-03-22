@@ -62,15 +62,18 @@
     @endif
 
     
-				<!-- PUSH -->
-        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-        <script>
-        OneSignal.push(() => {
-            OneSignal.init({
-                appId: "cedb8b0e-ecff-465f-8f65-b49d851626de",
-            });
+<!-- 加载 OneSignal SDK -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
-            OneSignal.registerForPushNotifications();
-        });
-        </script>
+<!-- 初始化 OneSignal 并请求用户订阅 -->
+<script>
+OneSignal.push(() => {
+    OneSignal.init({
+        appId: "cedb8b0e-ecff-465f-8f65-b49d851626de", // OneSignal 应用程序的 ID
+    });
+
+    OneSignal.registerForPushNotifications(); // 请求用户订阅推送通知
+});
+</script>
+
 </html>
