@@ -115,8 +115,6 @@ class AppController extends Controller
         ]);
 
         if (!$request->has('APP_SETUP_ICON')) {
-
-            dd($request);
             $this->error(__CLASS__, __FUNCTION__, "02");
             return redirect('/app');
         }
