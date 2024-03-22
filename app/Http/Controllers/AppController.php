@@ -21,10 +21,13 @@ class AppController extends Controller
         $session = Session::all();
         $this->assign("session", $session);
 
+        $data = $input;
+        $data = $this->filiterUpper($data);
+
         //////////////////////////////////////
 
         // 取得当前用户的应用列表
-        $return = App::where("USER_ID",$session['user']['ID'])->get();
+        $return = App::where("USER_ID",$session['user']['ID'])->where($data)->get();
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');
@@ -32,7 +35,7 @@ class AppController extends Controller
         $this->assign("app_list",$return);
 
         // 取得当前用户的应用列表- 分页
-        $return = App::where("USER_ID",$session['user']['ID'])->paginate(2);
+        $return = App::where("USER_ID",$session['user']['ID'])->where($data)->paginate(2);
         if ($return === false) {
             $this->error(__CLASS__, __FUNCTION__, "01");
             return redirect('/dashboard');
