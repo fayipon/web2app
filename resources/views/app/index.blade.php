@@ -26,18 +26,23 @@
 											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start">
 												<div id="rand_ijU_filter" class="dataTables_filter">
 													<label>
-														<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="rand_ijU">
-													</label>
-												</div>
-												<div class="dataTables_length" id="rand_ijU_length">
-													<label>
-														<select name="rand_ijU_length" aria-controls="rand_ijU" class="custom-select custom-select-sm form-control form-control-sm">
+														<select id="APP_ID" class="custom-select custom-select-sm form-control form-control-sm">
+															<option>选择应用</option>
 															<option value="10">10</option>
 															<option value="15">15</option>
 															<option value="30">30</option>
 															<option value="50">50</option>
 															<option value="100">100</option>
 															<option value="-1">All</option>
+														</select>
+													</label>
+												</div>
+												<div class="dataTables_length" id="rand_ijU_length">
+													<label>
+														<select id="APP_STATUS" class="custom-select custom-select-sm form-control form-control-sm">
+															<option>选择状态</option>
+															<option value="1">上架</option>
+															<option value="0">下架</option>
 														</select>
 													</label>
 												</div>
