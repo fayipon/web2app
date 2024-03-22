@@ -102,7 +102,7 @@
 														<td>{{ $item['STATUS'] ? '上架' : '下架' }}</td>
 														<td>{{ $item['SCREEN_TYPE'] }}</td>
 														<td>--</td>
-														<td>{{ $item['CREATE_TIME'] }}</td>
+														<td>{{ \Carbon\Carbon::parse($item['CREATE_TIME'])->timezone('Asia/Shanghai')->format('Y-m-d H:i:s') }}</td>
 														<td>{{ $item['MARK'] }}</td>
 														<td><a href="https://{{ $item['SETUP_URL'] }}.chjdhbyk.top/download" target="_blank">链接</a></td>
 														<td>
