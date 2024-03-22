@@ -24,7 +24,14 @@
 									</div>
 
 									<span class="d-block text-muted text-truncate font-weight-medium">
-										搜寻条件区块	
+										<div class="form-label-group mb-3">
+											<div class="dropdown bootstrap-select form-control bs-select"><select id="select_options" class="form-control bs-select js-bselectified" data-style="select-form-control border" tabindex="null">
+												<option value="1">Option 1</option>
+												<option value="2">Option 2</option>
+												<option value="3">Option 3</option>
+											</select><button type="button" tabindex="-1" class="btn dropdown-toggle select-form-control border" data-toggle="dropdown" role="combobox" aria-owns="bs-select-22" aria-haspopup="listbox" aria-expanded="false" data-id="select_options" title="Option 1"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Option 1</div></div> </div></button><div class="dropdown-menu" style="max-height: 534.188px; overflow: hidden; min-height: 0px;"><div class="inner show" role="listbox" id="bs-select-22" tabindex="-1" aria-activedescendant="bs-select-22-0" style="max-height: 526.188px; overflow-y: auto; min-height: 0px;"><ul class="dropdown-menu inner show" role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="selected active"><a role="option" class="dropdown-item active selected" id="bs-select-22-0" tabindex="0" aria-setsize="3" aria-posinset="1" aria-selected="true"><span class=" bs-ok-default check-mark"></span><span class="text">Option 1</span></a></li><li><a role="option" class="dropdown-item" id="bs-select-22-1" tabindex="0"><span class=" bs-ok-default check-mark"></span><span class="text">Option 2</span></a></li><li><a role="option" class="dropdown-item" id="bs-select-22-2" tabindex="0"><span class=" bs-ok-default check-mark"></span><span class="text">Option 3</span></a></li></ul></div></div></div>
+											<label for="select_options">Bootstrap Select Vendor</label>
+										</div>
 									</span>
 
 								</div>
