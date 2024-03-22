@@ -26,7 +26,7 @@
 											<div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start">
 												<div id="rand_ijU_filter" class="dataTables_filter">
 													<label>
-														<select id="SEARCH_APP_ID" class="custom-select custom-select-sm form-control form-control-sm">
+														<select id="SEARCH_APP_ID" class="ml-3 custom-select custom-select-sm form-control form-control-sm">
 															<option value="-1">选择应用</option>
 														@foreach ($app_list as $item)
 															<option value="{{ $item['ID'] }}">{{ $item['APP_NAME'] }}</option>
