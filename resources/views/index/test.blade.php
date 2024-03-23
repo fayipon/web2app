@@ -19,8 +19,8 @@
                         const vapidPublicKey = `MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf
 9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==`;
 
-                        const applicationServerKey = urlBase64ToUint8Array(vapidPublicKey);
-                        console.log(applicationServerKey);
+                        const applicationServerKey = vapidPublicKey;
+                        
 
                         const subscription = await registration.pushManager.subscribe({
                             userVisibleOnly: true,
