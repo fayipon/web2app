@@ -35,7 +35,7 @@ class IndexController extends Controller
 
 
     // push 测试
-    public function test(Request $request) {
+    public function webpush(Request $request) {
         
         $this->assign("version","ddd");
 

@@ -53,5 +53,5 @@ Route::get('/report', 'App\Http\Controllers\ReportController@index');
 
 // WebPush
 
-Route::get('/webpush', 'App\Http\Controllers\IndexController@test');
+Route::get('/webpush', 'App\Http\Controllers\IndexController@webpush');
 Route::get('/subscribe', 'App\Http\Controllers\SubscriptionController@subscribe');
