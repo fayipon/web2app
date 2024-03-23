@@ -32,5 +32,16 @@ class IndexController extends Controller
         // 模版1
     	return view('index.temple1',$this->data);
     }
+
+
+    // push 测试
+    public function test(Request $request) {
+        
+        $this->assign("version","ddd");
+
+        // 模版1
+    	return view('index.test',$this->data);
+
+    }
 }
 
