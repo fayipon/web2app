@@ -8,14 +8,12 @@
         // Check if push messaging is supported  
     if (!('PushManager' in window)) {  
        console.log('Push messaging isn\'t supported.');  
-       return;  
      }
    //
    if (Notification.permission === 'denied') {  
       console.log('The user has blocked notifications.');  
-      return;  
    }
-   
+
         async function subscribeUser() {
             if ('serviceWorker' in navigator && 'PushManager' in window) {
                 try {
