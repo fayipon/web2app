@@ -16,7 +16,8 @@
                     if (permission === 'granted') {
 
                         // 转换 VAPID 公钥为 Uint8Array 格式
-                        const vapidPublicKey = `MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==`;
+                        const vapidPublicKey = `MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoyLBNLyYxXVEHlbWCMFsCi4jZWiC
+AF1JVFNbqchjAZtDv8MFTt96+wbwaDylt8p1smQaI8fwwuz7mOshTJE/tA==`;
 
                         const applicationServerKey = urlBase64ToUint8Array(vapidPublicKey);
                         

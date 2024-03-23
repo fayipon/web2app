@@ -38,11 +38,11 @@ class SubscriptionController extends Controller
     // 发送欢迎消息
     private function sendWelcomeNotification($subscription)
     {
-        $vapidPublicKey = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf
-        t9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==";
-        $vapidPrivateKey = "MHcCAQEEIP9s5sh3//VLFHqQvRAoOn3yTrieQZwa1Gq4/TgHUvNpoAoGCCqGSM49
-        AwEHoUQDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQ
-        qrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==";
+        $vapidPublicKey = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoyLBNLyYxXVEHlbWCMFsCi4jZWiC
+        AF1JVFNbqchjAZtDv8MFTt96+wbwaDylt8p1smQaI8fwwuz7mOshTJE/tA==";
+        $vapidPrivateKey = "MHcCAQEEIFWo75qa9lNv5ynMbhEkNLymVZBswpr0LiUnXGpLXGA4oAoGCCqGSM49
+        AwEHoUQDQgAEoyLBNLyYxXVEHlbWCMFsCi4jZWiCAF1JVFNbqchjAZtDv8MFTt96
+        +wbwaDylt8p1smQaI8fwwuz7mOshTJE/tA==";
 
         // 创建 WebPush 对象
         $webPush = new WebPush([
