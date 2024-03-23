@@ -65,15 +65,39 @@
 <!-- 加载 OneSignal SDK -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
-<!-- 初始化 OneSignal 并请求用户订阅 -->
+<!-- 初始化 用户订阅 -->
 <script>
-OneSignal.push(() => {
-    OneSignal.init({
-        appId: "cedb8b0e-ecff-465f-8f65-b49d851626de", // OneSignal 应用程序的 ID
-    });
+// Check if service worker is supported
+if ('serviceWorker' in navigator) {
+    // Register service worker
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+            // Subscription options
+            const subscribeOptions = {
+                userVisibleOnly: true,
+                applicationServerKey: '6R4HFqjBuHLsNk3xZyTcBaWGb0e09p1e2Hw1GEhipfw6KOxhFM8zfQJdxW3l8RDF3kDr5UBOh-EiLLbKxDxUHQ'
+            };
 
-    OneSignal.registerForPushNotifications(); // 请求用户订阅推送通知
-});
+            // Subscribe to push notifications
+            return registration.pushManager.subscribe(subscribeOptions);
+        })
+        .then(function(subscription) {
+            // Send subscription data to server
+            fetch('/subscribe', {
+                method: 'POST',
+                body: JSON.stringify(subscription),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        })
+        .catch(function(error) {
+            console.error('Service worker registration failed:', error);
+        });
+} else {
+    console.error('Service workers are not supported.');
+}
+
 </script>
 
 </html>
