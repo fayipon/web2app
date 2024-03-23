@@ -58,7 +58,7 @@ class SubscriptionController extends Controller
         );
 
         // 发送推送通知
-        $webPush->sendNotification($webPushSubscription, 'Welcome to our website!');
+        $webPush->sendOneNotification($webPushSubscription, 'Welcome to our website!');
 
         // 检查发送结果
         foreach ($webPush->flush() as $report) {
