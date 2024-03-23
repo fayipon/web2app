@@ -13,8 +13,7 @@
                     
                     const permission = await Notification.requestPermission();
                     if (permission === 'granted') {
-                        const publicKey = 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf\
-        t9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==';
+                        const publicKey = 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==';
                         
                         const applicationServerKey = urlBase64ToUint8Array(publicKey);
                         
