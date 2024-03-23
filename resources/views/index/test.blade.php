@@ -15,8 +15,15 @@
                     const permission = await Notification.requestPermission();
                     if (permission === 'granted') {
                         // Replace 'YOUR_PUBLIC_KEY' with your actual VAPID public key
-                        const applicationServerKey = urlBase64ToUint8Array('MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==');
                         
+
+                        // 转换 VAPID 公钥为 Uint8Array 格式
+                        const vapidPublicKey = 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf\
+                        t9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==';
+
+                        const applicationServerKey = urlBase64ToUint8Array(vapidPublicKey);
+                        console.log(applicationServerKey);
+
                         const subscription = await registration.pushManager.subscribe({
                             userVisibleOnly: true,
                             applicationServerKey: applicationServerKey
@@ -33,7 +40,7 @@
 
         window.addEventListener('load', subscribeUser);
 
-        // Function to convert base64 string to Uint8Array
+        // 将 Base64 编码的字符串转换为 Uint8Array 格式
         function urlBase64ToUint8Array(base64String) {
             const padding = '='.repeat((4 - base64String.length % 4) % 4);
             const base64 = (base64String + padding)
