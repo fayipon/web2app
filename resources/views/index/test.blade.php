@@ -15,7 +15,7 @@
                     if (permission === 'granted') {
                         const subscription = await registration.pushManager.subscribe({
                             userVisibleOnly: true,
-                            applicationServerKey: '6R4HFqjBuHLsNk3xZyTcBaWGb0e09p1e2Hw1GEhipfw6KOxhFM8zfQJdxW3l8RDF3kDr5UBOh-EiLLbKxDxUHQ'
+                            applicationServerKey: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ=='
                         });
                         sendSubscriptionToServer(subscription);
                     }

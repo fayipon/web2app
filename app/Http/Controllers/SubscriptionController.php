@@ -3,13 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Cookie;
-use Minishlink\WebPush\WebPush;
-use Minishlink\WebPush\Subscription;
-
-use App\Models\Pv;
-use App\Models\App;
+use Illuminate\Support\Facades\Config;
 
 class SubscriptionController extends Controller
 {
@@ -18,19 +12,15 @@ class SubscriptionController extends Controller
         // 验证请求数据
         $request->validate([
             'endpoint' => 'required',
-            'keys' => 'required',
+            'keys' => 'required|array',
+            'keys.p256dh' => 'required|string',
+            'keys.auth' => 'required|string',
         ]);
 
-        // 保存订阅信息到数据库或者其他存储方式
-        $subscription = [
-            'endpoint' => $request->input('endpoint'),
-            'keys' => $request->input('keys'),
-        ];
+        // 保存订阅信息到数据库或其他存储方式
 
-        // 在这里进行进一步的逻辑处理，例如保存到数据库等
+        // 进行其他逻辑处理，例如发送欢迎邮件、记录日志等
 
         return response()->json(['message' => 'Subscription received successfully'], 200);
     }
-
 }
-
