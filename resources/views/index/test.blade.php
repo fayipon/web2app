@@ -13,9 +13,12 @@
                     
                     const permission = await Notification.requestPermission();
                     if (permission === 'granted') {
+                        const vapidPublicKey = 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==';
+                        const applicationServerKey = urlBase64ToUint8Array(vapidPublicKey);
+                        
                         const subscription = await registration.pushManager.subscribe({
                             userVisibleOnly: true,
-                            applicationServerKey: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdft9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ=='
+                            applicationServerKey: applicationServerKey
                         });
                         sendSubscriptionToServer(subscription);
                     }
@@ -52,6 +55,23 @@
             } catch (err) {
                 console.error('Error sending subscription to server:', err);
             }
+        }
+
+        // Function to convert base64 string to Uint8Array
+        function urlBase64ToUint8Array(base64String) {
+            const padding = '='.repeat((4 - base64String.length % 4) % 4);
+            const base64 = (base64String + padding)
+                .replace(/\-/g, '+')
+                .replace(/_/g, '/');
+
+            const rawData = window.atob(base64);
+            const outputArray = new Uint8Array(rawData.length);
+
+            for (let i = 0; i < rawData.length; ++i) {
+                outputArray[i] = rawData.charCodeAt(i);
+            }
+
+            return outputArray;
         }
 
         window.addEventListener('load', subscribeUser);
