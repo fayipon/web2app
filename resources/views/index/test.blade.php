@@ -17,9 +17,9 @@
 
                         // 转换 VAPID 公钥为 Uint8Array 格式
                         const vapidPublicKey = `MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf
-9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==`;
+t9G+DZO9N85O115bjo0R+NPQqrAcVBICS9l6FAet271gaUfpOUqbt2O0JQ==`;
 
-                        const applicationServerKey = vapidPublicKey;
+                        const applicationServerKey = urlBase64ToUint8Array(vapidPublicKey);
                         
 
                         const subscription = await registration.pushManager.subscribe({
