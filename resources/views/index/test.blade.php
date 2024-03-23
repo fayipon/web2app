@@ -14,8 +14,6 @@
                     
                     const permission = await Notification.requestPermission();
                     if (permission === 'granted') {
-                        // Replace 'YOUR_PUBLIC_KEY' with your actual VAPID public key
-                        
 
                         // 转换 VAPID 公钥为 Uint8Array 格式
                         const vapidPublicKey = 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw3998pVnUXDZSg3ZRnATZc3Doqdf\
