@@ -39,7 +39,7 @@ class IndexController extends Controller
         
         $this->assign("version","ddd");
 
-    	return view('index.ccc',$this->data);
+    	return view('index.test',$this->data);
 
     }
 }
