@@ -39,7 +39,6 @@ class IndexController extends Controller
         
         $this->assign("version","ddd");
 
-        // 模版1
     	return view('index.test',$this->data);
 
     }
