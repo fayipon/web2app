@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/app-post',
+        '/web-api/auth/session/v2/verifySession',
     ];
 }
