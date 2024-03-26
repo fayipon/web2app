@@ -55,3 +55,9 @@ Route::get('/report', 'App\Http\Controllers\ReportController@index');
 
 Route::get('/webpush', 'App\Http\Controllers\IndexController@webpush');
 Route::get('/subscribe', 'App\Http\Controllers\SubscriptionController@subscribe');
+
+
+
+// PG 测试用
+
+Route::get('/web-api/auth/session/v2/verifySession', 'App\Http\Controllers\GamePGController@verifySession');
