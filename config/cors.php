@@ -15,20 +15,20 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['web-api/*'],
 
-    'allowed_methods' => ['*'],
-
-    'allowed_origins' => ['*'],
-
+    'allowed_methods' => ['GET', 'POST'],
+    
+    'allowed_origins' => ['https://chjdhbyk.top/'],
+    
     'allowed_origins_patterns' => [],
-
-    'allowed_headers' => ['*'],
-
+    
+    'allowed_headers' => ['Content-Type', 'X-Requested-With'],
+    
     'exposed_headers' => [],
-
+    
     'max_age' => 0,
-
+    
     'supports_credentials' => false,
 
 ];
