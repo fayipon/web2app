@@ -93,6 +93,28 @@ class GamePGController extends Controller
     }
 
     
+    public function get()
+    {
+        $config = [
+            "dt" => [
+                "fb" => [
+                    "is" => true,
+                    "bm" => 100,
+                    "t" => 0.6
+                ],
+                "wt" => [
+                    "mw" => 3,
+                    "bw" => 5,
+                    "mgw" => 15,
+                    "smgw" => 35
+                ],
+                // 继续添加其他键值对
+            ],
+            "err" => null
+        ];
+
+        return response()->json($config);
+    }
 
 }
 
