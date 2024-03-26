@@ -93,7 +93,19 @@ class GamePGController extends Controller
     }
 
     
-    public function get()
+    public function getGameName()
+    {
+        $gameData = [
+            "dt" => [
+                "31" => "Baccarat Deluxe"
+            ],
+            "err" => null
+        ];
+
+        return response()->json($gameData);
+    }
+
+    public function getGameInfo()
     {
         $config = [
             "dt" => [

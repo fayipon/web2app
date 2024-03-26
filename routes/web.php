@@ -63,5 +63,8 @@ Route::get('/subscribe', 'App\Http\Controllers\SubscriptionController@subscribe'
 Route::get('/web-api/auth/session/v2/verifySession', 'App\Http\Controllers\GamePGController@verifySession');
 Route::post('/web-api/auth/session/v2/verifySession', 'App\Http\Controllers\GamePGController@verifySession');
 
-Route::get('/game-api/gem-saviour-conquest/v2/GameInfo/Get', 'App\Http\Controllers\GamePGController@get');
-Route::post('/game-api/gem-saviour-conquest/v2/GameInfo/Get', 'App\Http\Controllers\GamePGController@get');
+Route::get('/game-api/gem-saviour-conquest/v2/GameInfo/Get', 'App\Http\Controllers\GamePGController@getGameInfo');
+Route::post('/game-api/gem-saviour-conquest/v2/GameInfo/Get', 'App\Http\Controllers\GamePGController@getGameInfo');
+
+Route::get('/web-api/game-proxy/v2/GameName/Get', 'App\Http\Controllers\GamePGController@getGameName');
+Route::post('/web-api/game-proxy/v2/GameName/Get', 'App\Http\Controllers\GamePGController@getGameName');
