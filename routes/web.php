@@ -83,4 +83,8 @@ Route::get('/web-api/game-proxy/v2/BetSummary/Get', 'App\Http\Controllers\GamePG
 Route::post('/web-api/game-proxy/v2/BetSummary/Get', 'App\Http\Controllers\GamePGController@getBetSummary');
 
 
+Route::get('/web-api/game-proxy/v2/GameWallet/Get', 'App\Http\Controllers\GamePGController@getGameWallet');
+Route::post('/web-api/game-proxy/v2/GameWallet/Get', 'App\Http\Controllers\GamePGController@getGameWallet');
+
+
 

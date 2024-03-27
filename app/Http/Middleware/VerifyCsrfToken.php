@@ -20,5 +20,6 @@ class VerifyCsrfToken extends Middleware
         '/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds',
         '/web-api/game-proxy/v2/BetHistory/Get',
         '/web-api/game-proxy/v2/BetSummary/Get',
+        '/web-api/game-proxy/v2/GameWallet/Get',
     ];
 }
