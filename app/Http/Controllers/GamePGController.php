@@ -2134,7 +2134,7 @@ class GamePGController extends Controller
       $random_bet_info = $this->getRandomBetInfo(35, 2, 12);
 
       // 连线数据
-      $continuous_regions = find_continuous_regions($random_bet_info);
+      $continuous_regions = $this->find_continuous_regions($random_bet_info);
 
       $json_str = '{
         "dt": {
