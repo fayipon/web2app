@@ -4719,14 +4719,17 @@ class GamePGController extends Controller
 // 计算每一列与前面列出现相同数字的位置的函数
 function findMatchingGroups($map) {
 
+  $map_data = array();
   foreach ($map as $k => $v) {
 
     $y = $k%6;
     $x = floor($k/6);
 
-    echo "[".$x.", ".$y."] " . $map[$k] . "<br>";
+    $map_data[$x][$y] = $map[$k];
+
   } 
 
+  dd($map_data);
 }
 
 
