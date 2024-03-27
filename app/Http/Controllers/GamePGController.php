@@ -4725,16 +4725,11 @@ function findMatchingGroups($map) {
   // 遍历每一列（每6个元素为一列）
   for ($col = 0; $col < 4; $col++) { // 由于只需要检查前三列，所以这里是小于4
       // 遍历地图数组，检查相邻的三列是否存在相同数字
-      for ($i = 0; $i < $length - 18; $i++) { // 由于要检查相邻三列，所以这里是长度减去18
+      for ($i = 0; $i < 6; $i++) {
           // 获取当前列的索引
           $index1 = $col * 6 + $i;
           $index2 = ($col + 1) * 6 + $i;
           $index3 = ($col + 2) * 6 + $i;
-
-          // 检查索引是否越界
-          if ($index1 >= $length || $index2 >= $length || $index3 >= $length) {
-              break;
-          }
 
           // 检查相邻的三列中是否存在相同数字
           if ($map[$index1] == $map[$index2] && $map[$index1] == $map[$index3]) {
@@ -4745,6 +4740,9 @@ function findMatchingGroups($map) {
           }
       }
   }
+
+  return $matchingPositions;
+}
 
   return $matchingPositions;
 }
