@@ -4697,37 +4697,51 @@ class GamePGController extends Controller
 
   protected function test() {
 
-    $mapStr = "[4,6,8,5,8,5,12,4,9,5,3,5,2,12,11,12,11,5,7,2,5,6,5,5,4,4,11,7,7,9,2,4,7,4,4,12]";
+    $mapStr = "[
+      4,6,8,5,8,5,
+      12,4,9,5,3,5,
+      2,12,11,12,11,5,
+      7,2,5,6,5,5,
+      4,4,11,7,7,9,
+      2,4,7,4,4,12
+      ]";
     
     $map = json_decode($mapStr, true);
 
-    // 调用函数并打印结果
-    $result = $this->findMatchingGroups($map);
-    echo "第一列、第二列和第三列中出现相同数字的组合：" . PHP_EOL;
-    foreach ($result as $group) {
-        echo "[" . implode(', ', $group) . "]" . PHP_EOL;
-    }
+// 调用函数并打印结果
+$result = $this->convertAndFindMatchingGroups($map);
+echo "每一列中出现相同数字的组合：" . PHP_EOL;
+foreach ($result as $group) {
+    echo "[" . implode(', ', $group) . "]" . PHP_EOL;
+}
 
-    dd($result);
+    dd($map);
   }
   
-// 计算第一列、第二列和第三列中出现相同数字的组合
-protected function findMatchingGroups($map) {
-  $matchingGroups = [];
+  // 转换数组并查找相同数字组合的函数
+  function convertAndFindMatchingGroups($map) {
+    $matchingGroups = [];
 
-  // 遍历地图，每次跳过3个元素，即遍历每一列
-  for ($i = 0; $i < count($map); $i += 3) {
-      $col1 = $map[$i];
-      $col2 = $map[$i + 1];
-      $col3 = $map[$i + 2];
+    // 将一维数组转换为6x6的二维数组
+    $map2d = [];
+    for ($i = 0; $i < 6; $i++) {
+        $map2d[] = array_slice($map, $i * 6, 6);
+    }
 
-      // 判断相邻列中是否有相同的数字
-      if ($col1 == $col2 && $col1 == $col3) {
-          $matchingGroups[] = [$col1, $col2, $col3];
-      }
+    // 遍历每一列
+    for ($col = 0; $col < 6; $col++) {
+        $colData = array_column($map2d, $col); // 获取当前列的数据
+
+        // 判断相邻列中是否有相同的数字
+        for ($i = 0; $i < count($colData) - 2; $i++) {
+            if ($colData[$i] == $colData[$i + 1] && $colData[$i] == $colData[$i + 2]) {
+                $matchingGroups[] = [$colData[$i], $colData[$i + 1], $colData[$i + 2]];
+            }
+        }
+    }
+
+    return $matchingGroups;
   }
 
-  return $matchingGroups;
-}
 }
 
