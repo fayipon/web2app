@@ -4670,5 +4670,37 @@ class GamePGController extends Controller
       $data = json_decode($json_str);
       return response()->json($data);
     }
+
+    // /web-api/game-proxy/v2/GameWallet/Get
+    public function getGameWallet(Request $request) {
+
+      $json_str = '{
+        "dt": {
+          "cc": "PGC",
+          "tb": 99967.6,
+          "pb": 0,
+          "cb": 99967.6,
+          "tbb": 0,
+          "tfgb": 0,
+          "rfgc": 0,
+          "inbe": false,
+          "infge": false,
+          "iebe": false,
+          "iefge": false,
+          "ch": {
+            "k": "0_C",
+            "cid": 0,
+            "cb": 99967.6
+          },
+          "p": null,
+          "ocr": null
+        },
+        "err": null
+      }';
+
+      $data = json_decode($json_str);
+      return response()->json($data);
+    }
+
 }
 
