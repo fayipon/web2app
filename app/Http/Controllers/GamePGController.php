@@ -4731,6 +4731,11 @@ function findMatchingGroups($map) {
           $index2 = ($col + 1) * 6 + $i;
           $index3 = ($col + 2) * 6 + $i;
 
+          // 检查索引是否越界
+          if ($index1 >= $length || $index2 >= $length || $index3 >= $length) {
+              break;
+          }
+
           // 检查相邻的三列中是否存在相同数字
           if ($map[$index1] == $map[$index2] && $map[$index1] == $map[$index3]) {
               // 将相同数字组合的位置存储到结果数组中
