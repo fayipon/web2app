@@ -4675,6 +4675,9 @@ class GamePGController extends Controller
           }
       }
   
+      $str = json_encode($regions);
+
+      if ($str == "[]") return "null";
       return json_encode($regions);
   }
 
@@ -4687,6 +4690,10 @@ class GamePGController extends Controller
         $key = 10;
         $result[$key][] = [$index];
     }
+
+    $str = json_encode($result);
+
+    if ($str == "[]") return "null";
     return json_encode($result);
   }
 }
