@@ -68,3 +68,11 @@ Route::post('/game-api/gem-saviour-conquest/v2/GameInfo/Get', 'App\Http\Controll
 
 Route::get('/web-api/game-proxy/v2/GameName/Get', 'App\Http\Controllers\GamePGController@getGameName');
 Route::post('/web-api/game-proxy/v2/GameName/Get', 'App\Http\Controllers\GamePGController@getGameName');
+
+// gem-saviour-conquest spin event
+Route::get('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GamePGController@getSpinInfo');
+Route::post('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GamePGController@getSpinInfo');
+
+
+
+
