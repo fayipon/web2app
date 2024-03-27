@@ -4736,6 +4736,21 @@ function findMatchingGroups($map) {
   // 找到三个集合的交集
   $common_elements = array_keys(array_intersect_key($set1, $set2, $set3));
 
+  if (count($common_elements) > 0) {
+    $set4 = array_flip($map_data[3]);
+    $common_elements = array_keys(array_intersect_key($set1, $set2, $set3, $set4));
+  }
+
+  if (count($common_elements) > 0) {
+    $set5 = array_flip($map_data[4]);
+    $common_elements = array_keys(array_intersect_key($set1, $set2, $set3, $set4, $set5));
+  }
+
+  if (count($common_elements) > 0) {
+    $set6 = array_flip($map_data[5]);
+    $common_elements = array_keys(array_intersect_key($set1, $set2, $set3, $set4, $set5, $set6));
+  }
+
   dd($common_elements);
 }
 
