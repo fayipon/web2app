@@ -92,8 +92,8 @@ class GamePGController extends Controller
         return response()->json($data);
     }
 
-    
-    public function getGameName() {
+    // 取得游戏名称
+    public function getGameName(Request $request) {
         $gameData = [
             "dt" => [
                 "31" => "Baccarat Deluxe"
@@ -104,7 +104,8 @@ class GamePGController extends Controller
         return response()->json($gameData);
     }
 
-    public function getGameInfo() {
+    // 取得游戏内容
+    public function getGameInfo(Request $request) {
         $json_str = '{
             "dt": {
               "fb": {
@@ -158,21 +159,21 @@ class GamePGController extends Controller
                     3,
                     3,
                     3,
-                    0,
-                    0,
-                    0,
+                    1,
+                    1,
+                    1,
                     6,
                     11,
                     1,
                     2,
-                    0,
+                    1,
                     9,
                     12,
                     7,
                     7,
                     4,
                     4,
-                    0,
+                    1,
                     5,
                     5,
                     5,
@@ -375,7 +376,13 @@ class GamePGController extends Controller
 
     }
 
-    public function getSpinInfo() {
+    // 得到初始化的牌面
+    public function getResurceInfo(Request $request) {
+
+    }
+
+    // 投注结果
+    public function getSpinInfo(Request $request) {
       $json_str = '{
         "dt": {
           "si": {
@@ -693,5 +700,7 @@ class GamePGController extends Controller
       return response()->json($spinData);
 
     }
+
+
 }
 
