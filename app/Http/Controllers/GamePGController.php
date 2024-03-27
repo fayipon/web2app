@@ -4737,10 +4737,10 @@ function findMatchingGroups($map) {
   $pos = 0;
   foreach ($common_elements as $k => $elements) {
       foreach ($elements as $element) {
-          if (!in_array($element, $result)) {
-              $result[] = $element;
-              $pos = $k;
-          }
+        $pos = $k;
+        if (!in_array($element, $result)) {
+          $result[] = $element;
+        }
       }
   }
     
