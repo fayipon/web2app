@@ -92,7 +92,7 @@ class GamePGController extends Controller
         return response()->json($data);
     }
 
-    // 
+    // 取得游戏名称 (意味不明)
     public function getGameName(Request $request) {
         $gameData = [
             "dt" => [
@@ -104,7 +104,7 @@ class GamePGController extends Controller
         return response()->json($gameData);
     }
 
-    // 
+    // 意味不明  
     public function getGameInfo(Request $request) {
         $json_str = '{
             "dt": {
@@ -2129,49 +2129,15 @@ class GamePGController extends Controller
 
     // 投注结果
     public function getSpinInfo(Request $request) {
+
+      $random_bet_info = $this->getRandomBetInfo(35, 0, 12);
+
       $json_str = '{
         "dt": {
           "si": {
             "wp": null,
             "lw": null,
-            "orl": [
-              10,
-              9,
-              6,
-              4,
-              5,
-              9,
-              6,
-              6,
-              6,
-              7,
-              9,
-              9,
-              10,
-              10,
-              10,
-              11,
-              11,
-              10,
-              12,
-              12,
-              12,
-              12,
-              12,
-              3,
-              6,
-              6,
-              4,
-              4,
-              4,
-              4,
-              8,
-              10,
-              7,
-              7,
-              7,
-              7
-            ],
+            "orl": '.$random_bet_info.',
             "bwp": null,
             "now": 2916,
             "nowpr": [
@@ -2375,44 +2341,7 @@ class GamePGController extends Controller
             "hashr": "0:10;6;10;12;6;8#9;6;10;12;6;10#6;6;10;12;4;7#4;7;11;12;4;7#5;9;11;12;4;7#9;9;10;3;4;7#MV#12.0#MT#1#MG#0#",
             "ml": 2,
             "cs": 0.3,
-            "rl": [
-              10,
-              9,
-              6,
-              4,
-              5,
-              9,
-              6,
-              6,
-              6,
-              7,
-              9,
-              9,
-              10,
-              10,
-              10,
-              11,
-              11,
-              10,
-              12,
-              12,
-              12,
-              12,
-              12,
-              3,
-              6,
-              6,
-              4,
-              4,
-              4,
-              4,
-              8,
-              10,
-              7,
-              7,
-              7,
-              7
-            ],
+            "rl": '.$random_bet_info.',
             "sid": "1772822014693670400",
             "psid": "1772822014693670400",
             "st": 1,
@@ -2447,7 +2376,7 @@ class GamePGController extends Controller
 
     }
 
-    // 取得投注纪录  https://api.pg-demo.com/web-api/game-proxy/v2/BetHistory/Get
+    // 取得投注纪录 
     public function getBetHistory(Request $request) {
 
       $json_str = '{
@@ -4650,7 +4579,7 @@ class GamePGController extends Controller
       return response()->json($betHistory);
     }
 
-    //  '/web-api/game-proxy/v2/BetSummary/Get',
+    // 取得投注纪录 加总
     public function getBetSummary(Request $request) {
 
       $json_str = '{
@@ -4671,7 +4600,7 @@ class GamePGController extends Controller
       return response()->json($data);
     }
 
-    // /web-api/game-proxy/v2/GameWallet/Get
+    // 取得钱包
     public function getGameWallet(Request $request) {
 
       $json_str = '{
@@ -4702,5 +4631,19 @@ class GamePGController extends Controller
       return response()->json($data);
     }
 
+
+
+    // 随机产生投注结果
+    protected function getRandomBetInfo($limit, $min, $max) {
+
+      // 循环填充数组
+      for ($i = 0; $i < $limit; $i++) {
+        // 生成随机数并添加到数组中
+        $reponse[] = mt_rand($min, $max);
+      }
+
+      return json_encode($reponse);
+
+    }
 }
 
