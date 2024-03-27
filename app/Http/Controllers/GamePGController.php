@@ -2136,13 +2136,16 @@ class GamePGController extends Controller
       // 连线数据
       $continuous_regions = $this->find_continuous_regions($random_bet_info);
 
+      // 赔率+连线
+      $rate_cr = $this->convert_to_associative_array($continuous_regions);
+
       $json_str = '{
         "dt": {
           "si": {
             "wp": null,
             "lw": null,
             "orl": '.json_encode($random_bet_info).',
-            "bwp": null,
+            "bwp": '.$rate_cr.',
             "now": 2916,
             "nowpr": [
               6,
@@ -4673,6 +4676,21 @@ class GamePGController extends Controller
       }
   
       return json_encode($regions);
+  }
+
+  // 赔率联线
+  protected function convert_to_associative_array($indexes) {
+    $indexes = json_decode($indexes);
+
+    $result = [];
+    foreach ($indexes as $index) {
+        $key = intval($index / 6);
+        if (!isset($result[$key])) {
+            $result[$key] = [];
+        }
+        $result[$key][] = [$index];
+    }
+    return json_encode($result);
   }
 }
 
