@@ -4655,25 +4655,25 @@ class GamePGController extends Controller
 
     // 计算连线 预设6x6
     protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
+
       $regions = [];
-  
-      for ($i = 0; $i < $rows; $i++) {
-          $start_index = $i * $columns;
-          $end_index = ($i + 1) * $columns - 1;
-  
+
+      for ($i = 0; $i < $columns; $i++) {
+          $start_index = $i;
+          $end_index = count($map_data) - $columns + $i;
           $current_region = [];
   
-          for ($j = $start_index; $j < $end_index; $j++) {
-              if ($map_data[$j] == $map_data[$j + 1]) {
+          for ($j = $start_index; $j <= $end_index; $j += $columns) {
+              if ($j + $columns < count($map_data) && $map_data[$j] == $map_data[$j + $columns]) {
                   $current_region[] = $j;
-                  $current_region[] = $j + 1;
+                  $current_region[] = $j + $columns;
               }
           }
   
           if (!empty($current_region)) {
               $regions = array_merge($regions, $current_region);
           }
-      }
+      }  
   
       $str = json_encode($regions);
 
