@@ -2130,6 +2130,7 @@ class GamePGController extends Controller
     // 投注结果
     public function getSpinInfo(Request $request) {
 
+      $this->test();
       // 随机投注结果
       $random_bet_info = $this->getRandomBetInfo(36, 2, 12);
 
@@ -4690,11 +4691,15 @@ class GamePGController extends Controller
             }
         }
 
-      $str = json_encode($result);
-
-      if ($str == "[]") return "null";
-      return json_encode($result);
+      return $result;
   }
 
+
+  protected function test() {
+
+    $str = "[4,6,8,5,8,5,12,4,9,5,3,5,2,12,11,12,11,5,7,2,5,6,5,5,4,4,11,7,7,9,2,4,7,4,4,12]";
+    $return = $this->findCommonNumbers($str);
+    dd($return);
+  }
 }
 
