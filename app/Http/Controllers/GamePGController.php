@@ -4724,7 +4724,7 @@ function findMatchingGroups($map) {
     $x = $k%6;
     $y = floor($k/6);
 
-    dd($x,$y);
+    echo "[".$x.", ".$y."] " . $map[$k] . "<br>";
   } 
 
 }
