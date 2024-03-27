@@ -2142,7 +2142,7 @@ class GamePGController extends Controller
           "si": {
             "wp": null,
             "lw": null,
-            "orl": '.$random_bet_info.',
+            "orl": '.json_encode($random_bet_info).',
             "bwp": null,
             "now": 2916,
             "nowpr": [
@@ -2346,7 +2346,7 @@ class GamePGController extends Controller
             "hashr": "0:10;6;10;12;6;8#9;6;10;12;6;10#6;6;10;12;4;7#4;7;11;12;4;7#5;9;11;12;4;7#9;9;10;3;4;7#MV#12.0#MT#1#MG#0#",
             "ml": 2,
             "cs": 0.3,
-            "rl": '.$random_bet_info.',
+            "rl": '.json_encode($random_bet_info).',
             "sid": "1772822014693670400",
             "psid": "1772822014693670400",
             "st": 1,
@@ -4647,7 +4647,7 @@ class GamePGController extends Controller
         $reponse[] = mt_rand($min, $max);
       }
 
-      return json_encode($reponse);
+      return $reponse;
 
     }
 
