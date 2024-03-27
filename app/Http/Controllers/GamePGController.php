@@ -4663,7 +4663,7 @@ class GamePGController extends Controller
           for ($j = $start_index; $j <= $end_index; $j++) {
               // 如果当前值不是数字，则跳过
               if (!is_numeric($map_data[$j])) {
-                  dd($j,$map_data[$j]);
+                  dd($map_data,$j,$map_data[$j]);
               }
   
               // 如果当前值与前一个值连续，将其添加到当前区域中
