@@ -4715,23 +4715,23 @@ class GamePGController extends Controller
     dd($map);
   }
   
-// 计算相同数字组合的位置的函数
+// 计算每一列与前一列出现相同数字的位置的函数
 function findMatchingGroups($map) {
   $matchingPositions = [];
 
   // 遍历每一列
-  for ($col = 0; $col < 6; $col++) {
-      // 每一列中的数字与其后两个数字比较，找出相同数字组合的位置
-      for ($i = 0; $i < 4; $i++) { // 因为我们至少需要3个数字来形成组合，所以遍历到倒数第三个数字
-          $index1 = $col + $i * 6;
-          $index2 = $index1 + 6;
-          $index3 = $index2 + 6;
+  for ($col = 1; $col < 6; $col++) { // 从第二列开始
+      // 当前列的数字
+      $currentColumn = array_slice($map, $col * 6, 6);
 
-          // 如果这三个位置上的数字相同，记录这个组合的位置
-          if ($map[$index1] == $map[$index2] && $map[$index1] == $map[$index3]) {
-              $matchingPositions[] = $index1;
-              $matchingPositions[] = $index2;
-              $matchingPositions[] = $index3;
+      // 前一列的数字
+      $previousColumn = array_slice($map, ($col - 1) * 6, 6);
+
+      // 检查当前列中的数字是否在前一列中出现过
+      foreach ($currentColumn as $index => $number) {
+          if (in_array($number, $previousColumn)) {
+              // 如果当前列中的数字在前一列中出现过，记录其位置
+              $matchingPositions[] = $col * 6 + $index;
           }
       }
   }
