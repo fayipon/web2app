@@ -4697,7 +4697,10 @@ class GamePGController extends Controller
 
   protected function test() {
 
-    $map = "[4,6,8,5,8,5,12,4,9,5,3,5,2,12,11,12,11,5,7,2,5,6,5,5,4,4,11,7,7,9,2,4,7,4,4,12]";
+    $mapStr = "[4,6,8,5,8,5,12,4,9,5,3,5,2,12,11,12,11,5,7,2,5,6,5,5,4,4,11,7,7,9,2,4,7,4,4,12]";
+    
+    $map = json_decode($mapStr, true);
+
     // 调用函数并打印结果
     $result = $this->findMatchingGroups($map);
     echo "第一列、第二列和第三列中出现相同数字的组合：" . PHP_EOL;
