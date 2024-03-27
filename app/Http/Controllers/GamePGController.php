@@ -4744,8 +4744,6 @@ function findMatchingGroups($map) {
   return $matchingPositions;
 }
 
-  return $matchingPositions;
-}
 
 }
 
