@@ -78,4 +78,8 @@ Route::get('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\C
 Route::post('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\Controllers\GamePGController@getResurceInfo');
 
 
+Route::get('/web-api/game-proxy/v2/BetHistory/Get', 'App\Http\Controllers\GamePGController@getBetHistory');
+Route::post('/web-api/game-proxy/v2/BetHistory/Get', 'App\Http\Controllers\GamePGController@getBetHistory');
+
+
 
