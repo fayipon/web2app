@@ -4729,7 +4729,14 @@ function findMatchingGroups($map) {
 
   } 
 
-  dd($map_data);
+  $set1 = array_flip($map_data[0]);
+  $set2 = array_flip($map_data[1]);
+  $set3 = array_flip($map_data[2]);
+
+  // 找到三个集合的交集
+  $common_elements = array_keys(array_intersect_key($set1, $set2, $set3));
+
+  dd($common_elements);
 }
 
 
