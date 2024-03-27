@@ -4733,7 +4733,22 @@ function findMatchingGroups($map) {
   }
 
 
-  dd($common_elements);
+    // 找出在所有列中同时出现的数字
+    $result = [];
+    foreach ($common_elements[0] as $element) {
+        $found_in_all = true;
+        for ($i = 1; $i < count($common_elements); $i++) {
+            if (!in_array($element, $common_elements[$i])) {
+                $found_in_all = false;
+                break;
+            }
+        }
+        if ($found_in_all) {
+            $result[] = $element;
+        }
+    }
+    
+  dd($common_elements,$result);
 }
 
 
