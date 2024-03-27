@@ -4719,21 +4719,16 @@ class GamePGController extends Controller
 function findMatchingGroups($map) {
   $matchingPositions = [];
 
-  // 计算地图数组的长度
-  $length = count($map);
+  // 遍历每一列
+  for ($col = 0; $col < 6; $col++) {
+      // 每一列中的数字与其后两个数字比较，找出相同数字组合的位置
+      for ($i = 0; $i < 4; $i++) { // 因为我们至少需要3个数字来形成组合，所以遍历到倒数第三个数字
+          $index1 = $col + $i * 6;
+          $index2 = $index1 + 6;
+          $index3 = $index2 + 6;
 
-  // 遍历每一列（每6个元素为一列）
-  for ($col = 0; $col < 4; $col++) { // 由于只需要检查前三列，所以这里是小于4
-      // 遍历地图数组，检查相邻的三列是否存在相同数字
-      for ($i = 0; $i < 6; $i++) {
-          // 获取当前列的索引
-          $index1 = $col * 6 + $i;
-          $index2 = ($col + 1) * 6 + $i;
-          $index3 = ($col + 2) * 6 + $i;
-
-          // 检查相邻的三列中是否存在相同数字
+          // 如果这三个位置上的数字相同，记录这个组合的位置
           if ($map[$index1] == $map[$index2] && $map[$index1] == $map[$index3]) {
-              // 将相同数字组合的位置存储到结果数组中
               $matchingPositions[] = $index1;
               $matchingPositions[] = $index2;
               $matchingPositions[] = $index3;
@@ -4743,7 +4738,6 @@ function findMatchingGroups($map) {
 
   return $matchingPositions;
 }
-
 
 }
 
