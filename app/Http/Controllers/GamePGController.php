@@ -4654,7 +4654,9 @@ class GamePGController extends Controller
     }
 
     // 计算连线 预设6x6
-    protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
+    protected function find_continuous_regions($map) {
+      $rowCount = 6;
+      $colCount = 6;
       $result = [];
       
       // Initialize an array to keep track of seen numbers in each row
