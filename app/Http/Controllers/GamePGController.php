@@ -2131,7 +2131,7 @@ class GamePGController extends Controller
     public function getSpinInfo(Request $request) {
 
       // 随机投注结果
-      $random_bet_info = $this->getRandomBetInfo(35, 2, 12);
+      $random_bet_info = $this->getRandomBetInfo(36, 2, 12);
 
       // 连线数据
       $continuous_regions = $this->find_continuous_regions($random_bet_info);
