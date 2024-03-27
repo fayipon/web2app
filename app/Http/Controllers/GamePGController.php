@@ -2130,7 +2130,7 @@ class GamePGController extends Controller
     // 投注结果
     public function getSpinInfo(Request $request) {
 
-      $random_bet_info = $this->getRandomBetInfo(35, 0, 12);
+      $random_bet_info = $this->getRandomBetInfo(35, 1, 12);
 
       $json_str = '{
         "dt": {
