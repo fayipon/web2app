@@ -4718,30 +4718,17 @@ class GamePGController extends Controller
 
 // 计算每一列与前面列出现相同数字的位置的函数
 function findMatchingGroups($map) {
+  
+  $map_data = array_chunk($map, 6); // 将一维数组分成二维数组，每个子数组包含6个元素
 
-  $map_data = array();
-  foreach ($map as $k => $v) {
+  $common_elements = array();
+  $set = array_flip($map_data[0]); // 初始化第一列的集合
 
-    $y = $k%6;
-    $x = floor($k/6);
-
-    $map_data[$x][$y] = $map[$k];
-
-  } 
-
-  $set1 = array_flip($map_data[0]);
-  $set2 = array_flip($map_data[1]);
-  $set3 = array_flip($map_data[2]);
-  $set4 = array_flip($map_data[3]);
-  $set5 = array_flip($map_data[4]);
-  $set6 = array_flip($map_data[5]);
-
-  // 找到三个集合的交集
-  $common_elements[0] = array_keys(array_intersect_key($set1, $set2, $set3));
-  $common_elements[1] = array_keys(array_intersect_key($set1, $set2, $set3, $set4));
-  $common_elements[2] = array_keys(array_intersect_key($set1, $set2, $set3, $set4, $set5));
-  $common_elements[3] = array_keys(array_intersect_key($set1, $set2, $set3, $set4, $set5, $set6));
-
+  // 逐列比较
+  foreach ($map_data as $column) {
+      $set = array_intersect_key($set, array_flip($column)); // 与当前列进行交集
+      $common_elements[] = array_keys($set); // 将交集的键（即相同的元素）存入结果数组中
+  }
 
 
   dd($common_elements);
