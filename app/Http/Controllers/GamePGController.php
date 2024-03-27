@@ -2130,7 +2130,11 @@ class GamePGController extends Controller
     // 投注结果
     public function getSpinInfo(Request $request) {
 
+      // 随机投注结果
       $random_bet_info = $this->getRandomBetInfo(35, 2, 12);
+
+      // 连线数据
+      $continuous_regions = find_continuous_regions($random_bet_info);
 
       $json_str = '{
         "dt": {
@@ -2328,7 +2332,7 @@ class GamePGController extends Controller
             "rs": null,
             "fs": null,
             "ssaw": 0,
-            "ptbr": null,
+            "ptbr": '.$continuous_regions.',
             "sc": 0,
             "gwt": -1,
             "fb": null,
@@ -4645,5 +4649,37 @@ class GamePGController extends Controller
       return json_encode($reponse);
 
     }
+
+    // 计算连线 预设6x6
+    protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
+      $regions = [];
+      $current_region = [];
+  
+      for ($i = 0; $i < $rows; $i++) {
+          $start_index = $i * $columns;
+          $end_index = ($i + 1) * $columns - 1;
+  
+          for ($j = $start_index; $j <= $end_index; $j++) {
+              // 如果当前值与前一个值连续，将其添加到当前区域中
+              if ($j == $start_index || $map_data[$j] == $map_data[$j - 1] + 1) {
+                  $current_region[] = $j;
+              } else {
+                  // 否则，将当前区域添加到连续区域列表中，并开始新的区域
+                  if (count($current_region) > 1) {
+                      $regions = array_merge($regions, $current_region);
+                  }
+                  $current_region = [$j];
+              }
+          }
+  
+          // 将最后的区域添加到连续区域列表中
+          if (count($current_region) > 1) {
+              $regions = array_merge($regions, $current_region);
+          }
+          $current_region = [];
+      }
+  
+      return json_encode($regions);
+  }
 }
 
