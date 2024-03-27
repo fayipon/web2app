@@ -4708,40 +4708,33 @@ class GamePGController extends Controller
     
     $map = json_decode($mapStr, true);
 
-// 调用函数并打印结果
-$result = $this->convertAndFindMatchingGroups($map);
-echo "每一列中出现相同数字的组合：" . PHP_EOL;
-foreach ($result as $group) {
-    echo "[" . implode(', ', $group) . "]" . PHP_EOL;
-}
+    // 调用函数并打印结果
+    $result = $this->findMatchingGroups($map);
+    echo "相同数字组合的位置：" . implode(', ', $result) . PHP_EOL;
 
     dd($map);
   }
   
-  // 转换数组并查找相同数字组合的函数
-  function convertAndFindMatchingGroups($map) {
-    $matchingGroups = [];
+// 计算相同数字组合的位置的函数
+function findMatchingGroups($map) {
+  $matchingPositions = [];
 
-    // 将一维数组转换为6x6的二维数组
-    $map2d = [];
-    for ($i = 0; $i < 6; $i++) {
-        $map2d[] = array_slice($map, $i * 6, 6);
-    }
+  // 遍历地图数组
+  for ($i = 0; $i < count($map); $i++) {
+      // 跳过前两个元素
+      if ($i < 2) {
+          continue;
+      }
 
-    // 遍历每一列
-    for ($col = 0; $col < 6; $col++) {
-        $colData = array_column($map2d, $col); // 获取当前列的数据
-
-        // 判断相邻列中是否有相同的数字
-        for ($i = 0; $i < count($colData) - 2; $i++) {
-            if ($colData[$i] == $colData[$i + 1] && $colData[$i] == $colData[$i + 2]) {
-                $matchingGroups[] = [$colData[$i], $colData[$i + 1], $colData[$i + 2]];
-            }
-        }
-    }
-
-    return $matchingGroups;
+      // 检查当前元素与前两个元素是否相同
+      if ($map[$i] == $map[$i - 1] && $map[$i] == $map[$i - 2]) {
+          $position = $i - 2; // 相同组合的位置
+          $matchingPositions[] = $position;
+      }
   }
+
+  return $matchingPositions;
+}
 
 }
 
