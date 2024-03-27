@@ -4734,15 +4734,17 @@ function findMatchingGroups($map) {
 
   // 找出在所有列中出现过的数字
   $result = [];
-  foreach ($common_elements as $elements) {
+  $pos = 0;
+  foreach ($common_elements as $k => $elements) {
       foreach ($elements as $element) {
           if (!in_array($element, $result)) {
               $result[] = $element;
+              $pos = $k;
           }
       }
   }
     
-  dd($common_elements,$result);
+  dd($common_elements,$result,$pos);
 }
 
 
