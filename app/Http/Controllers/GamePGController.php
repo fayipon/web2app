@@ -2137,7 +2137,7 @@ class GamePGController extends Controller
       $continuous_regions = $this->findCommonNumbers($random_bet_info);
 
       // 赔率+连线
-      $rate_cr = $this->convert_to_associative_array($continuous_regions);
+      $rate_cr = "null";
 
       $json_str = '{
         "dt": {
@@ -4696,20 +4696,5 @@ class GamePGController extends Controller
       return json_encode($result);
   }
 
-  // 赔率联线
-  protected function convert_to_associative_array($indexes) {
-    $indexes = json_decode($indexes);
-
-    $result = [];
-    foreach ($indexes as $index) {
-        $key = 10;
-        $result[$key][] = [$index];
-    }
-
-    $str = json_encode($result);
-
-    if ($str == "[]") return "null";
-    return json_encode($result);
-  }
 }
 
