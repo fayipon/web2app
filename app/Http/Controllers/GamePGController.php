@@ -4668,7 +4668,7 @@ class GamePGController extends Controller
       }';
 
       $data = json_decode($json_str);
-      return response()->json($spinData);
+      return response()->json($data);
     }
 }
 
