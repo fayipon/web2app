@@ -4655,51 +4655,40 @@ class GamePGController extends Controller
 
     // 计算连线 预设6x6
     protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
-      $regions = [];
-
-      // 遍历每一行
-      for ($i = 0; $i < $rows; $i++) {
-          $start = null;
-          $end = null;
-          $max_length = 0;
-          $max_start = null;
-          $max_end = null;
-  
-          // 遍历当前行中的每个位置
-          for ($j = 0; $j < $columns; $j++) {
-              // 如果当前位置为空，则重置起始索引和结束索引
-              if ($map_data[$i * $columns + $j] === null) {
-                  $start = null;
-                  $end = null;
-              } else {
-                  // 如果当前位置与上一个位置相同，则更新结束索引
-                  if ($j > 0 && $map_data[$i * $columns + $j] == $map_data[$i * $columns + $j - 1] + 1) {
-                      $end = $j;
-                  } else {
-                      // 否则，更新起始索引和结束索引，并检查当前区域是否为当前行中最长的连续区域
-                      $start = $j;
-                      $end = $j;
-                  }
-              }
-  
-              // 更新最长连续区域
-              if ($end - $start + 1 > $max_length) {
-                  $max_length = $end - $start + 1;
-                  $max_start = $start;
-                  $max_end = $end;
+      $result = [];
+      
+      // Initialize an array to keep track of seen numbers in each row
+      $seenNumbers = array_fill(0, $rowCount, []);
+      
+      // Loop through each column
+      for ($col = 0; $col < $colCount; $col++) {
+          // Get the current number in the column
+          $currentNumber = $map[$col];
+          
+          // Check if this number has been seen in all previous rows
+          $common = true;
+          for ($row = 0; $row < $rowCount; $row++) {
+              if (!in_array($currentNumber, $seenNumbers[$row])) {
+                  $common = false;
+                  break;
               }
           }
-  
-          // 将当前行中的最长连续区域添加到结果中
-          if ($max_length > 0) {
-              $regions[] = [$i * $columns + $max_start, $i * $columns + $max_end];
+          
+          // If the number is common, add it to the result
+          if ($common) {
+              $result[] = $col;
+              
+              // Update the seen numbers array for each row
+              for ($row = 0; $row < $rowCount; $row++) {
+                  $seenNumbers[$row][] = $currentNumber;
+              }
           }
       }
-  
-      $str = json_encode($regions);
+
+      $str = json_encode($result);
 
       if ($str == "[]") return "null";
-      return json_encode($regions);
+      return json_encode($result);
   }
 
   // 赔率联线
