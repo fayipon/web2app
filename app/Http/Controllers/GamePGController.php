@@ -4715,7 +4715,8 @@ class GamePGController extends Controller
     dd($map);
   }
   
-// 计算每一列与前一列出现相同数字的位置的函数
+
+// 计算每一列与前面列出现相同数字的位置的函数
 function findMatchingGroups($map) {
   $matchingPositions = [];
 
@@ -4724,13 +4725,13 @@ function findMatchingGroups($map) {
       // 当前列的数字
       $currentColumn = array_slice($map, $col * 6, 6);
 
-      // 前一列的数字
-      $previousColumn = array_slice($map, ($col - 1) * 6, 6);
+      // 前面列的数字
+      $previousColumns = array_slice($map, 0, $col * 6);
 
-      // 检查当前列中的数字是否在前一列中出现过
+      // 检查当前列中的数字是否在前面列中已经出现过
       foreach ($currentColumn as $index => $number) {
-          if (in_array($number, $previousColumn)) {
-              // 如果当前列中的数字在前一列中出现过，记录其位置
+          if (in_array($number, $previousColumns)) {
+              // 如果当前列中的数字在前面列中已经出现过，记录其位置
               $matchingPositions[] = $col * 6 + $index;
           }
       }
