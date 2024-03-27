@@ -4720,12 +4720,16 @@ class GamePGController extends Controller
 function findMatchingGroups($map) {
   $matchingPositions = [];
 
-  $previousColumn = []; // 用于存储前一列出现过的数字
+  // 存储每列已经出现过的数字
+  $previousColumns = [];
 
   // 遍历每一列
   for ($col = 1; $col < 6; $col++) { // 从第二列开始
       // 当前列的数字
       $currentColumn = array_slice($map, $col * 6, 6);
+
+      // 前一列的数字
+      $previousColumn = $previousColumns[$col - 1] ?? [];
 
       // 检查当前列中的数字是否在前一列中已经出现过
       foreach ($currentColumn as $index => $number) {
@@ -4736,11 +4740,12 @@ function findMatchingGroups($map) {
       }
 
       // 更新前一列的数字为当前列的数字
-      $previousColumn = array_unique(array_merge($previousColumn, $currentColumn));
+      $previousColumns[$col] = array_unique($currentColumn);
   }
 
   return $matchingPositions;
 }
+
 
 }
 
