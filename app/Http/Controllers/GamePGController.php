@@ -4653,31 +4653,23 @@ class GamePGController extends Controller
     // 计算连线 预设6x6
     protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
       $regions = [];
-      $current_region = [];
   
       for ($i = 0; $i < $rows; $i++) {
           $start_index = $i * $columns;
           $end_index = ($i + 1) * $columns - 1;
   
-          for ($j = $start_index; $j <= $end_index; $j++) {
+          $current_region = [];
   
-              // 如果当前值与前一个值连续，将其添加到当前区域中
-              if ($j == $start_index || $map_data[$j] == $map_data[$j - 1] + 1) {
+          for ($j = $start_index; $j < $end_index; $j++) {
+              if ($map_data[$j] == $map_data[$j + 1]) {
                   $current_region[] = $j;
-              } else {
-                  // 否则，将当前区域添加到连续区域列表中，并开始新的区域
-                  if (count($current_region) > 1) {
-                      $regions = array_merge($regions, $current_region);
-                  }
-                  $current_region = [$j];
+                  $current_region[] = $j + 1;
               }
           }
   
-          // 将最后的区域添加到连续区域列表中
-          if (count($current_region) > 1) {
+          if (!empty($current_region)) {
               $regions = array_merge($regions, $current_region);
           }
-          $current_region = [];
       }
   
       return json_encode($regions);
