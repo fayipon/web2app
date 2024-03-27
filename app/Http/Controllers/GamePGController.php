@@ -4744,9 +4744,16 @@ function findMatchingGroups($map) {
       }
   }
 
-  // pos 最大长度
+    // 从数组中截取一部分并找出所有值为$result的键
+    $slice = array_slice($map, 0, $pos * 6);
+    $matching_keys = [];
+    foreach ($slice as $key => $value) {
+        if (in_array($value, $result)) {
+            $matching_keys[] = $key;
+        }
+    }
     
-  dd($common_elements,$result,$pos);
+    return $matching_keys;
 }
 
 
