@@ -74,5 +74,8 @@ Route::get('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GameP
 Route::post('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GamePGController@getSpinInfo');
 
 
+Route::get('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\Controllers\GamePGController@getResurceInfo');
+Route::post('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\Controllers\GamePGController@getResurceInfo');
+
 
 
