@@ -19,5 +19,6 @@ class VerifyCsrfToken extends Middleware
         '/game-api/gem-saviour-conquest/v2/Spin',
         '/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds',
         '/web-api/game-proxy/v2/BetHistory/Get',
+        '/web-api/game-proxy/v2/BetSummary/Get',
     ];
 }

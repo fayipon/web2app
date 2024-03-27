@@ -4649,5 +4649,26 @@ class GamePGController extends Controller
       $betHistory = json_decode($json_str);
       return response()->json($betHistory);
     }
+
+    //  '/web-api/game-proxy/v2/BetSummary/Get',
+    public function getBetSummary(Request $request) {
+
+      $json_str = '{
+        "dt": {
+          "lut": 1711518214889,
+          "bs": {
+            "gid": 62,
+            "bc": 7,
+            "btba": 60,
+            "btwla": -32.4,
+            "lbid": 1772862005239021000
+          }
+        },
+        "err": null
+      }';
+
+      $data = json_decode($json_str);
+      return response()->json($spinData);
+    }
 }
 

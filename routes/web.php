@@ -73,13 +73,14 @@ Route::post('/web-api/game-proxy/v2/GameName/Get', 'App\Http\Controllers\GamePGC
 Route::get('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GamePGController@getSpinInfo');
 Route::post('/game-api/gem-saviour-conquest/v2/Spin', 'App\Http\Controllers\GamePGController@getSpinInfo');
 
-
 Route::get('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\Controllers\GamePGController@getResurceInfo');
 Route::post('/web-api/game-proxy/v2/Resources/GetByResourcesTypeIds', 'App\Http\Controllers\GamePGController@getResurceInfo');
 
-
 Route::get('/web-api/game-proxy/v2/BetHistory/Get', 'App\Http\Controllers\GamePGController@getBetHistory');
 Route::post('/web-api/game-proxy/v2/BetHistory/Get', 'App\Http\Controllers\GamePGController@getBetHistory');
+
+Route::get('/web-api/game-proxy/v2/BetSummary/Get', 'App\Http\Controllers\GamePGController@getBetSummary');
+Route::post('/web-api/game-proxy/v2/BetSummary/Get', 'App\Http\Controllers\GamePGController@getBetSummary');
 
 
 
