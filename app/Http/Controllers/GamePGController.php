@@ -2133,8 +2133,6 @@ class GamePGController extends Controller
       // 随机投注结果
       $random_bet_info = $this->getRandomBetInfo(35, 2, 12);
 
-      dd($random_bet_info);
-      
       // 连线数据
       $continuous_regions = $this->find_continuous_regions($random_bet_info);
 
@@ -4665,7 +4663,7 @@ class GamePGController extends Controller
           for ($j = $start_index; $j <= $end_index; $j++) {
               // 如果当前值不是数字，则跳过
               if (!is_numeric($map_data[$j])) {
-                  continue;
+                  dd($j,$map_data[$j]);
               }
   
               // 如果当前值与前一个值连续，将其添加到当前区域中
