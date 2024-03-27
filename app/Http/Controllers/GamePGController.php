@@ -4651,8 +4651,7 @@ class GamePGController extends Controller
     }
 
     // 计算连线 预设6x6
-    protected function find_continuous_regions($map_data, $rows=6, $columns=6) {
-      $regions = [];
+    protected function find_continuous_regions($map_data, $rows=6, $columns=6) {    $regions = [];
       $current_region = [];
   
       for ($i = 0; $i < $rows; $i++) {
@@ -4660,6 +4659,11 @@ class GamePGController extends Controller
           $end_index = ($i + 1) * $columns - 1;
   
           for ($j = $start_index; $j <= $end_index; $j++) {
+              // 如果当前值不是数字，则跳过
+              if (!is_numeric($map_data[$j])) {
+                  continue;
+              }
+  
               // 如果当前值与前一个值连续，将其添加到当前区域中
               if ($j == $start_index || $map_data[$j] == $map_data[$j - 1] + 1) {
                   $current_region[] = $j;
