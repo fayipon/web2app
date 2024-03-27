@@ -4684,10 +4684,7 @@ class GamePGController extends Controller
 
     $result = [];
     foreach ($indexes as $index) {
-        $key = intval($index / 6);
-        if (!isset($result[$key])) {
-            $result[$key] = [];
-        }
+        $key = 10;
         $result[$key][] = [$index];
     }
     return json_encode($result);
