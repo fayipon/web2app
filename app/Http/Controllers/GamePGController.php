@@ -2134,7 +2134,7 @@ class GamePGController extends Controller
       $random_bet_info = $this->getRandomBetInfo(36, 2, 12);
 
       // 连线数据
-      $continuous_regions = $this->find_continuous_regions($random_bet_info);
+      $continuous_regions = $this->findCommonNumbers($random_bet_info);
 
       // 赔率+连线
       $rate_cr = $this->convert_to_associative_array($continuous_regions);
@@ -4654,38 +4654,41 @@ class GamePGController extends Controller
     }
 
     // 计算连线 预设6x6
-    protected function find_continuous_regions($map) {
-      $rowCount = 6;
-      $colCount = 6;
-      $result = [];
-      
-      // Initialize an array to keep track of seen numbers in each row
-      $seenNumbers = array_fill(0, $rowCount, []);
-      
-      // Loop through each column
-      for ($col = 0; $col < $colCount; $col++) {
-          // Get the current number in the column
-          $currentNumber = $map[$col];
-          
-          // Check if this number has been seen in all previous rows
-          $common = true;
-          for ($row = 0; $row < $rowCount; $row++) {
-              if (!in_array($currentNumber, $seenNumbers[$row])) {
-                  $common = false;
-                  break;
-              }
-          }
-          
-          // If the number is common, add it to the result
-          if ($common) {
-              $result[] = $col;
-              
-              // Update the seen numbers array for each row
-              for ($row = 0; $row < $rowCount; $row++) {
-                  $seenNumbers[$row][] = $currentNumber;
-              }
-          }
-      }
+    protected function findCommonNumbers($map) {
+        $rowCount = 6;
+        $colCount = 6;
+        $result = [];
+        
+        // Initialize an array to keep track of seen numbers in each row
+        $seenNumbers = [];
+        for ($i = 0; $i < $rowCount; $i++) {
+            $seenNumbers[] = [];
+        }
+        
+        // Loop through each column
+        for ($col = 0; $col < $colCount; $col++) {
+            // Get the current number in the column
+            $currentNumber = $map[$col];
+            
+            // Check if this number has been seen in all previous rows
+            $common = true;
+            for ($row = 0; $row < $rowCount; $row++) {
+                if (!in_array($currentNumber, $seenNumbers[$row])) {
+                    $common = false;
+                    break;
+                }
+            }
+            
+            // If the number is common, add it to the result
+            if ($common) {
+                $result[] = $col;
+                
+                // Update the seen numbers array for each row
+                for ($row = 0; $row < $rowCount; $row++) {
+                    $seenNumbers[$row][] = $currentNumber;
+                }
+            }
+        }
 
       $str = json_encode($result);
 
