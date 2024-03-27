@@ -4718,32 +4718,15 @@ class GamePGController extends Controller
 
 // 计算每一列与前面列出现相同数字的位置的函数
 function findMatchingGroups($map) {
-  $matchingPositions = [];
 
-  // 存储每列已经出现过的数字
-  $previousColumns = [];
+  foreach ($map as $k => $v) {
 
-  // 遍历每一列
-  for ($col = 1; $col < 6; $col++) { // 从第二列开始
-      // 当前列的数字
-      $currentColumn = array_slice($map, $col * 6, 6);
+    $x = $k%6;
+    $y = floor($k/6);
 
-      // 前一列的数字
-      $previousColumn = $previousColumns[$col - 1] ?? [];
+    dd($x,$y);
+  } 
 
-      // 检查当前列中的数字是否在前一列中已经出现过
-      foreach ($currentColumn as $index => $number) {
-          if (in_array($number, $previousColumn)) {
-              // 如果当前列中的数字在前一列中已经出现过，记录其位置
-              $matchingPositions[] = $col * 6 + $index;
-          }
-      }
-
-      // 更新前一列的数字为当前列的数字
-      $previousColumns[$col] = array_unique($currentColumn);
-  }
-
-  return $matchingPositions;
 }
 
 
