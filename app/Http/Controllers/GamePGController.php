@@ -4737,12 +4737,14 @@ function findMatchingGroups($map) {
   $pos = 0;
   foreach ($common_elements as $k => $elements) {
       foreach ($elements as $element) {
-        $pos = $k;
+        $pos = $k+3;
         if (!in_array($element, $result)) {
           $result[] = $element;
         }
       }
   }
+
+  // pos 最大长度
     
   dd($common_elements,$result,$pos);
 }
