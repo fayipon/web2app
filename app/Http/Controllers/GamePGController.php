@@ -4718,16 +4718,18 @@ class GamePGController extends Controller
 
 // 计算每一列与前面列出现相同数字的位置的函数
 function findMatchingGroups($map) {
-  
+
   $map_data = array_chunk($map, 6); // 将一维数组分成二维数组，每个子数组包含6个元素
 
   $common_elements = array();
   $set = array_flip($map_data[0]); // 初始化第一列的集合
 
   // 逐列比较
-  foreach ($map_data as $column) {
+  foreach ($map_data as $k => $column) {
       $set = array_intersect_key($set, array_flip($column)); // 与当前列进行交集
-      $common_elements[] = array_keys($set); // 将交集的键（即相同的元素）存入结果数组中
+      if ($k >=2 ) { // 第三行才开始纪录
+        $common_elements[] = array_keys($set); // 将交集的键（即相同的元素）存入结果数组中
+      }
   }
 
 
